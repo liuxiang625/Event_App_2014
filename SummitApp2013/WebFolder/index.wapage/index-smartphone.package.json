@@ -1,0 +1,37 @@
+{
+    "name": "SummitApp2013/index.waPage/index.html",
+    "version": "1.0.0",
+    "loadDependencies": [
+    {
+        "id": "Mobile_Core",
+        "version": "1.0.0",
+        "type": "core"
+    },{
+        "id": "styles/jquery.mobile-1.3.2.min.css",
+        "path": "WEBFOLDER",
+        "type": "style"
+    },{
+        "id": "cupertino",
+        "type": "theme"
+    },{
+        "id": "index.waPage/styles/index-smartphone.css",
+        "path": "WEBFOLDER",
+        "type": "style"
+    },{
+        "id": "styles/my.css",
+        "path": "WEBFOLDER",
+        "type": "style"
+    },{
+        "id": "application.css",
+        "path": "WEBFOLDER",
+        "type": "style"
+    },{
+        "id": "scripts/jquery.mobile-1.3.2.min.js",
+        "path": "WEBFOLDER",
+        "type": "script"
+    },{
+        "id": "index.waPage/scripts/index-smartphone.js",
+        "path": "WEBFOLDER",
+        "type": "script"
+    }]
+}

@@ -1,0 +1,828 @@
+{
+	"toJSON": true,
+	"extraProperties": {
+		"version": "1",
+		"__CDATA": "\n\t\t\n\t\t\n\t",
+		"classes": {
+			"__CDATA": "\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t",
+			"Session": {
+				"panelColor": "#996699",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "354",
+						"Y": "44"
+					}
+				}
+			},
+			"Survey": {
+				"panelColor": "#fff",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "367",
+						"Y": "822"
+					}
+				}
+			},
+			"Answer": {
+				"panelColor": "#C3D69B",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "42",
+						"Y": "752"
+					}
+				}
+			},
+			"Question": {
+				"panelColor": "#70CCC2",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "696",
+						"Y": "773"
+					}
+				}
+			},
+			"Attendee": {
+				"panelColor": "#B8CCE4",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "778",
+						"Y": "290"
+					}
+				}
+			},
+			"SessionFavorite": {
+				"panelColor": "#8DB3E2",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "737",
+						"Y": "65"
+					}
+				}
+			},
+			"Presentation": {
+				"panelColor": "#C4BD97",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "19",
+						"Y": "7"
+					}
+				}
+			},
+			"Speaker": {
+				"panelColor": "#fff",
+				"__CDATA": "\n\t\t\t\t\n\t\t\t",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": "true",
+					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
+					"position": {
+						"X": "10",
+						"Y": "342"
+					}
+				}
+			}
+		},
+		"model": {
+			"workspaceLeft": 1,
+			"workspaceTop": 727
+		}
+	},
+	"dataClasses": [
+		{
+			"name": "Answer",
+			"className": "Answer",
+			"collectionName": "AnswerCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "survey",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Survey",
+					"path": "Survey"
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "Session"
+				},
+				{
+					"name": "speakerName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "attendee",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Attendee",
+					"path": "Attendee"
+				},
+				{
+					"name": "attendeeName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "attendee.fullName"
+				},
+				{
+					"name": "anynomous",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "attendeeEmail",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "attendee.email"
+				},
+				{
+					"name": "sessionName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "survey.sessionTitle"
+				},
+				{
+					"name": "answer1",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer2",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer3",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer4",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer5",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer6",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer7",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "sessionID",
+					"kind": "alias",
+					"scope": "public",
+					"type": "long",
+					"path": "survey.session.ID"
+				},
+				{
+					"name": "answer8",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer9",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer10",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer11",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer12",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "answer13",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Attendee",
+			"className": "Attendee",
+			"collectionName": "AttendeeCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"autogenerate": true,
+					"type": "long"
+				},
+				{
+					"name": "firstName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "lastName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "email",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "fullName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "favoriteSessions",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SessionFavoriteCollection",
+					"reversePath": true,
+					"path": "attendee"
+				},
+				{
+					"name": "answerCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "AnswerCollection",
+					"reversePath": true,
+					"path": "attendee"
+				},
+				{
+					"name": "uniqueID",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string",
+					"events": [
+						{
+							"kind": "onInit",
+							"from": "guidedModel.Attendee.uniqueID.events.onInit"
+						}
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "onSave",
+					"from": "guidedModel.Attendee.events.onSave"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Presentation",
+			"className": "Presentation",
+			"collectionName": "PresentationCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "Session"
+				},
+				{
+					"name": "sessionName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "session.title"
+				},
+				{
+					"name": "speaker",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Speaker",
+					"path": "Speaker"
+				},
+				{
+					"name": "speakerName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "speaker.fullName"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"className": "Question",
+			"collectionName": "QuestionCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "question1",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question2",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question3",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question4",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question5",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question6",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "question7",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "surveyCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SurveyCollection",
+					"reversePath": true,
+					"path": "question"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"className": "Session",
+			"collectionName": "SessionCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "hidden",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "isActivity",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				},
+				{
+					"name": "title",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "room",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "startTime",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "startTimeString",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "startTimeFullTimeString",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "endTime",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "endTimeString",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "endTimeFullTimeString",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "sessionDate",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": false
+				},
+				{
+					"name": "sessionDateString",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "tags",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "description",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "FavoriteCount",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "SurveyReceived",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "SurveyAverageRate",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "sessionSurveys",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SurveyCollection",
+					"reversePath": true,
+					"path": "session"
+				},
+				{
+					"name": "sessionFavorites",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SessionFavoriteCollection",
+					"reversePath": true,
+					"path": "session"
+				},
+				{
+					"name": "presentaors",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "PresentationCollection",
+					"reversePath": true,
+					"path": "session"
+				},
+				{
+					"name": "speakers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SpeakerCollection",
+					"path": "presentaors.speaker"
+				},
+				{
+					"name": "evalAnswers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "AnswerCollection",
+					"path": "sessionSurveys.answers"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "SessionFavorite",
+			"className": "SessionFavorite",
+			"collectionName": "SessionFavoriteCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "Session"
+				},
+				{
+					"name": "sessionName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "session.title"
+				},
+				{
+					"name": "attendee",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Attendee",
+					"path": "Attendee"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Speaker",
+			"className": "Speaker",
+			"collectionName": "SpeakerCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "firstName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "lastName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "fullName",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "title",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "company",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "biography",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "picURL",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "presentations",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "PresentationCollection",
+					"reversePath": true,
+					"path": "speaker"
+				},
+				{
+					"name": "sessions",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SessionCollection",
+					"path": "presentations.session"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		},
+		{
+			"name": "Survey",
+			"className": "Survey",
+			"collectionName": "SurveyCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"indexKind": "btree"
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "Session"
+				},
+				{
+					"name": "answers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "AnswerCollection",
+					"reversePath": true,
+					"path": "survey"
+				},
+				{
+					"name": "sessionTitle",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "session.title"
+				},
+				{
+					"name": "question",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Question",
+					"path": "Question"
+				},
+				{
+					"name": "speakers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SpeakerCollection",
+					"path": "session.speakers"
+				}
+			],
+			"key": [
+				{
+					"name": "ID"
+				}
+			]
+		}
+	]
+}

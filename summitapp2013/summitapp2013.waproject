@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project><folder path="./datafolder/"><tag name="dataFolder"/></folder><folder path="./WebFolder/"><tag name="WebFolder"/></folder><file path="./model.wamodel"><tag name="catalog"/></file><file path="./settings.wasettings"><tag name="settings"/></file><file path="./permissions.waperm"><tag name="permissions"/></file><file path="./httprequesthandler.js"><tag name="bootStrap"/></file></project>

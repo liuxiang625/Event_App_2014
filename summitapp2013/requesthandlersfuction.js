@@ -1,0 +1,1 @@
+﻿//function rejectDataBrowser(request, response) {//    response.statusCode = 301; // Moved Permanently//	response.headers.Location = 'http://eval.4d.com';//}
