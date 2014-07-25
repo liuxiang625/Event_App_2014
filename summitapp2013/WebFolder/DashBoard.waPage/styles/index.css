@@ -3,6 +3,287 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#label10 {
+	 z-index: 19;
+	 width: 134px;
+	 height: 18px;
+	 top: 255px;
+	 left: 517px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox1 {
+	 z-index: 19;
+	 width: 339px;
+	 height: 40px;
+	 top: 244px;
+	 left: 656px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label9 {
+	 z-index: 17;
+	 width: 78px;
+	 height: 18px;
+	 top: 298px;
+	 left: 12px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#dataGrid1 {
+	 z-index: 17;
+	 width: 384px;
+	 height: 131px;
+	 top: 242px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label8 {
+	 z-index: 15;
+	 width: 82px;
+	 height: 18px;
+	 top: 462px;
+	 left: 10px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField7 {
+	 z-index: 15;
+	 width: 900px;
+	 height: 157px;
+	 top: 393px;
+	 left: 97px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label7 {
+	 z-index: 14;
+	 width: 75px;
+	 height: 18px;
+	 top: 105px;
+	 left: 395px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField6 {
+	 z-index: 14;
+	 width: 519px;
+	 height: 40px;
+	 top: 94px;
+	 left: 475px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label6 {
+	 z-index: 12;
+	 width: 75px;
+	 height: 18px;
+	 top: 179px;
+	 left: 715px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField5 {
+	 z-index: 12;
+	 width: 198px;
+	 height: 40px;
+	 top: 168px;
+	 left: 797px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label5 {
+	 z-index: 10;
+	 width: 75px;
+	 height: 18px;
+	 top: 179px;
+	 left: 366px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField4 {
+	 z-index: 10;
+	 width: 200px;
+	 height: 40px;
+	 top: 168px;
+	 left: 446px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label4 {
+	 z-index: 8;
+	 width: 75px;
+	 height: 18px;
+	 top: 179px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField3 {
+	 z-index: 8;
+	 width: 200px;
+	 height: 40px;
+	 top: 168px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label3 {
+	 z-index: 6;
+	 width: 75px;
+	 height: 18px;
+	 top: 105px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField2 {
+	 z-index: 6;
+	 width: 130px;
+	 height: 40px;
+	 top: 94px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label2 {
+	 z-index: 4;
+	 width: 75px;
+	 height: 18px;
+	 top: 31px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField1 {
+	 z-index: 4;
+	 width: 902px;
+	 height: 40px;
+	 top: 20px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label1 {
+	 z-index: 2;
+	 width: 75px;
+	 height: 18px;
+	 top: 106px;
+	 left: 278px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#checkbox1 {
+	 z-index: 2;
+	 width: 16px;
+	 height: 16px;
+	 top: 107px;
+	 left: 257px;
+	
+	 position: absolute;
+	 
+}
+
+#container1 {
+	 z-index: 3;
+	 top: 22px;
+	 bottom: 73px;
+	 left: 22px;
+	 right: 20px;
+	
+	 position: absolute;
+	 
+}
+
+#button4 {
+	 width: 120px;
+	 height: 40px;
+	 bottom: 16px;
+	 right: 20px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#button3 {
+	 width: 120px;
+	 height: 40px;
+	 bottom: 16px;
+	 right: 166px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
 #richText7 {
 	 z-index: 1;
 	 width: 110px;
@@ -95,7 +376,7 @@
 	 z-index: 1;
 	 width: 442px;
 	 height: 52px;
-	 top: 51px;
+	 bottom: 0px;
 	 left: 0px;
 	
 	 position: absolute;
@@ -103,13 +384,13 @@
 }
 
 #button2 {
+	 z-index: 3;
 	 width: 120px;
 	 height: 40px;
 	 bottom: 20px;
 	 right: 18px;
 	
 	 position: absolute;
-	 z-index: 3;
 	 
 }
 
@@ -125,13 +406,13 @@
 }
 
 #dataGrid2 {
+	 z-index: 1;
 	 top: 0px;
 	 bottom: 84px;
 	 left: -5px;
 	 right: -5px;
 	
 	 position: absolute;
-	 z-index: 1;
 	 
 }
 
