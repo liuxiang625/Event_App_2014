@@ -3,558 +3,522 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#button8 {
+	width: 137px;
+	height: 40px;
+	bottom: 257px;
+	right: 380px;
+	position: absolute;
+	font-size: 16px;
+	z-index: 20;
+}
+
+#button7 {
+	width: 137px;
+	height: 40px;
+	bottom: 328px;
+	right: 381px;
+	position: absolute;
+	font-size: 16px;
+	z-index: 19;
+}
+
+#button6 {
+	z-index: 12;
+	width: 92px;
+	height: 22px;
+	top: 0px;
+	left: 0px;
+}
+
+#button5 {
+	width: 92px;
+	height: 22px;
+	top: 329px;
+	left: 178px;
+}
+
+#login1 {
+	z-index: 2;
+	width: 198px;
+	height: 54px;
+	top: 20px;
+	right: 20px;
+	position: absolute;
+	font-size: 16px;
+}
+
 #label10 {
-	 z-index: 19;
-	 width: 134px;
-	 height: 18px;
-	 top: 255px;
-	 left: 517px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 17;
+	width: 134px;
+	height: 18px;
+	top: 218px;
+	left: 758px;
+	position: absolute;
+	font-size: 16px;
+	text-align: center;
 }
 
 #combobox1 {
-	 z-index: 19;
-	 width: 339px;
-	 height: 40px;
-	 top: 244px;
-	 left: 656px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 18;
+	width: 339px;
+	height: 40px;
+	top: 241px;
+	left: 656px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label9 {
-	 z-index: 17;
-	 width: 78px;
-	 height: 18px;
-	 top: 298px;
-	 left: 12px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 16;
+	width: 75px;
+	height: 18px;
+	top: 298px;
+	left: 15px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #dataGrid1 {
-	 z-index: 17;
-	 width: 384px;
-	 height: 131px;
-	 top: 242px;
-	 left: 95px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 16;
+	width: 384px;
+	height: 131px;
+	top: 242px;
+	left: 95px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label8 {
-	 z-index: 15;
-	 width: 82px;
-	 height: 18px;
-	 top: 462px;
-	 left: 10px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 15;
+	width: 82px;
+	height: 18px;
+	top: 462px;
+	left: 10px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField7 {
-	 z-index: 15;
-	 width: 900px;
-	 height: 157px;
-	 top: 393px;
-	 left: 97px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 15;
+	width: 900px;
+	height: 157px;
+	top: 393px;
+	left: 97px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label7 {
-	 z-index: 14;
-	 width: 75px;
-	 height: 18px;
-	 top: 105px;
-	 left: 395px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 14;
+	width: 75px;
+	height: 18px;
+	top: 105px;
+	left: 395px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField6 {
-	 z-index: 14;
-	 width: 519px;
-	 height: 40px;
-	 top: 94px;
-	 left: 475px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 14;
+	width: 519px;
+	height: 40px;
+	top: 94px;
+	left: 475px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label6 {
-	 z-index: 12;
-	 width: 75px;
-	 height: 18px;
-	 top: 179px;
-	 left: 715px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 12;
+	width: 75px;
+	height: 18px;
+	top: 179px;
+	left: 717px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField5 {
-	 z-index: 12;
-	 width: 198px;
-	 height: 40px;
-	 top: 168px;
-	 left: 797px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 12;
+	width: 198px;
+	height: 40px;
+	top: 168px;
+	left: 797px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label5 {
-	 z-index: 10;
-	 width: 75px;
-	 height: 18px;
-	 top: 179px;
-	 left: 366px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 10;
+	width: 75px;
+	height: 18px;
+	top: 179px;
+	left: 366px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField4 {
-	 z-index: 10;
-	 width: 200px;
-	 height: 40px;
-	 top: 168px;
-	 left: 446px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 10;
+	width: 200px;
+	height: 40px;
+	top: 168px;
+	left: 446px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label4 {
-	 z-index: 8;
-	 width: 75px;
-	 height: 18px;
-	 top: 179px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 8;
+	width: 75px;
+	height: 18px;
+	top: 179px;
+	left: 15px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField3 {
-	 z-index: 8;
-	 width: 200px;
-	 height: 40px;
-	 top: 168px;
-	 left: 95px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 8;
+	width: 200px;
+	height: 40px;
+	top: 168px;
+	left: 95px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label3 {
-	 z-index: 6;
-	 width: 75px;
-	 height: 18px;
-	 top: 105px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 6;
+	width: 75px;
+	height: 18px;
+	top: 105px;
+	left: 15px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField2 {
-	 z-index: 6;
-	 width: 130px;
-	 height: 40px;
-	 top: 94px;
-	 left: 95px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 6;
+	width: 130px;
+	height: 40px;
+	top: 94px;
+	left: 95px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label2 {
-	 z-index: 4;
-	 width: 75px;
-	 height: 18px;
-	 top: 31px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 4;
+	width: 75px;
+	height: 18px;
+	top: 31px;
+	left: 15px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #textField1 {
-	 z-index: 4;
-	 width: 902px;
-	 height: 40px;
-	 top: 20px;
-	 left: 95px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
+	z-index: 4;
+	width: 902px;
+	height: 40px;
+	top: 20px;
+	left: 95px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #label1 {
-	 z-index: 2;
-	 width: 75px;
-	 height: 18px;
-	 top: 106px;
-	 left: 278px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
+	z-index: 2;
+	width: 85px;
+	height: 18px;
+	top: 106px;
+	left: 278px;
+	position: absolute;
+	min-width: 75px;
+	font-size: 16px;
 }
 
 #checkbox1 {
-	 z-index: 2;
-	 width: 16px;
-	 height: 16px;
-	 top: 107px;
-	 left: 257px;
-	
-	 position: absolute;
-	 
+	z-index: 2;
+	width: 16px;
+	height: 16px;
+	top: 107px;
+	left: 257px;
+	position: absolute;
 }
 
 #container1 {
-	 z-index: 3;
-	 top: 22px;
-	 bottom: 73px;
-	 left: 22px;
-	 right: 20px;
-	
-	 position: absolute;
-	 
+	z-index: 3;
+	top: 22px;
+	bottom: 73px;
+	left: 22px;
+	right: 20px;
+	position: absolute;
 }
 
 #button4 {
-	 width: 120px;
-	 height: 40px;
-	 bottom: 16px;
-	 right: 20px;
-	
-	 position: absolute;
-	 z-index: 2;
-	 
+	z-index: 2;
+	width: 120px;
+	height: 40px;
+	bottom: 16px;
+	right: 20px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #button3 {
-	 width: 120px;
-	 height: 40px;
-	 bottom: 16px;
-	 right: 166px;
-	
-	 position: absolute;
-	 z-index: 1;
-	 
+	z-index: 1;
+	width: 120px;
+	height: 40px;
+	bottom: 16px;
+	right: 166px;
+	position: absolute;
+	font-size: 16px;
 }
 
 #richText7 {
-	 z-index: 1;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem7 {
-	 z-index: 4;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 4;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
 }
 
 #richText3 {
-	 z-index: 1;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem3 {
-	 z-index: 3;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 3;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #richText2 {
-	 z-index: 1;
-	 width: 109px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 109px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem2 {
-	 z-index: 2;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 2;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #richText1 {
-	 z-index: 1;
-	 width: 109px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 109px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem1 {
-	 z-index: 1;
-	 width: 110px;
-	 height: 50px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 110px;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
 }
 
 #menuBar1 {
-	 z-index: 1;
-	 width: 442px;
-	 height: 52px;
-	 bottom: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 442px;
+	height: 52px;
+	bottom: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #button2 {
-	 z-index: 3;
-	 width: 120px;
-	 height: 40px;
-	 bottom: 20px;
-	 right: 18px;
-	
-	 position: absolute;
-	 
+	z-index: 3;
+	width: 120px;
+	height: 40px;
+	bottom: 20px;
+	right: 18px;
+	position: absolute;
 }
 
 #button1 {
-	 z-index: 2;
-	 width: 120px;
-	 height: 40px;
-	 bottom: 20px;
-	 right: 164px;
-	
-	 position: absolute;
-	 
+	z-index: 2;
+	width: 120px;
+	height: 40px;
+	bottom: 20px;
+	right: 164px;
+	position: absolute;
 }
 
 #dataGrid2 {
-	 z-index: 1;
-	 top: 0px;
-	 bottom: 84px;
-	 left: -5px;
-	 right: -5px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	top: 0px;
+	bottom: 84px;
+	left: -5px;
+	right: -5px;
+	position: absolute;
 }
 
 #container7 {
-	 z-index: 12;
-	 height: 130px;
-	 top: 0px;
-	 left: 0px;
-	 right: 5px;
-	
-	 position: absolute;
-	 
+	z-index: 11;
+	height: 130px;
+	top: 0px;
+	left: 0px;
+	right: 5px;
+	position: absolute;
 }
 
 #container6 {
-	 z-index: 6;
-	 top: 28px;
-	 bottom: 5px;
-	 left: 5px;
-	 right: 5px;
-	
-	 position: absolute;
-	 
+	z-index: 6;
+	top: 28px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	position: absolute;
 }
 
 #richText6 {
-	 z-index: 1;
-	 width: 66px;
-	 height: 23px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 66px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem6 {
-	 z-index: 3;
-	 width: 66px;
-	 height: 23px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 3;
+	width: 66px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #container5 {
-	 z-index: 5;
-	 top: 28px;
-	 bottom: 5px;
-	 left: 5px;
-	 right: 5px;
-	
-	 position: absolute;
-	 
+	z-index: 5;
+	top: 28px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	position: absolute;
 }
 
 #richText5 {
-	 z-index: 1;
-	 width: 66px;
-	 height: 23px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 66px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem5 {
-	 z-index: 2;
-	 width: 66px;
-	 height: 23px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 2;
+	width: 66px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #container4 {
-	 z-index: 4;
-	 top: 28px;
-	 bottom: 5px;
-	 left: 5px;
-	 right: 5px;
-	
-	 position: absolute;
-	 
+	z-index: 4;
+	top: 28px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	position: absolute;
 }
 
 #richText4 {
-	 z-index: 1;
-	 width: 64px;
-	 height: 22px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 64px;
+	height: 22px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuItem4 {
-	 z-index: 1;
-	 width: 66px;
-	 height: 23px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 1;
+	width: 66px;
+	height: 23px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
 }
 
 #menuBar2 > .waf-menuItem {
-	 margin-bottom: 0px;
-	 
+	margin-bottom: 0px;
 }
 
 #menuBar2 > .waf-menuItem:not(.waf-menuItem-last) {
-	 margin-right: 5px;
-	 
+	margin-right: 5px;
 }
 
 #menuBar2 {
-	 z-index: 3;
-	 height: 23px;
-	 top: 5px;
-	 left: 5px;
-	 right: 5px;
-	
-	 position: absolute;
-	 
+	z-index: 3;
+	height: 23px;
+	top: 5px;
+	left: 5px;
+	right: 857px;
+	position: absolute;
 }
 
 #tabView2 {
-	 z-index: 11;
-	 top: 100px;
-	 bottom: 0px;
-	 left: -5px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
+	z-index: 10;
+	top: 100px;
+	bottom: 0px;
+	left: -5px;
+	right: 0px;
+	position: absolute;
 }
 
