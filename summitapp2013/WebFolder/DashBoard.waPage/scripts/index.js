@@ -2,6 +2,15 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button5 = {};	// @button
+	var button6 = {};	// @button
+	var button18 = {};	// @button
+	var button17 = {};	// @button
+	var dataGrid3 = {};	// @dataGrid
+	var button10 = {};	// @button
+	var button9 = {};	// @button
+	var menuItem1 = {};	// @menuItem
+	var menuItem2 = {};	// @menuItem
 	var button8 = {};	// @button
 	var button7 = {};	// @button
 	var button1 = {};	// @button
@@ -14,21 +23,73 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	button5.click = function button5_click (event)// @startlock
+	{// @endlock
+		sources.presentaors.removeCurrent();
+	};// @lock
+
+	button6.click = function button6_click (event)// @startlock
+	{// @endlock
+		sources.presentaors.addNewElement();
+		sources.presentaors.session.set(sources.session);
+		sources.presentaors.save();
+	};// @lock
+
+	button18.click = function button18_click (event)// @startlock
+	{// @endlock
+		sources.speaker.removeCurrentReference({
+	        onSuccess: function(event) {
+	           $$('tabView2').selectTab(3);
+	        }
+    	});
+	};// @lock
+
+	button17.click = function button17_click (event)// @startlock
+	{// @endlock
+		sources.speaker.save({
+	        onSuccess: function(event) {
+	           $$('tabView2').selectTab(3);
+	        }
+    	});
+	};// @lock
+
+	dataGrid3.onRowDblClick = function dataGrid3_onRowDblClick (event)// @startlock
+	{// @endlock
+		$$('tabView2').selectTab(4);
+	};// @lock
+
+	button10.click = function button10_click (event)// @startlock
+	{// @endlock
+		$$('tabView2').selectTab(4);
+	};// @lock
+
+	button9.click = function button9_click (event)// @startlock
+	{// @endlock
+		sources.speaker.addNewElement();
+		$$('tabView2').selectTab(4);
+	};// @lock
+
+	menuItem1.click = function menuItem1_click (event)// @startlock
+	{// @endlock
+		$$('tabView2').selectTab(1);
+	};// @lock
+
+	menuItem2.click = function menuItem2_click (event)// @startlock
+	{// @endlock
+		$$('tabView2').selectTab(3);
+	};// @lock
+
 	button8.click = function button8_click (event)// @startlock
 	{// @endlock
-		var newPresenter = sources.session.presentaors.addNewElement();
-		newPresenter.speaker = sources.speaker;
-		newPresenter.save();
+		sources.presentaors.removeCurrent();
 	};// @lock
 
 	button7.click = function button7_click (event)// @startlock
 	{// @endlock
-		var ID = sources.session.presentaors.ID;
-		sources.presentation.find({
-			onSuccess: function(event) {
-	           $$('tabView2').selectTab(1);
-	        }
-		});
+		
+		sources.presentaors.addNewElement();
+		sources.presentaors.speaker.set(sources.speaker);
+		sources.presentaors.save();
 	};// @lock
 	
 	button1.click = function button1_click (event)// @startlock
@@ -71,6 +132,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button5", "click", button5.click, "WAF");
+	WAF.addListener("button6", "click", button6.click, "WAF");
+	WAF.addListener("button18", "click", button18.click, "WAF");
+	WAF.addListener("button17", "click", button17.click, "WAF");
+	WAF.addListener("dataGrid3", "onRowDblClick", dataGrid3.onRowDblClick, "WAF");
+	WAF.addListener("button10", "click", button10.click, "WAF");
+	WAF.addListener("button9", "click", button9.click, "WAF");
+	WAF.addListener("menuItem1", "click", menuItem1.click, "WAF");
+	WAF.addListener("menuItem2", "click", menuItem2.click, "WAF");
 	WAF.addListener("button8", "click", button8.click, "WAF");
 	WAF.addListener("button7", "click", button7.click, "WAF");
 	WAF.addListener("button1", "click", button1.click, "WAF");
