@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var fileUpload2 = {};	// @fileUpload
 	var button5 = {};	// @button
 	var button6 = {};	// @button
 	var button18 = {};	// @button
@@ -23,16 +24,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	fileUpload2.filesUploaded = function fileUpload2_filesUploaded (event)// @startlock
+	{// @endlock
+		
+	};// @lock
+
 	button5.click = function button5_click (event)// @startlock
 	{// @endlock
-		sources.presentaors.removeCurrent();
+		sources.presentations.removeCurrent();
 	};// @lock
 
 	button6.click = function button6_click (event)// @startlock
 	{// @endlock
-		sources.presentaors.addNewElement();
-		sources.presentaors.session.set(sources.session);
-		sources.presentaors.save();
+		sources.presentations.addNewElement();
+		sources.presentations.session.set(sources.session1);
+		sources.presentations.save();
 	};// @lock
 
 	button18.click = function button18_click (event)// @startlock
@@ -46,6 +52,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button17.click = function button17_click (event)// @startlock
 	{// @endlock
+		sources.speaker.fullName = sources.speaker.firstName + " " + sources.speaker.lastName;
 		sources.speaker.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(3);
@@ -56,6 +63,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	dataGrid3.onRowDblClick = function dataGrid3_onRowDblClick (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(4);
+		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
 	};// @lock
 
 	button10.click = function button10_click (event)// @startlock
@@ -66,6 +74,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	button9.click = function button9_click (event)// @startlock
 	{// @endlock
 		sources.speaker.addNewElement();
+		sources.speaker.serverRefresh();
 		$$('tabView2').selectTab(4);
 	};// @lock
 
@@ -77,6 +86,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem2.click = function menuItem2_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(3);
+		$$('menuItem1').setState('default');
 	};// @lock
 
 	button8.click = function button8_click (event)// @startlock
@@ -132,6 +142,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("fileUpload2", "filesUploaded", fileUpload2.filesUploaded, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
 	WAF.addListener("button6", "click", button6.click, "WAF");
 	WAF.addListener("button18", "click", button18.click, "WAF");
