@@ -288,7 +288,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		$("#sessionsDateList").bind( "change", function(event, ui) {
 			var dataString = this.value;
-			ds.Session.query("sessionDateString > '11/11' and sessionDateString begin :1",dataString, {
+			ds.Session.query("sessionDateString > '10/26' and sessionDateString begin :1",dataString, {
 			//pageSize:1,
 			orderBy:"sessionDateString, startTimeString", //ID
 			onSuccess: function(e) {

@@ -3,6 +3,31 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#dataGrid6 {
+	 z-index: 22;
+	 width: 350px;
+	 height: 180px;
+	 top: 239px;
+	 left: 645px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label14 {
+	 z-index: 22;
+	 width: 127px;
+	 height: 18px;
+	 top: 216px;
+	 left: 645px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
 #dataGrid5 {
 	 z-index: 24;
 	 width: 498px;
@@ -17,9 +42,9 @@
 
 #label13 {
 	 z-index: 24;
-	 width: 147px;
-	 height: 20px;
-	 top: 395px;
+	 width: 131px;
+	 height: 18px;
+	 top: 397px;
 	 left: 758px;
 	
 	 position: absolute;
@@ -146,8 +171,8 @@
 	 z-index: 16;
 	 width: 26px;
 	 height: 20px;
-	 top: 150px;
-	 left: 571px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -169,8 +194,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: 280px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -194,8 +219,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: 150px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -231,8 +256,8 @@
 	 z-index: 4;
 	 width: 77px;
 	 height: 20px;
-	 top: 50px;
-	 left: 518px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -256,8 +281,8 @@
 	 z-index: 2;
 	 width: 75px;
 	 height: 20px;
-	 top: 50px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -295,7 +320,7 @@
 #container2 {
 	 z-index: 7;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	 right: 5px;
 	
@@ -366,7 +391,7 @@
 	 width: 148px;
 	 height: 40px;
 	 top: 317px;
-	 left: 499px;
+	 left: 476px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -378,7 +403,7 @@
 	 width: 148px;
 	 height: 38px;
 	 top: 246px;
-	 left: 498px;
+	 left: 475px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -397,36 +422,11 @@
 	 
 }
 
-#label10 {
-	 z-index: 17;
-	 width: 117px;
-	 height: 20px;
-	 top: 253px;
-	 left: 771px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 text-align: center;
-	 
-}
-
-#combobox1 {
-	 z-index: 18;
-	 width: 339px;
-	 height: 40px;
-	 top: 278px;
-	 left: 660px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
 #label9 {
 	 z-index: 16;
 	 width: 75px;
-	 height: 20px;
-	 top: 297px;
+	 height: 18px;
+	 top: 323px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -437,8 +437,8 @@
 
 #dataGrid1 {
 	 z-index: 16;
-	 width: 384px;
-	 height: 131px;
+	 width: 350px;
+	 height: 180px;
 	 top: 242px;
 	 left: 95px;
 	
@@ -449,10 +449,10 @@
 
 #label8 {
 	 z-index: 15;
-	 width: 75px;
-	 height: 20px;
-	 top: 461px;
-	 left: 17px;
+	 width: 82px;
+	 height: 18px;
+	 top: 486px;
+	 left: 10px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -463,8 +463,8 @@
 #textField7 {
 	 z-index: 15;
 	 width: 900px;
-	 height: 157px;
-	 top: 393px;
+	 height: 80px;
+	 top: 455px;
 	 left: 97px;
 	
 	 position: absolute;
@@ -476,8 +476,8 @@
 	 z-index: 14;
 	 width: 75px;
 	 height: 20px;
-	 top: 104px;
-	 left: 395px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -501,8 +501,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 717px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -526,8 +526,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 366px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -551,8 +551,8 @@
 	 z-index: 8;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -576,8 +576,8 @@
 	 z-index: 6;
 	 width: 75px;
 	 height: 20px;
-	 top: 104px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -601,8 +601,8 @@
 	 z-index: 4;
 	 width: 75px;
 	 height: 20px;
-	 top: 30px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -626,8 +626,8 @@
 	 z-index: 2;
 	 width: 75px;
 	 height: 20px;
-	 top: 105px;
-	 left: 278px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -820,8 +820,8 @@
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 84px;
-	 left: -5px;
-	 right: -5px;
+	 left: 0px;
+	 right: 0px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -842,7 +842,7 @@
 #container6 {
 	 z-index: 6;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	 right: 5px;
 	
@@ -875,7 +875,7 @@
 #container5 {
 	 z-index: 5;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	 right: 5px;
 	
@@ -908,7 +908,7 @@
 #container4 {
 	 z-index: 4;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	 right: 5px;
 	
@@ -953,7 +953,7 @@
 	 height: 23px;
 	 top: 5px;
 	 left: 5px;
-	 right: 1105px;
+	 right: 1066px;
 	
 	 position: absolute;
 	 
@@ -972,9 +972,9 @@
 
 #label21 {
 	 z-index: 18;
-	 width: 147px;
-	 height: 20px;
-	 top: 395px;
+	 width: 176px;
+	 height: 18px;
+	 top: 397px;
 	 left: 92px;
 	
 	 position: absolute;

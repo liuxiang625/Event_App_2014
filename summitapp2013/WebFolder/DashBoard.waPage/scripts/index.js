@@ -36,6 +36,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button6.click = function button6_click (event)// @startlock
 	{// @endlock
+		//Assign Session to  speaker
 		sources.presentations.addNewElement();
 		sources.presentations.session.set(sources.session1);
 		sources.presentations.save();
@@ -52,6 +53,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button17.click = function button17_click (event)// @startlock
 	{// @endlock
+		//Save Speaker Detail
 		sources.speaker.fullName = sources.speaker.firstName + " " + sources.speaker.lastName;
 		sources.speaker.save({
 	        onSuccess: function(event) {
@@ -105,6 +107,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
 		sources.session.addNewElement();
+		sources.session.serverRefresh();
 		$$('tabView2').selectTab(2);
 	};// @lock
 
@@ -115,6 +118,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button3.click = function button3_click (event)// @startlock
 	{// @endlock
+		//Save Session Details
+		var sessionDate = sources.session.sessionDate;
+		sources.session.sessionDateString = sessionDate.getMonth()+1 + "/" + sessionDate.getDate() + "/" + sessionDate.getFullYear();
+		sources.session.endTime = new Date(sources.session.sessionDate.toDateString() + " " + sources.session.endTimeString);
+		sources.session.startTime = new Date(sources.session.sessionDate.toDateString() + " " + sources.session.startTimeString);
 		sources.session.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(1);
@@ -124,11 +132,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button4.click = function button4_click (event)// @startlock
 	{// @endlock
-		sources.session.removeCurrentReference({
-	        onSuccess: function(event) {
-	           $$('tabView2').selectTab(1);
-	        }
-    	});
+		if(sources.session.isNewElement()){
+//			sources.session.removeCurrentReference({
+//		        onSuccess: function(event) {
+//		           $$('tabView2').selectTab(1);
+//		        }
+//	    	});
+			sources.session.removeCurrent({
+		        onSuccess: function(event) {
+		           $$('tabView2').selectTab(1);
+		        }
+	    	});
+	    }
+	    else
+	     $$('tabView2').selectTab(1);
 	};// @lock
 
 	button2.click = function button2_click (event)// @startlock
