@@ -39,7 +39,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Assign Session to  speaker
 		sources.presentations.addNewElement();
 		sources.presentations.session.set(sources.session1);
-		sources.presentations.save();
+		//sources.presentations.save();
 	};// @lock
 
 	button18.click = function button18_click (event)// @startlock

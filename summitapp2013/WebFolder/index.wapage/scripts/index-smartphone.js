@@ -42,17 +42,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		if(elem.title.indexOf("Registration") != -1){
 				var dayString = '';
 				switch(elem.sessionDateString) {
-					case '11/25/2013':
-						dayString = 'Monday'
-						break
-					case '11/26/2013':
+					case '10/27/2014':
 						dayString = 'Tuesday'
 						break
-					case '11/27/2013':
+					case '10/28/2014':
 						dayString = 'Wednesday'
 						break
-					case '11/28/2013':
+					case '10/29/2014':
 						dayString = 'Thursday'
+						break
+					case '10/30/2014':
+						dayString = 'Friday'
 						break	
 //					case '10/19/2013':
 //						dayString = 'Saturday'
@@ -369,7 +369,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 
 		//Get all sessions and build the session list
-		ds.Session.query("sessionDateString > '11'", {
+		ds.Session.query("", {
 			//pageSize:1,
 			orderBy:"sessionDateString, startTimeString", //ID
 			onSuccess: function(e) {
