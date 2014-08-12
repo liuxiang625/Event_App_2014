@@ -17,9 +17,9 @@
 
 #label14 {
 	 z-index: 22;
-	 width: 127px;
-	 height: 18px;
-	 top: 216px;
+	 width: 114px;
+	 height: 20px;
+	 top: 214px;
 	 left: 645px;
 	
 	 position: absolute;
@@ -42,9 +42,9 @@
 
 #label13 {
 	 z-index: 24;
-	 width: 131px;
-	 height: 18px;
-	 top: 397px;
+	 width: 112px;
+	 height: 20px;
+	 top: 395px;
 	 left: 758px;
 	
 	 position: absolute;
@@ -171,8 +171,8 @@
 	 z-index: 16;
 	 width: 26px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 150px;
+	 left: 571px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -194,8 +194,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 280px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -219,8 +219,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 150px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -256,8 +256,8 @@
 	 z-index: 4;
 	 width: 77px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 50px;
+	 left: 518px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -279,10 +279,10 @@
 
 #label11 {
 	 z-index: 2;
-	 width: 79px;
-	 height: 18px;
-	 top: 51px;
-	 left: 11px;
+	 width: 75px;
+	 height: 20px;
+	 top: 50px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -425,8 +425,8 @@
 #label9 {
 	 z-index: 16;
 	 width: 75px;
-	 height: 18px;
-	 top: 323px;
+	 height: 20px;
+	 top: 322px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -449,10 +449,10 @@
 
 #label8 {
 	 z-index: 15;
-	 width: 82px;
-	 height: 18px;
-	 top: 486px;
-	 left: 10px;
+	 width: 75px;
+	 height: 20px;
+	 top: 485px;
+	 left: 17px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -476,8 +476,8 @@
 	 z-index: 14;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 104px;
+	 left: 395px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -501,8 +501,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 178px;
+	 left: 717px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -526,8 +526,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 178px;
+	 left: 366px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -551,8 +551,8 @@
 	 z-index: 8;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 178px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -576,8 +576,8 @@
 	 z-index: 6;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 104px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -600,9 +600,9 @@
 #label2 {
 	 z-index: 4;
 	 width: 75px;
-	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 height: 18px;
+	 top: 31px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -626,8 +626,8 @@
 	 z-index: 2;
 	 width: 75px;
 	 height: 20px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 105px;
+	 left: 278px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -953,7 +953,7 @@
 	 height: 23px;
 	 top: 5px;
 	 left: 5px;
-	 right: 785px;
+	 right: 1066px;
 	
 	 position: absolute;
 	 
@@ -972,9 +972,9 @@
 
 #label21 {
 	 z-index: 18;
-	 width: 176px;
-	 height: 18px;
-	 top: 397px;
+	 width: 147px;
+	 height: 20px;
+	 top: 395px;
 	 left: 92px;
 	
 	 position: absolute;

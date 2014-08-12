@@ -209,8 +209,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
 				//$('#attendeeInfo').hide();
-				$('#attendeNameInput').innerHTML = evalAnswers.fullName;
-				$('#attendeEmailInput').innerHTML = evalAnswers.email;
+				$('#attendeNameInput').val(evalAnswers.fullName);
+				$('#attendeEmailInput').val(evalAnswers.email);
 				//Fill the Attendee info in the text fields
 				
 			}
