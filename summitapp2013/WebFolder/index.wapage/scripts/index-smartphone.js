@@ -39,24 +39,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var html = "";
 
 		arr.forEach(function(elem) {
-//		if(elem.title.indexOf("Registration") != -1){
-//				var dayString = '';
-//				switch(elem.sessionDateString) {
-//					case '10/27/2014':
-//						dayString = 'Tuesday'
-//						break
-//					case '10/28/2014':
-//						dayString = 'Wednesday'
-//						break
-//					case '10/29/2014':
-//						dayString = 'Thursday'
-//						break
-//					case '10/30/2014':
-//						dayString = 'Friday'
-//						break	
-//				}
-//				html += '<li role="heading" data-role="list-divider">' + htmlEncode(elem.sessionDateString) + '  ' + dayString + '</li>';
-//			}
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
@@ -78,8 +60,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-			html +=	(elem.speakers.length == 0?'':'<p>Present by ' +htmlEncode(elem.speakers[0].fullName)+ ' </p>') 
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html +=	(elem.speakers.length == 0?'':'<p>Present by ' + '<i>' +htmlEncode(elem.speakers[0].fullName)+'</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
@@ -88,8 +70,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-			html +=	(elem.speakers.length == 0?'':'<p>Present by ' +htmlEncode(elem.speakers[0].fullName)+ ' </p>') 
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html +=	(elem.speakers.length == 0?'':'<p>Present by ' + '<i>' + htmlEncode(elem.speakers[0].fullName) +'</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
@@ -142,7 +124,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								answersArr.forEach(function(elem) { 
 								if (elem.attendeeEmail == attendee.email.getValue()){
 									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-									$("#startEvalButton").addClass('ui-disabled');
+									//$("#startEvalButton").addClass('ui-disabled');
 								}
 								});
 							}
@@ -212,7 +194,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					        onSuccess: function(presentationEvent)
 					        {
 					            var presentation = presentationEvent.entity; // get the entity from event.entity
-					            sessionListHTML += '<li data-theme="c" id="'+ presentation.session.relKey +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Speaker: '+ presentation.sessionName.getValue() +'</a></li>'
+					            sessionListHTML += '<li data-theme="c" id="'+ presentation.session.relKey +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ presentation.sessionName.getValue() +'</a></li>'
 							}
 					    });
 						$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
@@ -226,7 +208,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if(attendee) {
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
-				$('#attendeeInfo').hide();
+				//$('#attendeeInfo').hide();
+				$('#attendeNameInput').innerHTML = evalAnswers.fullName;
+				$('#attendeEmailInput').innerHTML = evalAnswers.email;
+				//Fill the Attendee info in the text fields
+				
 			}
 			ds.Survey.find('session.ID = ' + sessionId, {
 				onSuccess: function(findSurveyEvent) {
@@ -312,21 +298,42 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		});
 
-		$("#sessionsDateList").bind( "change", function(event, ui) {
-			var dataString = this.value;
-			ds.Session.query("sessionDateString > '10/26' and sessionDateString begin :1",dataString, {
-			//pageSize:1,
-			orderBy:"sessionDateString, startTimeString", //ID
-			onSuccess: function(e) {
-				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-					onSuccess: function(e2) {
-						buildSessionListView(e2.result);
+//		$("#sessionsDateList").bind( "change", function(event, ui) {
+//			var dataString = this.value;
+//			ds.Session.query("sessionDateString > '10/26' and sessionDateString begin :1",dataString, {
+//			//pageSize:1,
+//			orderBy:"sessionDateString, startTimeString", //ID
+//			onSuccess: function(e) {
+//				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
+//					onSuccess: function(e2) {
+//						buildSessionListView(e2.result);
+//					}
+//				});
+//			}
+//		});
+		
+		$("input[type='checkbox']").bind( "change", function(event, ui) {
+			if(this.checked){
+				ds.Session.query("", {
+					orderBy:"sessionDateString, startTimeString", //ID
+					onSuccess: function(e) {
+						e.entityCollection.toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
+							onSuccess: function(e2) {
+								buildSessionListView(e2.result);
+							}
+					});
+					}
+				});
+			}
+			else {
+				ds.Session.getLiveSessions({
+					onSuccess: function(e) {
+						buildLiveSessionListView(e.result);
 					}
 				});
 			}
 		});
 			
-		});
 		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {
 			$(".saveSummitEval").addClass('ui-disabled');
 			var newEval = ds.Answer.newEntity();
@@ -378,7 +385,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 							        	$("#startSummitSurvey").addClass('ui-disabled');
 							        	$.mobile.changePage($('#page1'), {
 											transition: "slidedown"
-										});
+										});  
 										$(".saveSummitEval").removeClass('ui-disabled');
 							        }
 							    });		

@@ -94,3 +94,11 @@
 .session-break {
 	background-color: red;
 }
+
+.ui-listview-filter {
+	margin-left: -5px;
+	margin-right: -5px;
+	margin-top: -5px;
+
+
+}

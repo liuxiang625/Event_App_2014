@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html><html>
     <head>
-        <title>4D Summit 2013</title>
+        <title>4D Summit 2014</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="generator" content="Wakanda GUIDesigner"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -68,10 +68,10 @@
                     Take Survey about This Summit
                 </a> 
 				<h5 style="text-align:center;">
-	                   Please take  a brief survey about how are we doing at 4D Summit 2013 and help us improve your summit exprience every year.
+	                   Please take  a brief survey about how are we doing at 4D Summit 2014 and help us improve your summit exprience every year.
 	            </h5>
 				<p style="text-align:center;">
-					 © 2013 4D SAS All rights reserved
+					 © 2014 4D SAS All rights reserved
 				</p>
 				<div style="text-align : center;">
 					<p style="text-align:center;">
@@ -92,47 +92,14 @@
                     Home
                 </a>
             </div>
-					<select  name="sessionsDateList" id="sessionsDateList" data-mini="true" data-corners="false">
-						<option value="">All Breakout Sessions</option>
-						<option value="11/25/2013">11/25/2013 Monday</option>
-						<option value="11/26/2013">11/26/2013 Tuesday</option>
-						<option value="11/27/2013">11/27/2013 Wednesday</option>
-						<option value="11/28/2013">11/28/2013 Thursday</option>
-					</select>
-									<p> </p>
 
-                <ul id="sessionListview" data-role="listview" data-inset="false" data-filter="true" data-divider-theme="b">
-<!--                    <li role="heading" data-role="list-divider">-->
-<!--                        November 25th Monday-->
-<!--                    </li>-->
-<!--                    <li data-theme="c">-->
-<!--                        <a href="#page4" data-transition="slide">-->
-<!--                            09:00 - 10:00 Pre Class-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li data-theme="c">-->
-<!--                        <a href="#page4" data-transition="slide">-->
-<!--                            13:00 - 16:30 Pre Class Continues-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li role="heading" data-role="list-divider">-->
-<!--                        November 26th Tuesday-->
-<!--                    </li>-->
-<!--                    <li data-theme="c">-->
-<!--                        <a href="#page4" data-transition="slide">-->
-<!--                            08:30 - 09:30 Brekfast & Registration-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li data-theme="c">-->
-<!--                        <a href="#page4" data-transition="slide">-->
-<!--                            09:30 - 11:00 Key Note-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li data-theme="c">-->
-<!--                        <a href="#page4" data-transition="slide">-->
-<!--                            11:00 - 11:30 Coffee break-->
-<!--                        </a>-->
-<!--                    </li>-->
+				<form>
+						<label>
+							<input type="checkbox" name="showAllSessions" data-mini="true" > Shwo All Sessions
+						</label>
+				</form>
+
+                <ul style="margin:0px" id="sessionListview" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="Search session or speaker" data-divider-theme="b">
                 </ul>
             </div>
         </div>
@@ -142,7 +109,7 @@
                 <h3>
                     Session Detail
                 </h3>
-                <a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
                     Back
                 </a>
 				<a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
@@ -190,7 +157,7 @@
                 <h3>
                     Speaker
                 </h3>
-                <a id="" href="#page4" data-transition="slide" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a id="" href="#page4" data-transition="slide" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
                     Back
                 </a>
 				<a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
@@ -255,10 +222,10 @@
             <div data-role="content">
 				<div id="attendeeInfo" data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                        <input placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
+                        <input id="attendeNameInput" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
                         </input>
 						<p></p>
-                        <input placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
+                        <input id="attendeEmailInput" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
                         </input>
                     </fieldset>
                 </div>
@@ -586,23 +553,6 @@
                 </div>
 
 
-
-<!--                <div data-role="fieldcontain">-->
-<!--                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">-->
-<!--                        <legend>-->
-<!--                            Would you recommend 4D Summit to others?-->
-<!--                        </legend>-->
-<!--                        <input value="1" type="radio" name="answer8" id="radio43" class="answerInput" //>-->
-<!--                        <label for="radio43">-->
-<!--                            Yes-->
-<!--                        </label>-->
-<!--                        <input value="0" type="radio" name="answer8" id="radio44" class="answerInput" //>-->
-<!--                        <label for="radio44">-->
-<!--                            No-->
-<!--                        </label>-->
-<!--                    </fieldset>-->
-<!--                </div>-->
-
 <div data-role="fieldcontain">
                     <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
                         <legend>
@@ -630,30 +580,6 @@
                         </label>
                     </fieldset>
                 </div>
-
-<!--				<div data-role="fieldcontain">-->
-<!--                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">-->
-<!--                        <legend>Logistics and Quality of welcome.</legend>-->
-<!--						<select name="answer9-1" id="answer9-1" data-mini="true" class="rankingSelect">-->
-<!--							<option data-placeholder="true">Most</option>-->
-<!--							<option value="Cost of hotel">Cost of hotel</option>-->
-<!--							<option value="Cost of airfare">Cost of airfare</option>-->
-<!--							<option value="Cost of 4D Summit registration">Cost of 4D Summit registration</option>-->
-<!--						</select>-->
-<!--						<select name="answer9-2" id="answer9-2" data-mini="true" class="rankingSelect">-->
-<!--							<option data-placeholder="true"></option>-->
-<!--							<option value="Cost of hotel">Cost of hotel</option>-->
-<!--							<option value="Cost of airfare">Cost of airfare</option>-->
-<!--							<option value="Cost of 4D Summit registration">Cost of 4D Summit registration</option>-->
-<!--						</select>-->
-<!--						<select name="answer9-3" id="answer9-3" data-mini="true" class="rankingSelect">-->
-<!--							<option data-placeholder="true">Least</option>-->
-<!--							<option value="Cost of hotel">Cost of hotel</option>-->
-<!--							<option value="Cost of airfare">Cost of airfare</option>-->
-<!--							<option value="Cost of 4D Summit registration">Cost of 4D Summit registration</option>-->
-<!--						</select>-->
-<!--                    </fieldset>-->
-<!--                </div>-->
 				<div data-role="fieldcontain">
                     <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
                         <legend>What was your primary reason for attending the 4D Summit? Item in the left has the most influence and item in the right has the least .</legend>
