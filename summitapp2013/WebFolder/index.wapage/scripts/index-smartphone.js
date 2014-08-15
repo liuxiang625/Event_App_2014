@@ -24,7 +24,8 @@ var evalAnswers = {
 		answer12:'',
 		answer13:''
 	}
-	
+
+var allSessions = [];
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
@@ -353,16 +354,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		$("input[type='checkbox']").bind( "change", function(event, ui) {
 			if(this.checked){
-				ds.Session.query("", {
-					orderBy:"sessionDateString, startTimeString", //ID
-					onSuccess: function(e) {
-						e.entityCollection.toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-							onSuccess: function(e2) {
-								buildSessionListView(e2.result);
-							}
-					});
-					}
-				});
+//				ds.Session.query("", {
+//					orderBy:"sessionDateString, startTimeString", //ID
+//					onSuccess: function(e) {
+//						e.entityCollection.toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
+//							onSuccess: function(e2) {
+								buildSessionListView(allSessions);
+//							}
+//					});
+//					}
+//				});
 			}
 			else {
 				ds.Session.getLiveSessions({
@@ -455,6 +456,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Get live and upcoming sessions
 		ds.Session.getLiveSessions({
 			onSuccess: function(e) {
+				allSessions = e.result.allSessionsArray;
 				buildLiveSessionListView(e.result);
 			}
 		});
