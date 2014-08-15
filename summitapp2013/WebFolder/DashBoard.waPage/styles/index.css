@@ -3,6 +3,50 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#dataGrid7 {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#container8 {
+	 z-index: 8;
+	 top: 28px;
+	 bottom: 5px;
+	 left: 5px;
+	 right: 22px;
+	
+	 position: absolute;
+	 
+}
+
+#richText9 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem9 {
+	 z-index: 5;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #dataGrid6 {
 	 z-index: 22;
 	 width: 350px;
@@ -19,8 +63,8 @@
 	 z-index: 22;
 	 width: 114px;
 	 height: 20px;
-	 top: 214px;
-	 left: 645px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -44,8 +88,8 @@
 	 z-index: 24;
 	 width: 112px;
 	 height: 20px;
-	 top: 395px;
-	 left: 758px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -171,8 +215,8 @@
 	 z-index: 16;
 	 width: 26px;
 	 height: 20px;
-	 top: 150px;
-	 left: 571px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -194,8 +238,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: 280px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -219,8 +263,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: 150px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -256,8 +300,8 @@
 	 z-index: 4;
 	 width: 77px;
 	 height: 20px;
-	 top: 50px;
-	 left: 518px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -281,8 +325,8 @@
 	 z-index: 2;
 	 width: 75px;
 	 height: 20px;
-	 top: 50px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -322,7 +366,7 @@
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
+	 right: 22px;
 	
 	 position: absolute;
 	 
@@ -330,8 +374,8 @@
 
 #richText8 {
 	 z-index: 1;
-	 width: 66px;
-	 height: 23px;
+	 width: 64px;
+	 height: 22px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -426,8 +470,8 @@
 	 z-index: 16;
 	 width: 75px;
 	 height: 20px;
-	 top: 322px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -451,8 +495,8 @@
 	 z-index: 15;
 	 width: 75px;
 	 height: 20px;
-	 top: 485px;
-	 left: 17px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -476,8 +520,8 @@
 	 z-index: 14;
 	 width: 75px;
 	 height: 20px;
-	 top: 104px;
-	 left: 395px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -501,8 +545,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 717px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -526,8 +570,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 366px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -551,8 +595,8 @@
 	 z-index: 8;
 	 width: 75px;
 	 height: 20px;
-	 top: 178px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -576,8 +620,8 @@
 	 z-index: 6;
 	 width: 75px;
 	 height: 20px;
-	 top: 104px;
-	 left: 15px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -600,9 +644,9 @@
 #label2 {
 	 z-index: 4;
 	 width: 75px;
-	 height: 18px;
-	 top: 31px;
-	 left: 15px;
+	 height: 20px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -626,8 +670,8 @@
 	 z-index: 2;
 	 width: 75px;
 	 height: 20px;
-	 top: 105px;
-	 left: 278px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -844,7 +888,7 @@
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
+	 right: 22px;
 	
 	 position: absolute;
 	 
@@ -877,7 +921,7 @@
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
+	 right: 22px;
 	
 	 position: absolute;
 	 
@@ -910,7 +954,7 @@
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
+	 right: 22px;
 	
 	 position: absolute;
 	 
@@ -953,7 +997,7 @@
 	 height: 23px;
 	 top: 5px;
 	 left: 5px;
-	 right: 1066px;
+	 right: 716px;
 	
 	 position: absolute;
 	 
@@ -974,8 +1018,8 @@
 	 z-index: 18;
 	 width: 147px;
 	 height: 20px;
-	 top: 395px;
-	 left: 92px;
+	 top: NaNpx;
+	 left: NaNpx;
 	
 	 position: absolute;
 	 font-size: 16px;

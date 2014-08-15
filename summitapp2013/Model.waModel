@@ -112,7 +112,7 @@
 		},
 		"model": {
 			"workspaceLeft": 1,
-			"workspaceTop": 0,
+			"workspaceTop": 300,
 			"scriptMode": "manual",
 			"lastScriptLocation": {
 				"Session": {
@@ -630,8 +630,15 @@
 				{
 					"name": "getLiveSessions",
 					"applyTo": "dataClass",
-					"scope": "publicOnServer",
+					"scope": "public",
 					"from": "model.Session.methods.getLiveSessions",
+					"userDefined": true
+				},
+				{
+					"name": "isSessionAlive",
+					"applyTo": "dataClass",
+					"scope": "public",
+					"from": "model.Session.methods.isSessionAlive",
 					"userDefined": true
 				}
 			]

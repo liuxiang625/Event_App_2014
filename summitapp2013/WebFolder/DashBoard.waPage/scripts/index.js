@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem3 = {};	// @menuItem
 	var fileUpload2 = {};	// @fileUpload
 	var button5 = {};	// @button
 	var button6 = {};	// @button
@@ -23,6 +24,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem3.click = function menuItem3_click (event)// @startlock
+	{// @endlock
+		$$('tabView2').selectTab(5);
+	};// @lock
 
 	fileUpload2.filesUploaded = function fileUpload2_filesUploaded (event)// @startlock
 	{// @endlock
@@ -159,6 +165,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem3", "click", menuItem3.click, "WAF");
 	WAF.addListener("fileUpload2", "filesUploaded", fileUpload2.filesUploaded, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
 	WAF.addListener("button6", "click", button6.click, "WAF");

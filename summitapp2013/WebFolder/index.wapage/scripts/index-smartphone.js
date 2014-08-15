@@ -34,18 +34,39 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // eventHandlers// @lock
 	//Global var to hold the eval
 	
-	
-	function buildSessionListView(arr) {
-		var html = "";
-
-		arr.forEach(function(elem) {
+	function buildListItem(html, sessionArray){
+		sessionArray.forEach(function(elem) {
+			var speakerName = "";
+			if(!elem.isActivity & elem.speakers.length > 1){
+				for(var session in elem.speakers) {
+					speakerName +=  elem.speakers[session].fullName + ", ";
+				}
+			}
+			else if(!elem.isActivity & elem.speakers.length > 0) {
+				speakerName = htmlEncode(elem.speakers[0].fullName);
+			}
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
+		
+		return html
+	}
+	function buildSessionListView(arr) {
+		var html = "";
+//		arr.forEach(function(elem) {
+//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+//			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+//			html += elem.isActivity ? '' : '</a>';
+//			html += '</li>';
+//		});
+		html = buildListItem(html, arr);
 		var listview = document.getElementById('sessionListview');
 		listview.innerHTML = html;
 		if ($('#sessionListview').hasClass('ui-listview')) {
@@ -56,25 +77,27 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildLiveSessionListView(sessionsObj) {
 		var html = "";
 		if (sessionsObj.liveSessionsArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
-		sessionsObj.liveSessionsArray.forEach(function(elem) {
-			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-			html +=	(elem.speakers.length == 0?'':'<p>Present by ' + '<i>' +htmlEncode(elem.speakers[0].fullName)+'</i>' + ' </p>') 
-			html += elem.isActivity ? '' : '</a>';
-			html += '</li>';
-		});
+//		sessionsObj.liveSessionsArray.forEach(function(elem) {
+//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+//			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+//			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + elem.speakers.length > 1?htmlEncode(elem.speakers[0].fullName): (htmlEncode(elem.speakers[0].fullName) + htmlEncode(elem.speakers[1].fullName)) + '</i>' + ' </p>') 
+//			html += elem.isActivity ? '' : '</a>';
+//			html += '</li>';
+			html = buildListItem(html, sessionsObj.liveSessionsArray);
+		//});
 		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Upcoming Sessions </li>';
-		sessionsObj.commingSessionsArray.forEach(function(elem) {
-			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-			html +=	(elem.speakers.length == 0?'':'<p>Present by ' + '<i>' + htmlEncode(elem.speakers[0].fullName) +'</i>' + ' </p>') 
-			html += elem.isActivity ? '' : '</a>';
-			html += '</li>';
-		});
+//		sessionsObj.commingSessionsArray.forEach(function(elem) {
+//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+//			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+//			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + (elem.speakers.length > 1?(htmlEncode(elem.speakers[0].fullName) + ', ' +  htmlEncode(elem.speakers[1].fullName)):htmlEncode(elem.speakers[0].fullName)) +'</i>' + ' </p>'); 
+//			html += elem.isActivity ? '' : '</a>';
+//			html += '</li>';
+//		});
+		html = buildListItem(html, sessionsObj.commingSessionsArray);
 		
 		var listview = document.getElementById('sessionListview');
 		listview.innerHTML = html;
@@ -124,8 +147,22 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								answersArr.forEach(function(elem) { 
 								if (elem.attendeeEmail == attendee.email.getValue()){
 									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-									//$("#startEvalButton").addClass('ui-disabled');
+									$("#startEvalButton").addClass('ui-disabled');
 								}
+								});
+								
+								//Disabl Eval button when session is not started
+								ds.Session.isSessionAlive ({
+									onSuccess: function(checkSessionAliveEvent) {
+										if(checkSessionAliveEvent.result){
+											$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";
+											$("#startEvalButton").removeClass('ui-disabled');
+										}
+										else{
+											$('#startEvalButton span span')[0].innerHTML = "Session has not started yet";
+											$("#startEvalButton").addClass('ui-disabled');
+										}
+									}
 								});
 							}
 						});
@@ -144,8 +181,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					var sessionEntity = findEvent.entity;
 					
 					$('#sessionDetailTitleDiv h3')[0].innerHTML = sessionEntity.title.getValue();
-					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ', ' + sessionEntity.startTimeString.getValue() + '- ' 
-																	 + sessionEntity.endTimeString.getValue() + ', ' + sessionEntity.room.getValue();
+					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.startTimeString.getValue() + '- ' 
+																	 + sessionEntity.endTimeString.getValue() + ', ' + sessionEntity.room.getValue()  + ', ' +  sessionEntity.sessionDateString.getValue();
 					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
 
 					//build speakers list
@@ -163,6 +200,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					$('#sessionSpeakersList').listview('refresh');
 				}
 			});
+			
+			
 		});
 		
 		$( '#page4' ).live( 'pageshow',function(event, ui){

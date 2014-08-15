@@ -18,3 +18,14 @@ model.Session.methods.getLiveSessions = function() {
 	//	debugger;
 };
 model.Session.methods.getLiveSessions.scope = "public";
+
+model.Session.methods.isSessionAlive = function() {
+	var date = new Date();
+	
+	var isCurrent = false;
+	
+	ds.Session.query("startTime <= :1 and endTime >= :1", date).length > 0?isCurrent = true:isCurrent= false;
+
+	return isCurrent
+};
+model.Session.methods.isSessionAlive.scope = "public";
