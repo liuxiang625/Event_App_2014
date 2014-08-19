@@ -52,8 +52,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": "696",
-						"Y": "773"
+						"X": 718,
+						"Y": 785
 					}
 				}
 			},
@@ -112,7 +112,7 @@
 		},
 		"model": {
 			"workspaceLeft": 1,
-			"workspaceTop": 300,
+			"workspaceTop": 600,
 			"scriptMode": "manual",
 			"lastScriptLocation": {
 				"Session": {

@@ -6,6 +6,7 @@ $(document).live('pageinit',function(event){//Force the app to go home after for
 		pageNotInit = false;
 	}	
 });
+//Global var to hold the eval
 var evalAnswers = {
 		fullName:'',
 		email:'',
@@ -33,8 +34,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
-	//Global var to hold the eval
-	
+
 	function buildListItem(html, sessionArray){
 		sessionArray.forEach(function(elem) {
 			var speakerName = "";
@@ -59,14 +59,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	}
 	function buildSessionListView(arr) {
 		var html = "";
-//		arr.forEach(function(elem) {
-//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-//			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
-//			html += elem.isActivity ? '' : '</a>';
-//			html += '</li>';
-//		});
 		html = buildListItem(html, arr);
 		var listview = document.getElementById('sessionListview');
 		listview.innerHTML = html;
@@ -78,26 +70,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildLiveSessionListView(sessionsObj) {
 		var html = "";
 		if (sessionsObj.liveSessionsArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
-//		sessionsObj.liveSessionsArray.forEach(function(elem) {
-//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-//			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-//			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + elem.speakers.length > 1?htmlEncode(elem.speakers[0].fullName): (htmlEncode(elem.speakers[0].fullName) + htmlEncode(elem.speakers[1].fullName)) + '</i>' + ' </p>') 
-//			html += elem.isActivity ? '' : '</a>';
-//			html += '</li>';
 			html = buildListItem(html, sessionsObj.liveSessionsArray);
-		//});
 		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Upcoming Sessions </li>';
-//		sessionsObj.commingSessionsArray.forEach(function(elem) {
-//			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-//			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-//			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-//			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-//			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + (elem.speakers.length > 1?(htmlEncode(elem.speakers[0].fullName) + ', ' +  htmlEncode(elem.speakers[1].fullName)):htmlEncode(elem.speakers[0].fullName)) +'</i>' + ' </p>'); 
-//			html += elem.isActivity ? '' : '</a>';
-//			html += '</li>';
-//		});
 		html = buildListItem(html, sessionsObj.commingSessionsArray);
 		
 		var listview = document.getElementById('sessionListview');
@@ -143,7 +117,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						findAnswerEvent.entityCollection.toArray('attendeeEmail', {
 							onSuccess: function(findAttendeeeAnswerEvent) {
 								var answersArr = findAttendeeeAnswerEvent.result;
-								$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";
+								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";
 								$("#startEvalButton").removeClass('ui-disabled');
 								answersArr.forEach(function(elem) { 
 								if (elem.attendeeEmail == attendee.email.getValue()){
@@ -338,32 +312,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		});
 
-//		$("#sessionsDateList").bind( "change", function(event, ui) {
-//			var dataString = this.value;
-//			ds.Session.query("sessionDateString > '10/26' and sessionDateString begin :1",dataString, {
-//			//pageSize:1,
-//			orderBy:"sessionDateString, startTimeString", //ID
-//			onSuccess: function(e) {
-//				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-//					onSuccess: function(e2) {
-//						buildSessionListView(e2.result);
-//					}
-//				});
-//			}
-//		});
 		
 		$("input[type='checkbox']").bind( "change", function(event, ui) {
 			if(this.checked){
-//				ds.Session.query("", {
-//					orderBy:"sessionDateString, startTimeString", //ID
-//					onSuccess: function(e) {
-//						e.entityCollection.toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-//							onSuccess: function(e2) {
-								buildSessionListView(allSessions);
-//							}
-//					});
-//					}
-//				});
+				buildSessionListView(allSessions);
 			}
 			else {
 				ds.Session.getLiveSessions({
@@ -440,18 +392,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			!validateEmail(evalAnswers.email)?alert('Please enter a Valid email!'):alert('Please enter a Valid name!')
 
 		});
-
-		//Get all sessions and build the session list
-//		ds.Session.query("", {
-//			orderBy:"sessionDateString, startTimeString", //ID
-//			onSuccess: function(e) {
-//				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-//					onSuccess: function(e2) {
-//						buildSessionListView(e2.result);
-//					}
-//				});
-//			}
-//		});
 		
 		//Get live and upcoming sessions
 		ds.Session.getLiveSessions({

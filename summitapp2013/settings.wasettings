@@ -11,7 +11,7 @@
 	<service name="upload" modulePath="services/upload" enabled="true" autoStart="true"/>
 	<service name="Git HTTP Service" modulePath="services/waf-git/waf-GitService" enabled="true"/>
 	<service name="remoteFileExplorer"/>
-	<service name="Builder handler" modulePath="services/builder-service" enabled="true" hardCache="false" max-age="120"/>
+	<service name="Builder handler" modulePath="services/builder-service" enabled="true" hardCache="true" max-age="120"/>
 	<service name="Print service" modulePath="services/print"/>
 	<resources location="/walib/" lifeTime="31536000"/>
 	<javaScript reuseContexts="true"/>
