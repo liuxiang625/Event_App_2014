@@ -117,7 +117,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						findAnswerEvent.entityCollection.toArray('attendeeEmail', {
 							onSuccess: function(findAttendeeeAnswerEvent) {
 								var answersArr = findAttendeeeAnswerEvent.result;
-								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";
+								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
 								$("#startEvalButton").removeClass('ui-disabled');
 								answersArr.forEach(function(elem) { 
 								if (elem.attendeeEmail == attendee.email.getValue()){

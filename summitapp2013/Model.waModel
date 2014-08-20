@@ -52,8 +52,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": 718,
-						"Y": 785
+						"X": 729,
+						"Y": 805
 					}
 				}
 			},
@@ -112,11 +112,14 @@
 		},
 		"model": {
 			"workspaceLeft": 1,
-			"workspaceTop": 600,
+			"workspaceTop": 0,
 			"scriptMode": "manual",
 			"lastScriptLocation": {
 				"Session": {
 					"method": "Session/Session-methods.js"
+				},
+				"Speaker": {
+					"method": "Speaker/Speaker-methods.js"
 				}
 			}
 		}
@@ -752,6 +755,15 @@
 					"scope": "public",
 					"type": "SessionCollection",
 					"path": "presentations.session"
+				}
+			],
+			"methods": [
+				{
+					"name": "updateSpeakerImagesFolder",
+					"applyTo": "dataClass",
+					"scope": "publicOnServer",
+					"from": "model.Speaker.methods.updateSpeakerImagesFolder",
+					"userDefined": true
 				}
 			]
 		},

@@ -32,7 +32,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	fileUpload2.filesUploaded = function fileUpload2_filesUploaded (event)// @startlock
 	{// @endlock
-		
+		var fileName = event.response[0].filename;
+		sources.speaker.updateSpeakerImagesFolder({
+	        onSuccess: function(updateImagesFolderevent) {
+	        	if(updateImagesFolderevent.result) {
+	          		sources.speaker.picURL = fileName;
+	          		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
+	          	}
+	        }
+    	});
 	};// @lock
 
 	button5.click = function button5_click (event)// @startlock
