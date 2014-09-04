@@ -3,6 +3,90 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText16 {
+	 width: 131px;
+	 height: 18px;
+	 top: 397px;
+	 left: 758px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 31;
+	 
+}
+
+#richText15 {
+	 width: 134px;
+	 height: 18px;
+	 top: 396px;
+	 left: 91px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 30;
+	 
+}
+
+#richText14 {
+	 width: 74px;
+	 height: 18px;
+	 top: 281px;
+	 left: 15px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 29;
+	 
+}
+
+#richText13 {
+	 width: 31px;
+	 height: 18px;
+	 top: 151px;
+	 left: 566px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 28;
+	 
+}
+
+#richText12 {
+	 width: 77px;
+	 height: 18px;
+	 top: 51px;
+	 left: 518px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 27;
+	 
+}
+
+#richText11 {
+	 width: 69px;
+	 height: 18px;
+	 top: 151px;
+	 left: 15px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 26;
+	 
+}
+
+#richText10 {
+	 z-index: 25;
+	 width: 79px;
+	 height: 18px;
+	 top: 51px;
+	 left: 11px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
 #dataGrid7 {
 	 z-index: 1;
 	 top: 0px;
@@ -77,18 +161,6 @@
 	 width: 498px;
 	 height: 157px;
 	 top: 420px;
-	 left: 758px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#label13 {
-	 z-index: 24;
-	 width: 131px;
-	 height: 18px;
-	 top: 397px;
 	 left: 758px;
 	
 	 position: absolute;
@@ -211,18 +283,6 @@
 	 
 }
 
-#label18 {
-	 z-index: 16;
-	 width: 31px;
-	 height: 18px;
-	 top: 151px;
-	 left: 566px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
 #image1 {
 	 z-index: 15;
 	 width: 140px;
@@ -234,19 +294,6 @@
 	 
 }
 
-#label16 {
-	 z-index: 12;
-	 width: 75px;
-	 height: 18px;
-	 top: 281px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
-}
-
 #textField13 {
 	 z-index: 12;
 	 width: 855px;
@@ -255,19 +302,6 @@
 	 left: 95px;
 	
 	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#label15 {
-	 z-index: 10;
-	 width: 75px;
-	 height: 18px;
-	 top: 151px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
 	 font-size: 16px;
 	 
 }
@@ -296,19 +330,6 @@
 	 
 }
 
-#label12 {
-	 z-index: 4;
-	 width: 77px;
-	 height: 18px;
-	 top: 51px;
-	 left: 518px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
-}
-
 #textField9 {
 	 z-index: 4;
 	 width: 350px;
@@ -317,19 +338,6 @@
 	 left: 600px;
 	
 	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#label11 {
-	 z-index: 2;
-	 width: 79px;
-	 height: 18px;
-	 top: 51px;
-	 left: 11px;
-	
-	 position: absolute;
-	 min-width: 75px;
 	 font-size: 16px;
 	 
 }
@@ -873,7 +881,7 @@
 }
 
 #container7 {
-	 z-index: 9;
+	 z-index: 8;
 	 height: 131px;
 	 top: 0px;
 	 left: 0px;
@@ -1004,25 +1012,13 @@
 }
 
 #tabView2 {
-	 z-index: 8;
+	 z-index: 7;
 	 top: 100px;
 	 bottom: 0px;
 	 left: -5px;
 	 right: 0px;
 	
 	 position: absolute;
-	 
-}
-
-#label21 {
-	 z-index: 18;
-	 width: 176px;
-	 height: 18px;
-	 top: 397px;
-	 left: 92px;
-	
-	 position: absolute;
-	 font-size: 16px;
 	 
 }
 

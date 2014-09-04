@@ -58,11 +58,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button18.click = function button18_click (event)// @startlock
 	{// @endlock
-		sources.speaker.removeCurrentReference({
-	        onSuccess: function(event) {
-	           $$('tabView2').selectTab(3);
-	        }
-    	});
+		if(sources.speaker.isNewElement()){
+			sources.speaker.removeCurrentReference({
+		        onSuccess: function(event) {
+		           $$('tabView2').selectTab(3);
+		        }
+	    	});
+	    }
+	    else
+	    sources.speaker.serverRefresh({
+		        onSuccess: function(event) {
+		           $$('tabView2').selectTab(3);
+		        }
+	    });
 	};// @lock
 
 	button17.click = function button17_click (event)// @startlock
@@ -147,11 +155,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	button4.click = function button4_click (event)// @startlock
 	{// @endlock
 		if(sources.session.isNewElement()){
-//			sources.session.removeCurrentReference({
-//		        onSuccess: function(event) {
-//		           $$('tabView2').selectTab(1);
-//		        }
-//	    	});
 			sources.session.removeCurrent({
 		        onSuccess: function(event) {
 		           $$('tabView2').selectTab(1);
@@ -159,7 +162,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	    	});
 	    }
 	    else
-	     $$('tabView2').selectTab(1);
+	     sources.session.serverRefresh({
+		        onSuccess: function(event) {
+		           $$('tabView2').selectTab(1);
+		        }
+	    });
 	};// @lock
 
 	button2.click = function button2_click (event)// @startlock

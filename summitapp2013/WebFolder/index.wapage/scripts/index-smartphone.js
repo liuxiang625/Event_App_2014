@@ -129,12 +129,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								//Disabl Eval button when session is not started
 								ds.Session.isSessionAlive ({
 									onSuccess: function(checkSessionAliveEvent) {
+										var evalButtonText = "";
+										$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
 										if(checkSessionAliveEvent.result){
-											$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";
+											$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
 											$("#startEvalButton").removeClass('ui-disabled');
 										}
 										else{
-											$('#startEvalButton span span')[0].innerHTML = "Session has not started yet";
+											$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
 											$("#startEvalButton").addClass('ui-disabled');
 										}
 									}
@@ -191,17 +193,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		// tap event handler to load speak's profile
 		$( "#sessionSpeakersList li" ).live( "tap", function() {
-			///images/speakerImages/sergiy-temnikov.jpg
 			var speakerId = this.id;
 			var sessionListHTML = '';
 			 ds.Speaker.find("ID = " + speakerId , {
 		  			autoExpand:'presentations',
 		   			onSuccess: function(findSpeakerEvent) {
 		   				var speakerEntity = findSpeakerEvent.entity;
-		   				if(speakerEntity.picURL.getValue()) $('#speakerImage')[0].src = "/images/speakerImages/" + speakerEntity.picURL.getValue();
+		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerImages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerImages/x.png";
 		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
 		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + " at " + speakerEntity.company.getValue();
 		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
+		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
 		   				
 		   				//build speakers' session list
 		   				speakerEntity.presentations.getValue().forEach({  

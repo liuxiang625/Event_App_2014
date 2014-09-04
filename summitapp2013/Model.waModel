@@ -52,8 +52,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": 729,
-						"Y": 805
+						"X": 775,
+						"Y": 797
 					}
 				}
 			},
@@ -104,8 +104,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": "10",
-						"Y": "342"
+						"X": 31,
+						"Y": 270
 					}
 				}
 			}
@@ -755,6 +755,12 @@
 					"scope": "public",
 					"type": "SessionCollection",
 					"path": "presentations.session"
+				},
+				{
+					"name": "linkedIn",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
 				}
 			],
 			"methods": [
@@ -820,5 +826,6 @@
 				}
 			]
 		}
-	]
+	],
+	"type": []
 }
