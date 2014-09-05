@@ -50,7 +50,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
 			//html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
-			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Conference Room: ' + htmlEncode(elem.room) + ' </p>';
+			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
 			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
@@ -82,7 +82,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$('#sessionListview').listview('refresh');
 		}
 	}
-	//speakerListView
+	
+	//Build Speaker & Staff list in page3
 	function buildSpeakerListView(speakersObj) {
 		var html = "";
 		if (speakersObj.speakersArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Speakers</li>';
@@ -92,13 +93,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerImages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
 			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  +', '+ htmlEncode(elem.company) + '</p>';
-			//html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			html += '</a>';
 			html += '</li>';
 		});
-//		html = buildListItem(html, sessionsObj.liveSessionsArray);
-//		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Staff </li>';
-//		html = buildListItem(html, sessionsObj.commingSessionsArray);
 		
 		var listview = document.getElementById('speakerListView');
 		listview.innerHTML = html;
@@ -183,9 +180,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					
 					var sessionEntity = findEvent.entity;
 					
-					$('#sessionDetailTitleDiv h3')[0].innerHTML = sessionEntity.title.getValue();
-					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.startTimeString.getValue() + '- ' 
-																	 + sessionEntity.endTimeString.getValue() + ', ' + sessionEntity.room.getValue()  + ', ' +  sessionEntity.sessionDateString.getValue();
+					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
+					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + ', Conference Room: ' + sessionEntity.room.getValue();
 					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
 
 					//build speakers list
@@ -207,6 +203,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			
 		});
 		
+		
+		$( '#page3' ).live( 'pageshow',function(event, ui){
+		  	$("#speakersList").addClass('ui-btn-active');
+		});
 		$( '#page4' ).live( 'pageshow',function(event, ui){
 		  	$('#sessionSpeakersList').listview('refresh');
 		});
@@ -356,18 +356,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		$(".SessionListTabButton").bind( "tap", function(event, ui) {
 			
-			if(this.id == "allSessions" )
+			if(this.id == "allSessions" ){
 				buildSessionListView(allSessions);
+				$("#speakersList").removeClass('ui-btn-active');
+			}
 			else if (this.id == "liveSessions" ){
 				ds.Session.getLiveSessions({
 					onSuccess: function(e) {
 						buildLiveSessionListView(e.result);
 					}
 				});
+				$("#speakersList").removeClass('ui-btn-active');
 			}
 			else
 				$.mobile.changePage($('#page3'), {
-					transition: "slide"
+					transition: "none"
 				});
 			$("#" + this.id).addClass('ui-btn-active');
 		});
