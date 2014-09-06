@@ -1,3 +1,25 @@
+.speakerDetailsDiv {
+	margin-bottom: 110px;
+}
+.speakerDetailImage {
+	float: left;
+	margin:0 10px 0 0px;
+	max-width:100p;
+	
+}
+.speakerDetailNameAndTitle {
+	float:left;
+	margin:0 0px 0 0px;
+	max-width:60%;
+}
+
+.speakerDetailNameAndTitle spam {
+	display:inline-block;
+}
+#speakerName {
+	word-wrap:break-word;
+}
+
 .SessionListTabButton{
 	color:white !important;
 }

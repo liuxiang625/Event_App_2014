@@ -204,9 +204,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		
-		$( '#page3' ).live( 'pageshow',function(event, ui){
-		  	$("#speakersList").addClass('ui-btn-active');
-		});
+//		$( '#page3' ).live( 'pageshow',function(event, ui){
+//		  	$("#speakersList").addClass('ui-btn-active');
+//		});
 		$( '#page4' ).live( 'pageshow',function(event, ui){
 		  	$('#sessionSpeakersList').listview('refresh');
 		});
@@ -356,22 +356,28 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		$(".SessionListTabButton").bind( "tap", function(event, ui) {
 			
-			if(this.id == "allSessions" ){
+			if(this.id.indexOf("allSessions") > -1 ){
 				buildSessionListView(allSessions);
 				$("#speakersList").removeClass('ui-btn-active');
+				$("#allSessions").addClass('ui-btn-active');
 			}
-			else if (this.id == "liveSessions" ){
+			else if (this.id.indexOf("liveSessions") > -1 ){
 				ds.Session.getLiveSessions({
 					onSuccess: function(e) {
 						buildLiveSessionListView(e.result);
 					}
 				});
 				$("#speakersList").removeClass('ui-btn-active');
+				$("#liveSessions").addClass('ui-btn-active');
 			}
-			else
+			else {
+				$("#liveSessionsInSpeakerListPage").removeClass('ui-btn-active');
+				$("#allSessionsInSpeakerListPage").removeClass('ui-btn-active');
 				$.mobile.changePage($('#page3'), {
 					transition: "none"
 				});
+				$("#speakersListInSpeakerListPage").addClass('ui-btn-active');
+			}
 			$("#" + this.id).addClass('ui-btn-active');
 		});
 			
