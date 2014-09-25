@@ -352,7 +352,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //		});
 		
 		$(".SessionListTabButton").bind( "tap", function(event, ui) {
-			$('.ui-input-clear').click();
+			//$('.ui-input-clear').tap();
+			$("input[data-type=search]").val("").change(); 
 			if(this.id.indexOf("allSessions") > -1 ){
 				buildSessionListView(allSessions);
 				$("#speakersList").removeClass('ui-btn-active');
@@ -445,7 +446,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		});
 		
-		//Get live and upcoming sessions and build session list
+		
 		ds.Session.getLiveSessions({
 			onSuccess: function(e) {
 				allSessions = e.result.allSessionsArray;
