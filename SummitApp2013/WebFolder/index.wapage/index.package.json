@@ -34,7 +34,7 @@
         "path": "WEBFOLDER",
         "type": "script"
     },{
-        "id": "scripts/jquery.mobile-1.3.2.min.map",
+        "id": "index.waPage/scripts/jquery.mobile-1.3.2.min.map",
         "path": "WEBFOLDER",
         "type": "script"
     }]
