@@ -89,7 +89,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		speakersObj.speakersArray.forEach(function(elem) {
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSpeakerProfile" ' + '>';
 			html += '<a href="#page5" data-transition="slide" >';
-			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerImages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
+			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerimages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
 			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  +', '+ htmlEncode(elem.company) + '</p>';
 			html += '</a>';
@@ -222,7 +222,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		  			autoExpand:'presentations',
 		   			onSuccess: function(findSpeakerEvent) {
 		   				var speakerEntity = findSpeakerEvent.entity;
-		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerImages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerImages/x.png";
+		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
 		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
 		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + " at " + speakerEntity.company.getValue();
 		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
