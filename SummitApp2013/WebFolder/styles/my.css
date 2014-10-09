@@ -1,3 +1,14 @@
+/*fix static listview item left padding in Wak 9*/
+.ui-li-static {
+	padding:15px!important;
+}
+
+/*fix listview divider size issue in Wak 9*/
+.ui-li-divider{
+	padding:15px!important;
+}
+
+/* linkedin image for speaker page button*/
 .ui-icon-linkedin {
     background-image: url("/images/linkedin-icon.jpg");
 }
