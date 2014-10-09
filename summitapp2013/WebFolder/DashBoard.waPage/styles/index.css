@@ -100,10 +100,10 @@
 
 #container8 {
 	 z-index: 8;
+	 width: 1061px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
 	
 	 position: absolute;
 	 
@@ -147,8 +147,8 @@
 	 z-index: 22;
 	 width: 127px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 216px;
+	 left: 645px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -371,10 +371,10 @@
 
 #container2 {
 	 z-index: 7;
+	 width: 1061px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
 	
 	 position: absolute;
 	 
@@ -478,8 +478,8 @@
 	 z-index: 16;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 323px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -503,8 +503,8 @@
 	 z-index: 15;
 	 width: 82px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 486px;
+	 left: 10px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -528,8 +528,8 @@
 	 z-index: 14;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 105px;
+	 left: 395px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -553,8 +553,8 @@
 	 z-index: 12;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 179px;
+	 left: 717px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -578,8 +578,8 @@
 	 z-index: 10;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 179px;
+	 left: 366px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -603,8 +603,8 @@
 	 z-index: 8;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 179px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -628,8 +628,8 @@
 	 z-index: 6;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 105px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -653,8 +653,8 @@
 	 z-index: 4;
 	 width: 75px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 31px;
+	 left: 15px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -678,8 +678,8 @@
 	 z-index: 2;
 	 width: 85px;
 	 height: 18px;
-	 top: NaNpx;
-	 left: NaNpx;
+	 top: 106px;
+	 left: 278px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -893,10 +893,10 @@
 
 #container6 {
 	 z-index: 6;
+	 width: 1061px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
 	
 	 position: absolute;
 	 
@@ -926,10 +926,10 @@
 
 #container5 {
 	 z-index: 5;
+	 width: 1061px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
 	
 	 position: absolute;
 	 
@@ -959,10 +959,10 @@
 
 #container4 {
 	 z-index: 4;
+	 width: 1061px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
-	 right: 5px;
 	
 	 position: absolute;
 	 
