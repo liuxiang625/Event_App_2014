@@ -4,6 +4,7 @@
 */
 
 #button6 {
+	 z-index: 36;
 	 width: 116px;
 	 height: 40px;
 	 top: 570px;
@@ -11,7 +12,6 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 36;
 	 
 }
 
@@ -253,7 +253,7 @@
 
 #container10 {
 	 z-index: 9;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -623,8 +623,8 @@
 
 #dataGrid7 {
 	 z-index: 1;
+	 height: 300px;
 	 top: 0px;
-	 bottom: 0px;
 	 left: 0px;
 	 right: 0px;
 	
@@ -635,7 +635,7 @@
 
 #container8 {
 	 z-index: 8;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -845,7 +845,7 @@
 
 #container2 {
 	 z-index: 7;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1318,7 +1318,7 @@
 
 #container6 {
 	 z-index: 6;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1351,7 +1351,7 @@
 
 #container5 {
 	 z-index: 5;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1384,7 +1384,7 @@
 
 #container4 {
 	 z-index: 4;
-	 width: 1308px;
+	 width: 1028px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
