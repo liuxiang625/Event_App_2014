@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button11 = {};	// @button
 	var menuItem3 = {};	// @menuItem
 	var fileUpload2 = {};	// @fileUpload
 	var button5 = {};	// @button
@@ -24,6 +25,24 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	button11.click = function button11_click (event)// @startlock
+	{// @endlock
+//		WAF.directory.loginByPassword($$('adminName').getValue(),$$('adminPwd').getValue());
+		WAF.directory.loginByPassword($$('adminName').getValue(),$$('adminPwd').getValue(), {
+		    onSuccess: function(event){
+		        if(event.result == true){            
+					$$('loginContainer').hide();
+					
+		        } else {
+		            return {error: 101, errorMessage: "Incorrect login credentials."};
+		            }
+		        },
+		    onError: function(event){
+		        return {error: 100, errorMessage: "Failed to communicate with server."};
+		    }
+		});
+	};// @lock
 
 	menuItem3.click = function menuItem3_click (event)// @startlock
 	{// @endlock
@@ -180,6 +199,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button11", "click", button11.click, "WAF");
 	WAF.addListener("menuItem3", "click", menuItem3.click, "WAF");
 	WAF.addListener("fileUpload2", "filesUploaded", fileUpload2.filesUploaded, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
