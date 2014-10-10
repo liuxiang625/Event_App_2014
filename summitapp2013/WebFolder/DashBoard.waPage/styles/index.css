@@ -3,6 +3,552 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#button6 {
+	 width: 116px;
+	 height: 40px;
+	 top: 570px;
+	 right: 181px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 z-index: 36;
+	 
+}
+
+#label14 {
+	 z-index: 43;
+	 width: 62px;
+	 height: 18px;
+	 top: 342px;
+	 left: 599px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#dataGrid4 {
+	 z-index: 43;
+	 width: 350px;
+	 height: 200px;
+	 top: 365px;
+	 left: 599px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label9 {
+	 z-index: 31;
+	 width: 65px;
+	 height: 18px;
+	 top: 296px;
+	 left: 714px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#dataGrid1 {
+	 z-index: 30;
+	 width: 516px;
+	 height: 198px;
+	 top: 319px;
+	 left: 714px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#button5 {
+	 z-index: 35;
+	 width: 116px;
+	 height: 40px;
+	 top: 570px;
+	 right: 41px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label39 {
+	 z-index: 30;
+	 height: 18px;
+	 top: 437px;
+	 left: 63px;
+	 right: 358px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox7 input {
+	 font-size: 16px;
+	 z-index: 27;
+	 
+}
+
+#combobox7 {
+	 z-index: 29;
+	 height: 40px;
+	 top: 270px;
+	 left: 62px;
+	 right: 42px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label38 {
+	 z-index: 29;
+	 height: 18px;
+	 top: 247px;
+	 left: 62px;
+	 right: 308px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox6 {
+	 z-index: 27;
+	 height: 40px;
+	 top: 80px;
+	 left: 60px;
+	 right: 44px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox6 input {
+	 font-size: 16px;
+	 z-index: 21;
+	 
+}
+
+#label37 {
+	 z-index: 27;
+	 height: 18px;
+	 top: 57px;
+	 left: 60px;
+	 right: 313px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox4 input {
+	 font-size: 16px;
+	 
+}
+
+#combobox4 {
+	 z-index: 21;
+	 height: 40px;
+	 top: 460px;
+	 left: 63px;
+	 right: 41px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox2 {
+	 z-index: 42;
+	 width: 348px;
+	 height: 40px;
+	 top: 276px;
+	 left: 603px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox2 input {
+	 font-size: 16px;
+	 z-index: 29;
+	 
+}
+
+#label29 {
+	 z-index: 42;
+	 width: 83px;
+	 height: 18px;
+	 top: 287px;
+	 left: 515px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox1 input {
+	 font-size: 16px;
+	 
+}
+
+#label28 {
+	 z-index: 29;
+	 width: 83px;
+	 height: 18px;
+	 top: 96px;
+	 left: 859px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#combobox1 {
+	 z-index: 29;
+	 width: 282px;
+	 height: 40px;
+	 top: 85px;
+	 left: 947px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#container11 {
+	 z-index: 2;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 800px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#dataGrid8 .waf-dataGrid-cell {
+	 font-size: 16px;
+	 
+}
+
+#dataGrid8 {
+	 z-index: 1;
+	 width: 800px;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#container10 {
+	 z-index: 9;
+	 width: 1308px;
+	 top: 28px;
+	 bottom: 5px;
+	 left: 5px;
+	
+	 position: absolute;
+	 
+}
+
+#richText18 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem11 {
+	 z-index: 6;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText17 {
+	 z-index: 1;
+	 width: 110px;
+	 height: 50px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem10 {
+	 z-index: 5;
+	 width: 110px;
+	 height: 50px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#label26 {
+	 z-index: 39;
+	 width: 268px;
+	 height: 18px;
+	 top: 19px;
+	 left: 122px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#checkbox2 {
+	 z-index: 40;
+	 width: 25px;
+	 height: 25px;
+	 top: 16px;
+	 left: 92px;
+	
+	 position: absolute;
+	 
+}
+
+#textField22 {
+	 z-index: 38;
+	 width: 349px;
+	 height: 40px;
+	 top: 276px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label25 {
+	 z-index: 38;
+	 width: 63px;
+	 height: 18px;
+	 top: 287px;
+	 left: 27px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label24 {
+	 z-index: 37;
+	 width: 53px;
+	 height: 18px;
+	 top: 210px;
+	 left: 545px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label23 {
+	 z-index: 36;
+	 width: 31px;
+	 height: 18px;
+	 top: 210px;
+	 left: 59px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label22 {
+	 z-index: 35;
+	 width: 90px;
+	 height: 18px;
+	 top: 144px;
+	 left: 508px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#textField21 {
+	 z-index: 33;
+	 width: 350px;
+	 height: 40px;
+	 top: 199px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#textField20 {
+	 z-index: 32;
+	 width: 348px;
+	 height: 40px;
+	 top: 199px;
+	 left: 603px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label20 {
+	 z-index: 31;
+	 width: 95px;
+	 height: 18px;
+	 top: 475px;
+	 left: 96px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label19 {
+	 z-index: 30;
+	 width: 74px;
+	 height: 18px;
+	 top: 340px;
+	 left: 97px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#textField19 {
+	 z-index: 30;
+	 width: 350px;
+	 height: 100px;
+	 top: 363px;
+	 left: 97px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#textField16 {
+	 z-index: 27;
+	 width: 200px;
+	 height: 40px;
+	 top: 154px;
+	 left: 1029px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label16 {
+	 z-index: 27;
+	 width: 75px;
+	 height: 18px;
+	 top: 165px;
+	 left: 949px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField15 {
+	 z-index: 25;
+	 width: 200px;
+	 height: 40px;
+	 top: 154px;
+	 left: 406px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label15 {
+	 z-index: 24;
+	 width: 75px;
+	 height: 18px;
+	 top: 165px;
+	 left: 326px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField14 {
+	 z-index: 23;
+	 width: 700px;
+	 height: 40px;
+	 top: 85px;
+	 left: 95px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label13 {
+	 z-index: 23;
+	 width: 75px;
+	 height: 18px;
+	 top: 96px;
+	 left: 15px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
+#textField10 {
+	 z-index: 22;
+	 width: 550px;
+	 height: 80px;
+	 top: 319px;
+	 left: 94px;
+	
+	 position: absolute;
+	 font-size: 16px;
+	 
+}
+
+#label12 {
+	 z-index: 22;
+	 width: 82px;
+	 height: 18px;
+	 top: 296px;
+	 left: 94px;
+	
+	 position: absolute;
+	 min-width: 75px;
+	 font-size: 16px;
+	 
+}
+
 #button11 {
 	 z-index: 5;
 	 width: 120px;
@@ -39,59 +585,11 @@
 	 
 }
 
-#richText16 {
-	 z-index: 31;
-	 width: 131px;
-	 height: 18px;
-	 top: 397px;
-	 left: 758px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#richText15 {
-	 z-index: 30;
-	 width: 134px;
-	 height: 18px;
-	 top: 396px;
-	 left: 91px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#richText14 {
-	 z-index: 29;
-	 width: 74px;
-	 height: 18px;
-	 top: 281px;
-	 left: 15px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#richText13 {
-	 z-index: 28;
-	 width: 31px;
-	 height: 18px;
-	 top: 151px;
-	 left: 566px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
 #richText12 {
-	 z-index: 27;
+	 z-index: 25;
 	 width: 77px;
 	 height: 18px;
-	 top: 51px;
+	 top: 70px;
 	 left: 518px;
 	
 	 position: absolute;
@@ -100,10 +598,10 @@
 }
 
 #richText11 {
-	 z-index: 26;
+	 z-index: 24;
 	 width: 69px;
 	 height: 18px;
-	 top: 151px;
+	 top: 144px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -112,10 +610,10 @@
 }
 
 #richText10 {
-	 z-index: 25;
+	 z-index: 23;
 	 width: 79px;
 	 height: 18px;
-	 top: 51px;
+	 top: 70px;
 	 left: 11px;
 	
 	 position: absolute;
@@ -136,9 +634,9 @@
 
 #container8 {
 	 z-index: 8;
-	 width: 1044px;
+	 width: 1308px;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	
 	 position: absolute;
@@ -164,67 +662,6 @@
 	 left: 0px;
 	
 	 position: absolute;
-	 
-}
-
-#dataGrid6 {
-	 z-index: 22;
-	 width: 350px;
-	 height: 180px;
-	 top: 239px;
-	 left: 645px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#label14 {
-	 z-index: 22;
-	 width: 127px;
-	 height: 18px;
-	 top: 216px;
-	 left: 645px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
-}
-
-#dataGrid5 {
-	 z-index: 24;
-	 width: 498px;
-	 height: 157px;
-	 top: 420px;
-	 left: 758px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#button6 {
-	 z-index: 22;
-	 width: 130px;
-	 height: 40px;
-	 top: 437px;
-	 left: 612px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#button5 {
-	 z-index: 21;
-	 width: 130px;
-	 height: 40px;
-	 top: 491px;
-	 left: 612px;
-	
-	 position: absolute;
-	 font-size: 16px;
 	 
 }
 
@@ -311,8 +748,8 @@
 	 z-index: 18;
 	 width: 258px;
 	 height: 40px;
-	 top: 263px;
-	 left: 998px;
+	 top: 199px;
+	 left: 984px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -321,10 +758,10 @@
 
 #image1 {
 	 z-index: 15;
-	 width: 140px;
-	 height: 200px;
-	 top: 40px;
-	 left: 1058px;
+	 width: 70px;
+	 height: 100px;
+	 top: 59px;
+	 left: 1083px;
 	
 	 position: absolute;
 	 
@@ -332,10 +769,10 @@
 
 #textField13 {
 	 z-index: 12;
-	 width: 855px;
+	 width: 350px;
 	 height: 100px;
-	 top: 240px;
-	 left: 95px;
+	 top: 498px;
+	 left: 96px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -346,7 +783,7 @@
 	 z-index: 10;
 	 width: 350px;
 	 height: 40px;
-	 top: 140px;
+	 top: 133px;
 	 left: 95px;
 	
 	 position: absolute;
@@ -358,8 +795,8 @@
 	 z-index: 8;
 	 width: 348px;
 	 height: 40px;
-	 top: 140px;
-	 left: 602px;
+	 top: 133px;
+	 left: 603px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -370,8 +807,8 @@
 	 z-index: 4;
 	 width: 350px;
 	 height: 40px;
-	 top: 40px;
-	 left: 600px;
+	 top: 59px;
+	 left: 601px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -382,7 +819,7 @@
 	 z-index: 2;
 	 width: 350px;
 	 height: 40px;
-	 top: 40px;
+	 top: 59px;
 	 left: 95px;
 	
 	 position: absolute;
@@ -395,7 +832,7 @@
 	 top: 20px;
 	 bottom: 80px;
 	 left: 20px;
-	 right: 20px;
+	 right: 12px;
 	
 	 position: absolute;
 	 -webkit-box-shadow: rgb(153, 153, 153) 2px 2px 6px 0px;
@@ -407,9 +844,9 @@
 
 #container2 {
 	 z-index: 7;
-	 width: 1044px;
+	 width: 1308px;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	
 	 position: absolute;
@@ -474,30 +911,6 @@
 	 
 }
 
-#button8 {
-	 z-index: 20;
-	 width: 148px;
-	 height: 40px;
-	 top: 317px;
-	 left: 476px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
-#button7 {
-	 z-index: 19;
-	 width: 148px;
-	 height: 38px;
-	 top: 246px;
-	 left: 475px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
 #login1 {
 	 z-index: 2;
 	 width: 198px;
@@ -510,37 +923,12 @@
 	 
 }
 
-#label9 {
-	 z-index: 16;
-	 width: 75px;
-	 height: 18px;
-	 top: 323px;
-	 left: 15px;
-	
-	 position: absolute;
-	 min-width: 75px;
-	 font-size: 16px;
-	 
-}
-
-#dataGrid1 {
-	 z-index: 16;
-	 width: 350px;
-	 height: 180px;
-	 top: 242px;
-	 left: 95px;
-	
-	 position: absolute;
-	 font-size: 16px;
-	 
-}
-
 #label8 {
 	 z-index: 15;
-	 width: 82px;
+	 width: 103px;
 	 height: 18px;
-	 top: 486px;
-	 left: 10px;
+	 top: 420px;
+	 left: 94px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -550,10 +938,10 @@
 
 #textField7 {
 	 z-index: 15;
-	 width: 900px;
+	 width: 550px;
 	 height: 80px;
-	 top: 455px;
-	 left: 97px;
+	 top: 443px;
+	 left: 94px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -564,8 +952,8 @@
 	 z-index: 14;
 	 width: 75px;
 	 height: 18px;
-	 top: 105px;
-	 left: 395px;
+	 top: 165px;
+	 left: 637px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -575,10 +963,10 @@
 
 #textField6 {
 	 z-index: 14;
-	 width: 519px;
+	 width: 200px;
 	 height: 40px;
-	 top: 94px;
-	 left: 475px;
+	 top: 154px;
+	 left: 717px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -586,11 +974,11 @@
 }
 
 #label6 {
-	 z-index: 12;
+	 z-index: 19;
 	 width: 75px;
 	 height: 18px;
-	 top: 179px;
-	 left: 717px;
+	 top: 237px;
+	 left: 637px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -599,11 +987,11 @@
 }
 
 #textField5 {
-	 z-index: 12;
-	 width: 198px;
+	 z-index: 20;
+	 width: 200px;
 	 height: 40px;
-	 top: 168px;
-	 left: 797px;
+	 top: 226px;
+	 left: 717px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -611,11 +999,11 @@
 }
 
 #label5 {
-	 z-index: 10;
+	 z-index: 20;
 	 width: 75px;
 	 height: 18px;
-	 top: 179px;
-	 left: 366px;
+	 top: 237px;
+	 left: 326px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -624,11 +1012,11 @@
 }
 
 #textField4 {
-	 z-index: 10;
+	 z-index: 21;
 	 width: 200px;
 	 height: 40px;
-	 top: 168px;
-	 left: 446px;
+	 top: 226px;
+	 left: 406px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -636,11 +1024,11 @@
 }
 
 #label4 {
-	 z-index: 8;
+	 z-index: 21;
 	 width: 75px;
 	 height: 18px;
-	 top: 179px;
-	 left: 15px;
+	 top: 237px;
+	 left: 13px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -649,11 +1037,11 @@
 }
 
 #textField3 {
-	 z-index: 8;
+	 z-index: 21;
 	 width: 200px;
 	 height: 40px;
-	 top: 168px;
-	 left: 95px;
+	 top: 226px;
+	 left: 93px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -664,7 +1052,7 @@
 	 z-index: 6;
 	 width: 75px;
 	 height: 18px;
-	 top: 105px;
+	 top: 165px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -675,9 +1063,9 @@
 
 #textField2 {
 	 z-index: 6;
-	 width: 130px;
+	 width: 200px;
 	 height: 40px;
-	 top: 94px;
+	 top: 154px;
 	 left: 95px;
 	
 	 position: absolute;
@@ -700,7 +1088,7 @@
 
 #textField1 {
 	 z-index: 4;
-	 width: 902px;
+	 width: 700px;
 	 height: 40px;
 	 top: 20px;
 	 left: 95px;
@@ -712,10 +1100,10 @@
 
 #label1 {
 	 z-index: 2;
-	 width: 85px;
+	 width: 189px;
 	 height: 18px;
-	 top: 106px;
-	 left: 278px;
+	 top: 30px;
+	 left: 952px;
 	
 	 position: absolute;
 	 min-width: 75px;
@@ -727,8 +1115,8 @@
 	 z-index: 2;
 	 width: 16px;
 	 height: 16px;
-	 top: 107px;
-	 left: 257px;
+	 top: 31px;
+	 left: 931px;
 	
 	 position: absolute;
 	 
@@ -739,7 +1127,7 @@
 	 top: 22px;
 	 bottom: 80px;
 	 left: 22px;
-	 right: 20px;
+	 right: 12px;
 	
 	 position: absolute;
 	 
@@ -797,7 +1185,7 @@
 
 #richText3 {
 	 z-index: 1;
-	 width: 110px;
+	 width: 109px;
 	 height: 50px;
 	 top: 0px;
 	 left: 0px;
@@ -871,7 +1259,7 @@
 
 #menuBar1 {
 	 z-index: 1;
-	 width: 442px;
+	 width: 552px;
 	 height: 52px;
 	 bottom: 0px;
 	 left: 0px;
@@ -917,11 +1305,11 @@
 }
 
 #container7 {
-	 z-index: 6;
+	 z-index: 2;
 	 height: 131px;
 	 top: -1px;
 	 left: -1px;
-	 right: 17px;
+	 right: 25px;
 	
 	 position: absolute;
 	 
@@ -929,9 +1317,9 @@
 
 #container6 {
 	 z-index: 6;
-	 width: 1044px;
+	 width: 1308px;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	
 	 position: absolute;
@@ -962,9 +1350,9 @@
 
 #container5 {
 	 z-index: 5;
-	 width: 1044px;
+	 width: 1308px;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	
 	 position: absolute;
@@ -995,9 +1383,9 @@
 
 #container4 {
 	 z-index: 4;
-	 width: 1044px;
+	 width: 1308px;
 	 top: 28px;
-	 bottom: -12px;
+	 bottom: 5px;
 	 left: 5px;
 	
 	 position: absolute;
@@ -1048,25 +1436,13 @@
 }
 
 #tabView2 {
-	 z-index: 5;
-	 top: 100px;
+	 z-index: 1;
+	 top: 98px;
 	 bottom: 0px;
 	 left: -5px;
-	 right: 16px;
+	 right: 33px;
 	
 	 position: absolute;
-	 
-}
-
-#dataGrid4 {
-	 z-index: 19;
-	 width: 500px;
-	 height: 157px;
-	 top: 420px;
-	 left: 92px;
-	
-	 position: absolute;
-	 font-size: 16px;
 	 
 }
 
@@ -1095,11 +1471,11 @@
 }
 
 #loginContainer {
-	 z-index: 7;
+	 z-index: 3;
 	 top: 0px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 16px;
+	 right: 24px;
 	
 	 position: absolute;
 	 

@@ -469,9 +469,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					var html = "";
 					var answerNumber = "answer" + question.questionNumber;
 					if (question.questionType == "selection")
-						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
 					if (question.questionType == "text")
-						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
+						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1"  class="answerInput" /></textarea></fieldset>';
 					$('.evalQuestionsContent').append(html);
 				});
 				$('#page7').trigger('create');
@@ -486,9 +486,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					var html = "";
 					var answerNumber = "answer" + question.questionNumber;
 					if (question.questionType == "selection")
-						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
 					if (question.questionType == "text")
-						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
+						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
 					$('.summitEvalQuestionsContent').append(html);
 				});
 //				questions.forEach(function(question) {

@@ -99,8 +99,8 @@
 					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
 					"position" : 
 					{
-						"X" : "19",
-						"Y" : "7"
+						"X" : 52,
+						"Y" : 7
 					}
 				}
 			},
@@ -179,7 +179,7 @@
 		},
 		"model" : 
 		{
-			"workspaceLeft" : 40,
+			"workspaceLeft" : 0,
 			"workspaceTop" : 0,
 			"scriptMode" : "manual",
 			"lastScriptLocation" : 
@@ -519,10 +519,20 @@
 					"path" : "conference"
 				},
 				{
-					"name" : "evalCollection",
+					"name" : "evalucations",
 					"kind" : "relatedEntities",
+					"matchColumn" : "evalCollection",
 					"scope" : "public",
 					"type" : "EvalCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				},
+				{
+					"name" : "presentations",
+					"kind" : "relatedEntities",
+					"matchColumn" : "presentationCollection",
+					"scope" : "public",
+					"type" : "PresentationCollection",
 					"reversePath" : true,
 					"path" : "conference"
 				}
@@ -810,6 +820,13 @@
 					"path" : "session.title"
 				},
 				{
+					"name" : "sessionID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "session.ID"
+				},
+				{
 					"name" : "speaker",
 					"kind" : "relatedEntity",
 					"scope" : "public",
@@ -822,6 +839,20 @@
 					"scope" : "public",
 					"type" : "string",
 					"path" : "speaker.fullName"
+				},
+				{
+					"name" : "speakerID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "speaker.ID"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
 				}
 			],
 			"key" : 
