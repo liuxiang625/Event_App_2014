@@ -2,6 +2,10 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button24 = {};	// @button
+	var button23 = {};	// @button
+	var button22 = {};	// @button
+	var button12 = {};	// @button
 	var button8 = {};	// @button
 	var button7 = {};	// @button
 	var button6 = {};	// @button
@@ -28,6 +32,29 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	button24.click = function button24_click (event)// @startlock
+	{// @endlock
+		var deleteOK = confirm('Are you sure to delete: ' + sources.evalQuestion.questionText +"?");
+		if(deleteOK)sources.evalQuestion.removeCurrent();
+	};// @lock
+
+	button23.click = function button23_click (event)// @startlock
+	{// @endlock
+		sources.evalQuestion.addNewElement();
+		sources.evalQuestion.serverRefresh();
+	};// @lock
+
+	button22.click = function button22_click (event)// @startlock
+	{// @endlock
+		sources.evalQuestion.save();
+	};// @lock
+
+	button12.click = function button12_click (event)// @startlock
+	{// @endlock
+		var deleteOK = confirm('Are you sure to delete: ' + sources.presentation.sessionName + ", speaker: " + sources.presentation.speakerName +"?");
+		if(deleteOK)sources.presentation.removeCurrent();
+	};// @lock
+
 	button8.click = function button8_click (event)// @startlock
 	{// @endlock
 		var deleteOK = confirm('Are you sure to delete: ' + sources.speaker.fullName);
@@ -42,10 +69,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button6.click = function button6_click (event)// @startlock
 	{// @endlock
-//		debugger;
-//		sources.presentation.session.set(sources.breakoutSessions);
-//		sources.presentation.speaker.set(sources.speakersOnly);
-//		sources.presentation.save();
+		sources.presentation.addNewElement();
+		sources.presentation.serverRefresh();
 	};// @lock
 
 	button5.click = function button5_click (event)// @startlock
@@ -222,6 +247,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button24", "click", button24.click, "WAF");
+	WAF.addListener("button23", "click", button23.click, "WAF");
+	WAF.addListener("button22", "click", button22.click, "WAF");
+	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button8", "click", button8.click, "WAF");
 	WAF.addListener("button7", "click", button7.click, "WAF");
 	WAF.addListener("button6", "click", button6.click, "WAF");
