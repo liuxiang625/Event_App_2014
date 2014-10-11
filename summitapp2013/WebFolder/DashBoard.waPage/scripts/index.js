@@ -2,6 +2,8 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button8 = {};	// @button
+	var button7 = {};	// @button
 	var button6 = {};	// @button
 	var button5 = {};	// @button
 	var dataGrid8 = {};	// @dataGrid
@@ -26,17 +28,30 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	button8.click = function button8_click (event)// @startlock
+	{// @endlock
+		var deleteOK = confirm('Are you sure to delete: ' + sources.speaker.fullName);
+		if(deleteOK)sources.session.removeCurrent();
+	};// @lock
+
+	button7.click = function button7_click (event)// @startlock
+	{// @endlock
+		var deleteOK = confirm('Are you sure to delete: ' + sources.session.title);
+		if(deleteOK)sources.session.removeCurrent();
+	};// @lock
+
 	button6.click = function button6_click (event)// @startlock
 	{// @endlock
-		sources.presentation.session.set(sources.breakoutSessions);
-		sources.presentation.session.set(sources.speakersOnly);
-		sources.presentation.save();
+//		debugger;
+//		sources.presentation.session.set(sources.breakoutSessions);
+//		sources.presentation.speaker.set(sources.speakersOnly);
+//		sources.presentation.save();
 	};// @lock
 
 	button5.click = function button5_click (event)// @startlock
 	{// @endlock
 		sources.presentation.session.set(sources.breakoutSessions);
-		sources.presentation.session.set(sources.speakersOnly);
+		sources.presentation.speaker.set(sources.speakersOnly);
 		sources.presentation.save();
 	};// @lock
 
@@ -50,6 +65,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem10.click = function menuItem10_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(5);
+		$$('menuItem1').setState('default');
+		sources.presentation.all();
 	};// @lock
 
 	button11.click = function button11_click (event)// @startlock
@@ -73,6 +90,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem3.click = function menuItem3_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(6);
+		$$('menuItem1').setState('default');
 	};// @lock
 
 	fileUpload2.filesUploaded = function fileUpload2_filesUploaded (event)// @startlock
@@ -137,12 +155,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem1.click = function menuItem1_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(1);
+		sources.session.all();
 	};// @lock
 
 	menuItem2.click = function menuItem2_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(3);
 		$$('menuItem1').setState('default');
+		sources.speaker.all();
 	};// @lock
 	
 	button1.click = function button1_click (event)// @startlock
@@ -198,9 +218,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	dataGrid2.onRowDblClick = function dataGrid2_onRowDblClick (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(2);
+
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button8", "click", button8.click, "WAF");
+	WAF.addListener("button7", "click", button7.click, "WAF");
 	WAF.addListener("button6", "click", button6.click, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
 	WAF.addListener("dataGrid8", "onRowClick", dataGrid8.onRowClick, "WAF");
