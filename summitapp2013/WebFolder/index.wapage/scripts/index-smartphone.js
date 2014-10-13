@@ -10,20 +10,10 @@ $(document).live('pageinit',function(event){//Force the app to go home after for
 var evalAnswers = {
 		fullName:'',
 		email:'',
-		speakerName:'',
-		answer1:'',
-		answer2:'',
-		answer3:'',
-		answer4:'',
-		answer5:'',
-		answer6:'',
-		answer7:'',
-		answer8:'',
-		answer9:'',
-		answer10:'',
-		answer11:'',
-		answer12:'',
-		answer13:''
+		speakerID:'',
+		sessionID:'',
+		uniqueID:'',
+		evalType:''
 	}
 
 var allSessions = [];
@@ -132,23 +122,24 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "tap", function() {
 			sessionId = this.id;
-			if(attendee) {
-				ds.Answer.query('sessionID == :1 ', sessionId, {
-					autoExpand:'attendee',
-					onSuccess: function(findAnswerEvent) {
-						findAnswerEvent.entityCollection.toArray('attendeeEmail', {
-							onSuccess: function(findAttendeeeAnswerEvent) {
-								var answersArr = findAttendeeeAnswerEvent.result;
-								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
-								$("#startEvalButton").removeClass('ui-disabled');
-								answersArr.forEach(function(elem) { 
-								if (elem.attendeeEmail == attendee.email.getValue()){
-									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-									$("#startEvalButton").addClass('ui-disabled');
-								}
-								});
-							}
-						});
+			if(attendee) {//Check if attendee has already submitted a eval in this session
+				ds.Eval.query('sessionID == :1 & attendeeEmail = :2', sessionId, attendee.email, {
+					///autoExpand:'attendee',
+					onSuccess: function(findEvalEvent) {
+						var eval = findEvalEvent
+//						findEvalEvent.entityCollection.toArray('attendeeEmail,speakerName', {
+//							onSuccess: function(findAttendeeeAnswerEvent) {
+//								var answersArr = findAttendeeeAnswerEvent.result;
+//								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
+//								$("#startEvalButton").removeClass('ui-disabled');
+//								answersArr.forEach(function(elem) { 
+//								if (elem.attendeeEmail == attendee.email.getValue()){
+//									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+//									$("#startEvalButton").addClass('ui-disabled');
+//								}
+//								});
+//							}
+//						});
 					},
 					onError: function(error) {
 						console.log(error.error[0]);
@@ -173,7 +164,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				            var presentor = presentorEvent.entity; // get the entity from event.entity
 				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
 							//Build the dropdown for later eval
-							evalSpeakListHTML += '<option value="'+ presentor.speakerName.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
+							evalSpeakListHTML += '<option value="'+ presentor.speakerID.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
 						}
 				    });
 				    //Disable Eval button when session is not started
@@ -247,13 +238,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if(attendee) {
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
+				evalAnswers.sessionID = sessionId;
 				//$('#attendeeInfo').hide();
 				$('#attendeNameInput').val(evalAnswers.fullName);
 				$('#attendeEmailInput').val(evalAnswers.email);
 				//Fill the Attendee info in the text fields
 				
 			}
-			ds.Survey.find('session.ID = ' + sessionId, {
+			ds.Eval.find('session.ID = ' + sessionId, {
 				onSuccess: function(findSurveyEvent) {
 					sessionSurvey = findSurveyEvent.entity;
 					$.mobile.changePage($('#page7'), {
@@ -265,9 +257,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			});
 		});
 		
-		$( ".answerInput" ).bind( "change", function(event, ui) {
-			evalAnswers[this.name] = this.value;
-		});
+//		$( ".answerInput" ).bind( "change", function(event, ui) {
+//			evalAnswers[this.name] = this.value;
+//		});
+//		$("input[type='radio']").bind( "change", function(event, ui) {
+//		  	debugger;
+//		});
+		
 		
 		$( ".rankingSelect" ).bind( "change", function(event, ui) {
 			var evalAnswerString = evalAnswers[this.name];
@@ -276,26 +272,29 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//Set survey and attendee while saving the eval
 		$( ".saveEval" ).bind( "tap", function(event, ui) {
+			evalAnswers.evalType = 'session';
 			$(".saveEval").addClass('ui-disabled');
-			var newEval = ds.Answer.newEntity();
-			newEval.answer1.setValue(evalAnswers.answer1);
-			newEval.answer2.setValue(evalAnswers.answer2);
-			newEval.answer3.setValue(evalAnswers.answer3);
-			newEval.answer4.setValue(evalAnswers.answer4);
-			newEval.answer5.setValue(evalAnswers.answer5);
-			newEval.answer6.setValue(evalAnswers.answer6);
-			newEval.answer7.setValue(evalAnswers.answer7);
-			newEval.speakerName.setValue($('#evalSpeakerList')[0].value);
-			newEval.survey.setValue(sessionSurvey);	
+//			var newEval = ds.Answer.newEntity();
+//			newEval.answer1.setValue(evalAnswers.answer1);
+//			newEval.answer2.setValue(evalAnswers.answer2);
+//			newEval.answer3.setValue(evalAnswers.answer3);
+//			newEval.answer4.setValue(evalAnswers.answer4);
+//			newEval.answer5.setValue(evalAnswers.answer5);
+//			newEval.answer6.setValue(evalAnswers.answer6);
+//			newEval.answer7.setValue(evalAnswers.answer7);
+//			newEval.speakerName.setValue($('#evalSpeakerList')[0].value);
+//			newEval.survey.setValue(sessionSurvey);	
+					
 					
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
-			ds.Attendee.find("email = :1", evalAnswers.email,{
+				ds.Attendee.find("email = :1", evalAnswers.email,{
 				 onSuccess: function(findAttendeeEvent){
-				 	
 				 	if(findAttendeeEvent.entity) {
-				 		newEval.attendee.setValue(findAttendeeEvent.entity);
-						newEval.save({
-					        onSuccess:function(event)
+				 		evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue();
+						evalAnswers.speakerID = $('#evalSpeakerList')[0].value;
+						debugger;
+						ds.Eval.submitEval(evalAnswers,{
+					        onSuccess:function(submitEvalEvent)
 					        {	
 					        	$('#startEvalButton span span')[0].innerHTML = "Evaluation Saved";
 					        	$("#startEvalButton").addClass('ui-disabled');
@@ -313,18 +312,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						newAttendee.uniqueID.setValue(cookieID);
 						newAttendee.save({
 							onSuccess: function(attendeeEvent){
-								newEval.attendee.setValue(attendeeEvent.entity);
-								newEval.save({
-							        onSuccess:function(event)
-							        {	
-							        	$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-							        	$("#startEvalButton").addClass('ui-disabled');
-							        	$.mobile.changePage($('#page4'), {
-											transition: "slidedown"
-										});
-										$(".saveEval").removeClass('ui-disabled');
-							        }
-							    });		
+								evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue;
+								evalAnswers.speakerID.setValue($('#evalSpeakerList')[0].value);
+								debugger;
+//								ds.Eval.submitEval(evalAnswers,{{
+//							        onSuccess:function(event)
+//							        {	
+//							        	$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+//							        	$("#startEvalButton").addClass('ui-disabled');
+//							        	$.mobile.changePage($('#page4'), {
+//											transition: "slidedown"
+//										});
+//										$(".saveEval").removeClass('ui-disabled');
+//							        }
+//							    });		
 							},
 							onError: function(error){
 							}
@@ -332,6 +333,50 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				 	}
 				 }
 			});
+			
+//			ds.Attendee.find("email = :1", evalAnswers.email,{
+//				 onSuccess: function(findAttendeeEvent){
+//				 	
+//				 	if(findAttendeeEvent.entity) {
+//				 		newEval.attendee.setValue(findAttendeeEvent.entity);
+//						newEval.save({
+//					        onSuccess:function(event)
+//					        {	
+//					        	$('#startEvalButton span span')[0].innerHTML = "Evaluation Saved";
+//					        	$("#startEvalButton").addClass('ui-disabled');
+//					        	$.mobile.changePage($('#page4'), {
+//											transition: "slidedown"
+//								});
+//								$(".saveEval").removeClass('ui-disabled');
+//					        }
+//					    });					
+//				 	}
+//				 	else {
+//				 		var newAttendee = ds.Attendee.newEntity();
+//						newAttendee.fullName.setValue(evalAnswers.fullName);
+//						newAttendee.email.setValue(evalAnswers.email);
+//						newAttendee.uniqueID.setValue(cookieID);
+//						newAttendee.save({
+//							onSuccess: function(attendeeEvent){
+//								newEval.attendee.setValue(attendeeEvent.entity);
+//								newEval.save({
+//							        onSuccess:function(event)
+//							        {	
+//							        	$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+//							        	$("#startEvalButton").addClass('ui-disabled');
+//							        	$.mobile.changePage($('#page4'), {
+//											transition: "slidedown"
+//										});
+//										$(".saveEval").removeClass('ui-disabled');
+//							        }
+//							    });		
+//							},
+//							onError: function(error){
+//							}
+//						});
+//				 	}
+//				 }
+//			});
 			else
 			!validateEmail(evalAnswers.email)?alert('Please enter a Valid email!'):alert('Please enter a Valid name!')
 
@@ -467,7 +512,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				var questions = findEvalQuestionEvent.result;
 				questions.forEach(function(question) {
 					var html = "";
-					var answerNumber = "answer" + question.questionNumber;
+					//var answerNumber = "answer" + question.questionNumber;
+					var answerNumber = question.questionNumber;
 					if (question.questionType == "selection")
 						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
 					if (question.questionType == "text")
@@ -475,6 +521,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					$('.evalQuestionsContent').append(html);
 				});
 				$('#page7').trigger('create');
+				$( ".answerInput" ).bind( "change", function(event, ui) {
+					evalAnswers[this.name] = this.value;
+				});
 			}
 		});
 		
@@ -484,7 +533,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				//debugger;
 				questions.forEach(function(question) {
 					var html = "";
-					var answerNumber = "answer" + question.questionNumber;
+					//var answerNumber = "answer" + question.questionNumber;
+					var answerNumber = question.questionNumber;
 					if (question.questionType == "selection")
 						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
 					if (question.questionType == "text")
