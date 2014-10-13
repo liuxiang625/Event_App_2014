@@ -10,7 +10,6 @@ model.Eval.methods.getEvalQuestions.scope = "public";
 
 
 model.Eval.methods.submitEval = function(evalAnswers) {
-	debugger;
 	var token = currentSession().promoteWith('admin');
 	var attendee = ds.Attendee.find('uniqueID = :1', evalAnswers.uniqueID);
 	var session = ds.Session(evalAnswers.sessionID);
@@ -25,7 +24,6 @@ model.Eval.methods.submitEval = function(evalAnswers) {
 		newEval.conference = session.conference;
 		newEval.evalType = evalAnswers.evalType;
 		newEval.save();
-		debugger;
 		while(evalAnswers[answerNumber]){
 				newAnswer = new ds.EvalAnswer();
 				newAnswer.eval = newEval;

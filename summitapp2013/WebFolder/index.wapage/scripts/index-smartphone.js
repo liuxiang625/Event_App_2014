@@ -121,72 +121,106 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "tap", function() {
-			debugger;
 			sessionId = this.id;
-			if(attendee) {//Check if attendee has already submitted a eval in this session
-				ds.Eval.query('sessionID == :1 & attendeeEmail = :2', sessionId, attendee.email.getValue(), {
-					///autoExpand:'attendee',
-					onSuccess: function(findEvalEvent) {
-						debugger;
-						if(findEvalEvent.result.length > 0);
-//						findEvalEvent.entityCollection.toArray('attendeeEmail,speakerName', {
-//							onSuccess: function(findAttendeeeAnswerEvent) {
-//								var answersArr = findAttendeeeAnswerEvent.result;
-//								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
-//								$("#startEvalButton").removeClass('ui-disabled');
-//								answersArr.forEach(function(elem) { 
-//								if (elem.attendeeEmail == attendee.email.getValue()){
-//									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-//									$("#startEvalButton").addClass('ui-disabled');
-//								}
-//								});
-//							}
-//						});
-					},
-					onError: function(error) {
-						console.log(error.error[0]);
+//			if(attendee) {//Check if attendee has already submitted a eval in this session
+//				ds.Eval.query('sessionID == :1 & attendeeEmail = :2', sessionId, attendee.email.getValue(), {
+//					///autoExpand:'attendee',
+//					onSuccess: function(findEvalEvent) {
+//						debugger;
+//						if(findEvalEvent.result.length > 0);
+////						findEvalEvent.entityCollection.toArray('attendeeEmail,speakerName', {
+////							onSuccess: function(findAttendeeeAnswerEvent) {
+////								var answersArr = findAttendeeeAnswerEvent.result;
+////								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
+////								$("#startEvalButton").removeClass('ui-disabled');
+////								answersArr.forEach(function(elem) { 
+////								if (elem.attendeeEmail == attendee.email.getValue()){
+////									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+////									$("#startEvalButton").addClass('ui-disabled');
+////								}
+////								});
+////							}
+////						});
+//					},
+//					onError: function(error) {
+//						console.log(error.error[0]);
+//					}
+//				});
+//			}
+			//Disable Eval button when session is not started
+			ds.Session.isSessionAlive ({
+				onSuccess: function(checkSessionAliveEvent) {
+					var evalButtonText = "";
+					$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
+					if(checkSessionAliveEvent.result){
+						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
+						$("#startEvalButton").removeClass('ui-disabled');
 					}
-				});
-			}
+					else {
+						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
+						//$("#startEvalButton").addClass('ui-disabled');   temperorally commented out for eval page development
+					}
+				}
+			});
+
 			ds.Session.find("ID = " + sessionId , {
-				autoExpand:'presentaors',
+				autoExpand:'presentations',
 				onSuccess: function(findEvent) {
 					//Build Session Detail
 					var speakerListHTML = '';
 					var evalSpeakListHTML = '';
 					var sessionEntity = findEvent.entity;
-					debugger;
+					var speakerMap = {};
 					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
 					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + '<br> Conference Room: ' + sessionEntity.room.getValue();
 					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
 					//build speakers list
-					if(sessionEntity.presentaors.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
-					sessionEntity.presentaors.getValue().forEach({  
+					if(sessionEntity.presentations.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
+					sessionEntity.presentations.getValue().forEach({  
 				        onSuccess: function(presentorEvent)
 				        {
 				            var presentor = presentorEvent.entity; // get the entity from event.entity
 				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
 							//Build the dropdown for later eval
 							evalSpeakListHTML += '<option value="'+ presentor.speakerID.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
+							speakerMap[presentor.speakerName.getValue()]= presentor.speakerID.getValue();
+						},
+						atTheEnd: function(event){
+							
+							//check if evaluation has already been submited for each speaker;
+						    if(attendee)
+							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
+							    	onSuccess: function(findEvalEvent) {
+							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {
+											$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+											$("#startEvalButton").addClass('ui-disabled');
+										}
+										else if (1 <= findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {
+											findEvalEvent.result.forEach({
+												onSuccess: function(evalEvent)
+										        {
+										            var eval = evalEvent.entity; // get the entity from event.entity
+										            if (speakerMap[eval.speakerName.getValue()]) delete speakerMap[eval.speakerName.getValue()];
+												},
+												atTheEnd: function(event)
+										        {
+										           //debugger;
+										           evalSpeakListHTML = "";
+										           for (var speakerName in speakerMap) {
+										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
+										       		}
+										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+										       		$("#startEvalButton").removeClass('ui-disabled');
+										        }
+										    });
+										}
+							    	}
+								});		    
 						}
 				    });
-				    //Disable Eval button when session is not started
-					ds.Session.isSessionAlive ({
-						onSuccess: function(checkSessionAliveEvent) {
-							var evalButtonText = "";
-							$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
-							if(checkSessionAliveEvent.result){
-								$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
-								$("#startEvalButton").removeClass('ui-disabled');
-							}
-							else{
-								$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
-								//$("#startEvalButton").addClass('ui-disabled');   temperorally commented out for eval page development
-							}
-						}
-					});				
+
+							
 					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
-					$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
 					$('#sessionSpeakersList').listview('refresh');
 				}
 			});
@@ -246,8 +280,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				//Fill the Attendee info in the text fields
 				$('#attendeNameInput').val(evalAnswers.fullName);
 				$('#attendeEmailInput').val(evalAnswers.email);
-				
 			}
+			$.mobile.changePage($('#page7'), {
+					transition: "slideup"
+			});
 //			ds.Eval.find('session.ID = ' + sessionId, {
 //				onSuccess: function(findSurveyEvent) {
 //					sessionSurvey = findSurveyEvent.entity;
