@@ -132,7 +132,7 @@
 		"model" : 
 		{
 			"workspaceLeft" : 0,
-			"workspaceTop" : 1019,
+			"workspaceTop" : 1020,
 			"scriptMode" : "manual",
 			"lastScriptLocation" : 
 			{
@@ -355,6 +355,13 @@
 					"scope" : "public",
 					"type" : "string",
 					"path" : "session.title"
+				},
+				{
+					"name" : "sessionID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "session.ID"
 				},
 				{
 					"name" : "speakers",
