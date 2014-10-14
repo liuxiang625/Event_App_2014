@@ -1,1 +1,1070 @@
-﻿{	"toJSON": true,	"extraProperties": {		"version": "2",		"__CDATA": "\n\t\t\n\t\t\n\t",		"classes": {			"__CDATA": "\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t",			"Session": {				"panelColor": "#996699",				"__CDATA": "\n\t\t\t\t\n\t\t\t",				"panel": {					"isOpen": "true",					"pathVisible": "true",					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",					"position": {						"X": 383,						"Y": 5					}				}			},			"Attendee": {				"panelColor": "#B8CCE4",				"__CDATA": "\n\t\t\t\t\n\t\t\t",				"panel": {					"isOpen": "true",					"pathVisible": "true",					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",					"position": {						"X": 44,						"Y": 1485					}				}			},			"Presentation": {				"panelColor": "#C4BD97",				"__CDATA": "\n\t\t\t\t\n\t\t\t",				"panel": {					"isOpen": "true",					"pathVisible": "true",					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",					"position": {						"X": 52,						"Y": 7					}				}			},			"Speaker": {				"panelColor": "#fff",				"__CDATA": "\n\t\t\t\t\n\t\t\t",				"panel": {					"isOpen": "true",					"pathVisible": "true",					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",					"position": {						"X": 31,						"Y": 270					}				}			},			"Eval": {				"panelColor": "#4FA997",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 485,						"Y": 1444					}				}			},			"EvalAnswer": {				"panelColor": "#7F7F7F",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 73,						"Y": 1063					}				}			},			"Conference": {				"panelColor": "#D8D8D8",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 434,						"Y": 885					}				}			},			"EvalQuestion": {				"panelColor": "#548DD4",				"panel": {					"isOpen": "true",					"pathVisible": true,					"position": {						"X": 857,						"Y": 1140					}				}			}		},		"model": {			"workspaceLeft": 0,			"workspaceTop": 596,			"scriptMode": "manual",			"lastScriptLocation": {				"Session": {					"method": "Session/Session-methods.js"				},				"Speaker": {					"method": "Speaker/Speaker-methods.js"				},				"Eval": {					"method": "Eval/Eval-methods.js"				}			}		}	},	"dataClasses": [		{			"name": "Attendee",			"className": "Attendee",			"collectionName": "AttendeeCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"autosequence": true,					"autogenerate": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "firstName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "lastName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "email",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "fullName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "uniqueID",					"kind": "storage",					"scope": "public",					"type": "string",					"events": [						{							"kind": "onInit",							"from": "$mainModel.Attendee.uniqueID.events.onInit",							"userDefined": true						}					]				},				{					"name": "evaluations",					"kind": "relatedEntities",					"scope": "public",					"type": "EvalCollection",					"reversePath": true,					"path": "attendee"				}			],			"events": [				{					"kind": "onSave",					"from": "$mainModel.Attendee.events.onSave",					"userDefined": true				}			]		},		{			"name": "Conference",			"className": "Conference",			"collectionName": "ConferenceCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "name",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "location",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "startDate",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": true				},				{					"name": "endDate",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": true				},				{					"name": "sessions",					"kind": "relatedEntities",					"scope": "public",					"type": "SessionCollection",					"reversePath": true,					"path": "conference"				},				{					"name": "speakers",					"kind": "relatedEntities",					"scope": "public",					"type": "SpeakerCollection",					"reversePath": true,					"path": "conference"				},				{					"name": "evalQuestions",					"kind": "relatedEntities",					"scope": "public",					"type": "EvalQuestionCollection",					"reversePath": true,					"path": "conference"				},				{					"name": "evaluations",					"kind": "relatedEntities",					"matchColumn": "evalucations, evalCollection",					"scope": "public",					"type": "EvalCollection",					"reversePath": true,					"path": "conference"				},				{					"name": "presentations",					"kind": "relatedEntities",					"matchColumn": "presentationCollection",					"scope": "public",					"type": "PresentationCollection",					"reversePath": true,					"path": "conference"				}			]		},		{			"name": "Eval",			"className": "Eval",			"collectionName": "EvalCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "session",					"kind": "relatedEntity",					"scope": "public",					"type": "Session",					"path": "Session"				},				{					"name": "sessionTitle",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "session.title"				},				{					"name": "sessionID",					"kind": "alias",					"scope": "public",					"type": "long",					"path": "session.ID"				},				{					"name": "speakers",					"kind": "relatedEntities",					"scope": "public",					"type": "SpeakerCollection",					"path": "session.speakers"				},				{					"name": "evalType",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "conference",					"kind": "relatedEntity",					"scope": "public",					"type": "Conference",					"path": "Conference"				},				{					"name": "evalQuestions",					"kind": "relatedEntities",					"scope": "public",					"type": "EvalQuestionCollection",					"path": "conference.evalQuestions"				},				{					"name": "attendee",					"kind": "relatedEntity",					"matchColumn": "atendee",					"scope": "public",					"type": "Attendee",					"path": "Attendee"				},				{					"name": "ateendeeName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "attendee.fullName"				},				{					"name": "attendeeEmail",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "attendee.email"				},				{					"name": "anynomous",					"kind": "storage",					"scope": "public",					"type": "bool"				},				{					"name": "speaker",					"kind": "relatedEntity",					"scope": "public",					"type": "Speaker",					"path": "Speaker"				},				{					"name": "speakerName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "speaker.fullName"				}			],			"methods": [				{					"name": "getEvalQuestions",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Eval.methods.getEvalQuestions",					"userDefined": true				},				{					"name": "submitEval",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Eval.methods.submitEval",					"userDefined": true				}			]		},		{			"name": "EvalAnswer",			"className": "EvalAnswer",			"collectionName": "EvalAnswerCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "eval",					"kind": "relatedEntity",					"scope": "public",					"type": "Eval",					"path": "Eval"				},				{					"name": "session",					"kind": "relatedEntity",					"scope": "public",					"type": "Session",					"path": "eval.session"				},				{					"name": "sessionTitle",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "eval.sessionTitle"				},				{					"name": "attendee",					"kind": "relatedEntity",					"scope": "public",					"type": "Attendee",					"path": "Attendee"				},				{					"name": "attendeeName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "attendee.fullName"				},				{					"name": "attendeeEmail",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "attendee.email"				},				{					"name": "answerText",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "anynomous",					"kind": "storage",					"scope": "public",					"type": "bool"				},				{					"name": "answerNumber",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "speakerName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "eval.speakerName"				}			]		},		{			"name": "EvalQuestion",			"className": "EvalQuestion",			"collectionName": "EvalQuestionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"unique": true,					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "questionText",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "questionText_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "questionType",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "questionNumber",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "conference",					"kind": "relatedEntity",					"scope": "public",					"type": "Conference",					"path": "Conference"				},				{					"name": "evalType",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "options",					"kind": "storage",					"scope": "public",					"type": "string"				}			]		},		{			"name": "Presentation",			"className": "Presentation",			"collectionName": "PresentationCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "session",					"kind": "relatedEntity",					"scope": "public",					"type": "Session",					"path": "Session"				},				{					"name": "sessionName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "session.title"				},				{					"name": "sessionID",					"kind": "alias",					"scope": "public",					"type": "long",					"path": "session.ID"				},				{					"name": "speaker",					"kind": "relatedEntity",					"scope": "public",					"type": "Speaker",					"path": "Speaker"				},				{					"name": "speakerName",					"kind": "alias",					"scope": "public",					"type": "string",					"path": "speaker.fullName"				},				{					"name": "speakerID",					"kind": "alias",					"scope": "public",					"type": "long",					"path": "speaker.ID"				},				{					"name": "conference",					"kind": "relatedEntity",					"scope": "public",					"type": "Conference",					"path": "Conference"				}			]		},		{			"name": "Session",			"className": "Session",			"collectionName": "SessionCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "hidden",					"kind": "storage",					"scope": "public",					"type": "bool"				},				{					"name": "isActivity",					"kind": "storage",					"scope": "public",					"type": "bool"				},				{					"name": "title",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "title_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "room",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "room_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "startTime",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": false				},				{					"name": "startTimeString",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "startTimeFullTimeString",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "endTime",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": false				},				{					"name": "endTimeString",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "endTimeFullTimeString",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "sessionDate",					"kind": "storage",					"scope": "public",					"type": "date",					"simpleDate": false				},				{					"name": "sessionDateString",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "tags",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "tags_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "description",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "description_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "FavoriteCount",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "SurveyReceived",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "SurveyAverageRate",					"kind": "storage",					"scope": "public",					"type": "number"				},				{					"name": "presentations",					"kind": "relatedEntities",					"scope": "public",					"type": "PresentationCollection",					"reversePath": true,					"path": "session",					"matchColumn": "presentaors"				},				{					"name": "speakers",					"kind": "relatedEntities",					"scope": "public",					"type": "SpeakerCollection",					"path": "presentations.speaker"				},				{					"name": "evaluations",					"kind": "relatedEntities",					"scope": "public",					"type": "EvalCollection",					"reversePath": true,					"path": "session"				},				{					"name": "conference",					"kind": "relatedEntity",					"scope": "public",					"type": "Conference",					"path": "Conference"				}			],			"methods": [				{					"name": "getLiveSessions",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Session.methods.getLiveSessions",					"userDefined": true				},				{					"name": "isSessionAlive",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Session.methods.isSessionAlive",					"userDefined": true				}			]		},		{			"name": "Speaker",			"className": "Speaker",			"collectionName": "SpeakerCollection",			"scope": "public",			"attributes": [				{					"name": "ID",					"kind": "storage",					"scope": "public",					"autosequence": true,					"type": "long",					"indexKind": "btree",					"primKey": true				},				{					"name": "firstName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "lastName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "fullName",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "title",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "title_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "company",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "company_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "biography",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "biography_FR",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "picURL",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "presentations",					"kind": "relatedEntities",					"scope": "public",					"type": "PresentationCollection",					"reversePath": true,					"path": "speaker"				},				{					"name": "sessions",					"kind": "relatedEntities",					"scope": "public",					"type": "SessionCollection",					"path": "presentations.session"				},				{					"name": "linkedIn",					"kind": "storage",					"scope": "public",					"type": "string"				},				{					"name": "isStaff",					"kind": "storage",					"scope": "public",					"type": "bool"				},				{					"name": "conference",					"kind": "relatedEntity",					"scope": "public",					"type": "Conference",					"path": "Conference"				},				{					"name": "evaluations",					"kind": "relatedEntities",					"scope": "public",					"type": "EvalCollection",					"reversePath": true,					"path": "speaker"				}			],			"methods": [				{					"name": "getAllSpeakers",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Speaker.methods.getAllSpeakers",					"userDefined": true				},				{					"name": "updateSpeakerImagesFolder",					"applyTo": "dataClass",					"scope": "public",					"from": "$mainModel.Speaker.methods.updateSpeakerImagesFolder",					"userDefined": true				}			]		}	]}
+
+{
+	"toJSON" : true,
+	"extraProperties" : 
+	{
+		"version" : "2",
+		"__CDATA" : "\n\t\t\n\t\t\n\t",
+		"classes" : 
+		{
+			"__CDATA" : "\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t",
+			"Session" : 
+			{
+				"panelColor" : "#996699",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : 383,
+						"Y" : 5
+					}
+				}
+			},
+			"Attendee" : 
+			{
+				"panelColor" : "#B8CCE4",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : 44,
+						"Y" : 1485
+					}
+				}
+			},
+			"Presentation" : 
+			{
+				"panelColor" : "#C4BD97",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : 52,
+						"Y" : 7
+					}
+				}
+			},
+			"Speaker" : 
+			{
+				"panelColor" : "#fff",
+				"__CDATA" : "\n\t\t\t\t\n\t\t\t",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : "true",
+					"__CDATA" : "\n\t\t\t\t\t\n\t\t\t\t",
+					"position" : 
+					{
+						"X" : 31,
+						"Y" : 270
+					}
+				}
+			},
+			"Eval" : 
+			{
+				"panelColor" : "#4FA997",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 444,
+						"Y" : 1373
+					}
+				}
+			},
+			"EvalAnswer" : 
+			{
+				"panelColor" : "#7F7F7F",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 61,
+						"Y" : 1063
+					}
+				}
+			},
+			"Conference" : 
+			{
+				"panelColor" : "#D8D8D8",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 434,
+						"Y" : 885
+					}
+				}
+			},
+			"EvalQuestion" : 
+			{
+				"panelColor" : "#548DD4",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"pathVisible" : true,
+					"position" : 
+					{
+						"X" : 857,
+						"Y" : 1140
+					}
+				}
+			}
+		},
+		"model" : 
+		{
+			"workspaceLeft" : 0,
+			"workspaceTop" : 1100,
+			"scriptMode" : "manual",
+			"lastScriptLocation" : 
+			{
+				"Session" : 
+				{
+					"method" : "Session/Session-methods.js"
+				},
+				"Speaker" : 
+				{
+					"method" : "Speaker/Speaker-methods.js"
+				},
+				"Eval" : 
+				{
+					"method" : "Eval/Eval-methods.js"
+				}
+			}
+		}
+	},
+	"dataClasses" : 
+	[
+		{
+			"name" : "Attendee",
+			"className" : "Attendee",
+			"collectionName" : "AttendeeCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"autogenerate" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "firstName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "lastName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "email",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "fullName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "uniqueID",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string",
+					"events" : 
+					[
+						{
+							"kind" : "onInit",
+							"from" : "$mainModel.Attendee.uniqueID.events.onInit"
+						},
+						{
+							"kind" : "onInit",
+							"from" : "$mainModel.Attendee.uniqueID.events.onInit"
+						},
+						{
+							"kind" : "onInit",
+							"from" : "$mainModel.Attendee.uniqueID.events.onInit"
+						},
+						{
+							"kind" : "onInit",
+							"from" : "$mainModel.Attendee.uniqueID.events.onInit",
+							"userDefined" : true
+						}
+					]
+				},
+				{
+					"name" : "evaluations",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalCollection",
+					"reversePath" : true,
+					"path" : "attendee"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onSave",
+					"from" : "$mainModel.Attendee.events.onSave"
+				},
+				{
+					"kind" : "onSave",
+					"from" : "$mainModel.Attendee.events.onSave"
+				},
+				{
+					"kind" : "onSave",
+					"from" : "$mainModel.Attendee.events.onSave"
+				},
+				{
+					"kind" : "onSave",
+					"from" : "$mainModel.Attendee.events.onSave",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Conference",
+			"className" : "Conference",
+			"collectionName" : "ConferenceCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "name",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "location",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "startDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "endDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : true
+				},
+				{
+					"name" : "sessions",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "SessionCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				},
+				{
+					"name" : "speakers",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "SpeakerCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				},
+				{
+					"name" : "evalQuestions",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalQuestionCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				},
+				{
+					"name" : "evaluations",
+					"kind" : "relatedEntities",
+					"matchColumn" : "evalucations,evalCollection",
+					"scope" : "public",
+					"type" : "EvalCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				},
+				{
+					"name" : "presentations",
+					"kind" : "relatedEntities",
+					"matchColumn" : "presentationCollection",
+					"scope" : "public",
+					"type" : "PresentationCollection",
+					"reversePath" : true,
+					"path" : "conference"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Eval",
+			"className" : "Eval",
+			"collectionName" : "EvalCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "session",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Session",
+					"path" : "Session"
+				},
+				{
+					"name" : "sessionTitle",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "session.title"
+				},
+				{
+					"name" : "sessionID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "session.ID"
+				},
+				{
+					"name" : "speakers",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "SpeakerCollection",
+					"path" : "session.speakers"
+				},
+				{
+					"name" : "evalType",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
+				},
+				{
+					"name" : "evalQuestions",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalQuestionCollection",
+					"path" : "conference.evalQuestions"
+				},
+				{
+					"name" : "attendee",
+					"kind" : "relatedEntity",
+					"matchColumn" : "atendee",
+					"scope" : "public",
+					"type" : "Attendee",
+					"path" : "Attendee"
+				},
+				{
+					"name" : "ateendeeName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "attendee.fullName"
+				},
+				{
+					"name" : "attendeeEmail",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "attendee.email"
+				},
+				{
+					"name" : "anynomous",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "speaker",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Speaker",
+					"path" : "Speaker"
+				},
+				{
+					"name" : "speakerName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "speaker.fullName"
+				},
+				{
+					"name" : "evalAnswers",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalAnswerCollection",
+					"reversePath" : true,
+					"path" : "eval"
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "getEvalQuestions",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Eval.methods.getEvalQuestions",
+					"userDefined" : true
+				},
+				{
+					"name" : "submitEval",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Eval.methods.submitEval",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "EvalAnswer",
+			"className" : "EvalAnswer",
+			"collectionName" : "EvalAnswerCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "eval",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Eval",
+					"path" : "Eval"
+				},
+				{
+					"name" : "session",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Session",
+					"path" : "eval.session"
+				},
+				{
+					"name" : "sessionTitle",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "eval.sessionTitle"
+				},
+				{
+					"name" : "attendee",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Attendee",
+					"path" : "Attendee"
+				},
+				{
+					"name" : "attendeeName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "attendee.fullName"
+				},
+				{
+					"name" : "attendeeEmail",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "attendee.email"
+				},
+				{
+					"name" : "answerText",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "anynomous",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "answerNumber",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "speakerName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "eval.speakerName"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "EvalQuestion",
+			"className" : "EvalQuestion",
+			"collectionName" : "EvalQuestionCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "questionText",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "questionText_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "questionType",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "questionNumber",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
+				},
+				{
+					"name" : "evalType",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "options",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Presentation",
+			"className" : "Presentation",
+			"collectionName" : "PresentationCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "session",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Session",
+					"path" : "Session"
+				},
+				{
+					"name" : "sessionName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "session.title"
+				},
+				{
+					"name" : "sessionID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "session.ID"
+				},
+				{
+					"name" : "speaker",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Speaker",
+					"path" : "Speaker"
+				},
+				{
+					"name" : "speakerName",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "string",
+					"path" : "speaker.fullName"
+				},
+				{
+					"name" : "speakerID",
+					"kind" : "alias",
+					"scope" : "public",
+					"type" : "long",
+					"path" : "speaker.ID"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Session",
+			"className" : "Session",
+			"collectionName" : "SessionCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "hidden",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "isActivity",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "title_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "room",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "room_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "startTime",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : false
+				},
+				{
+					"name" : "startTimeString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "startTimeFullTimeString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "endTime",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : false
+				},
+				{
+					"name" : "endTimeString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "endTimeFullTimeString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "sessionDate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "date",
+					"simpleDate" : false
+				},
+				{
+					"name" : "sessionDateString",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "tags",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "tags_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "description",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "description_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "FavoriteCount",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "SurveyReceived",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "SurveyAverageRate",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "number"
+				},
+				{
+					"name" : "presentations",
+					"kind" : "relatedEntities",
+					"matchColumn" : "presentaors",
+					"scope" : "public",
+					"type" : "PresentationCollection",
+					"reversePath" : true,
+					"path" : "session"
+				},
+				{
+					"name" : "speakers",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "SpeakerCollection",
+					"path" : "presentations.speaker"
+				},
+				{
+					"name" : "evaluations",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalCollection",
+					"reversePath" : true,
+					"path" : "session"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "getLiveSessions",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Session.methods.getLiveSessions",
+					"userDefined" : true
+				},
+				{
+					"name" : "isSessionAlive",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Session.methods.isSessionAlive",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		},
+		{
+			"name" : "Speaker",
+			"className" : "Speaker",
+			"collectionName" : "SpeakerCollection",
+			"scope" : "public",
+			"attributes" : 
+			[
+				{
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
+				},
+				{
+					"name" : "firstName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "lastName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "fullName",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "title",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "title_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "company",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "company_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "biography",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "biography_FR",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "picURL",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "presentations",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "PresentationCollection",
+					"reversePath" : true,
+					"path" : "speaker"
+				},
+				{
+					"name" : "sessions",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "SessionCollection",
+					"path" : "presentations.session"
+				},
+				{
+					"name" : "linkedIn",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "isStaff",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				},
+				{
+					"name" : "conference",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Conference",
+					"path" : "Conference"
+				},
+				{
+					"name" : "evaluations",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "EvalCollection",
+					"reversePath" : true,
+					"path" : "speaker"
+				}
+			],
+			"methods" : 
+			[
+				{
+					"name" : "getAllSpeakers",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Speaker.methods.getAllSpeakers",
+					"userDefined" : true
+				},
+				{
+					"name" : "updateSpeakerImagesFolder",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Speaker.methods.updateSpeakerImagesFolder",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
+				}
+			]
+		}
+	]
+}

@@ -8,6 +8,7 @@ $(document).live('pageinit',function(event){//Force the app to go home after for
 });
 //Global var to hold the eval
 var evalAnswers = {
+		conferenceID:'',
 		fullName:'',
 		email:'',
 		speakerID:'',
@@ -17,6 +18,9 @@ var evalAnswers = {
 	}
 
 var allSessions = [];
+//global var to hold conference
+var conference = {};
+
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
@@ -36,6 +40,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			else if(!elem.isActivity & elem.speakers.length > 0) {
 				speakerName = htmlEncode(elem.speakers[0].fullName);
 			}
+			//debugger;
+			//if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="a" style = "text-align:center"> '+ elem.sessionDateString +' </li>';
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
@@ -85,7 +91,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '</a>';
 			html += '</li>';
 		});
-		
 		var listview = document.getElementById('speakerListView');
 		listview.innerHTML = html;
 		if ($('#speakerListView').hasClass('ui-listview')) {
@@ -100,6 +105,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		ds.Conference.find('name = :1','4D US Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
+			autoExpand:'sessions,speakers,evalQuestions',
+			onSuccess : function(findConferenceEvent) {
+				conference = findConferenceEvent.entity;
+			}
+		});
+		
 		// Set attendee's name and email in cookie for future authentication 
 		var CookieDate = new Date;
 		CookieDate.setFullYear(CookieDate.getFullYear( ) +10);
@@ -110,7 +122,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var endIndex = beginIndex + 32;
 		var cookieID = document.cookie.substring(beginIndex,endIndex);
 		
-//		var sessionSurvey = {};
 		var sessionId = '';
 		var attendee = {};
 		ds.Attendee.find('uniqueID == ' + cookieID ,{
@@ -163,7 +174,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				}
 			});
 
-			ds.Session.find("ID = " + sessionId , {
+			ds.Session.find("ID = :1 & conference.ID = :2" ,sessionId,conference.ID.getValue(), {
 				autoExpand:'presentations',
 				onSuccess: function(findEvent) {
 					//Build Session Detail
@@ -284,16 +295,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$.mobile.changePage($('#page7'), {
 					transition: "slideup"
 			});
-//			ds.Eval.find('session.ID = ' + sessionId, {
-//				onSuccess: function(findSurveyEvent) {
-//					sessionSurvey = findSurveyEvent.entity;
-//					$.mobile.changePage($('#page7'), {
-//						transition: "slideup"
-//					});
-//				},
-//				onError: function(error){
-//				}
-//			});
+		});
+		
+		$("#startSummitSurvey").live( "tap", function(event, ui) {
+			if(attendee) {
+				evalAnswers.email = attendee.email.getValue();
+				evalAnswers.fullName = attendee.fullName.getValue();
+				evalAnswers.sessionID = sessionId;
+				//$('#attendeeInfo').hide();
+				//Fill the Attendee info in the text fields
+				$('#attendeNameInputSummitEval').val(evalAnswers.fullName);
+				$('#attendeEmailInputSummitEval').val(evalAnswers.email);
+			}
+			$.mobile.changePage($('#page6'), {
+					transition: "slideup"
+			});
 		});
 		
 //		$( ".answerInput" ).bind( "change", function(event, ui) {
@@ -392,31 +408,77 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 			
 		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {
+			evalAnswers.evalType = 'summit';
+			evalAnswers.conferenceID = conference.ID.getValue();
 			$(".saveSummitEval").addClass('ui-disabled');
-			var newEval = ds.Answer.newEntity();
-			newEval.answer1.setValue(evalAnswers.answer1);
-			newEval.answer2.setValue(evalAnswers.answer2);
-			newEval.answer3.setValue(evalAnswers.answer3);
-			newEval.answer4.setValue(evalAnswers.answer4);
-			newEval.answer5.setValue(evalAnswers.answer5);
-			newEval.answer6.setValue(evalAnswers.answer6);
-			newEval.answer7.setValue(evalAnswers.answer7);
-			newEval.answer8.setValue(evalAnswers.answer8);
-			newEval.answer9.setValue(evalAnswers.answer9);
-			newEval.answer10.setValue(evalAnswers.answer10);
-			newEval.answer11.setValue(evalAnswers.answer11);
-			newEval.answer12.setValue(evalAnswers.answer12);
-			newEval.answer13.setValue(evalAnswers.answer13);
+//			var newEval = ds.Answer.newEntity();
+//			newEval.answer1.setValue(evalAnswers.answer1);
+//			newEval.answer2.setValue(evalAnswers.answer2);
+//			newEval.answer3.setValue(evalAnswers.answer3);
+//			newEval.answer4.setValue(evalAnswers.answer4);
+//			newEval.answer5.setValue(evalAnswers.answer5);
+//			newEval.answer6.setValue(evalAnswers.answer6);
+//			newEval.answer7.setValue(evalAnswers.answer7);
+//			newEval.answer8.setValue(evalAnswers.answer8);
+//			newEval.answer9.setValue(evalAnswers.answer9);
+//			newEval.answer10.setValue(evalAnswers.answer10);
+//			newEval.answer11.setValue(evalAnswers.answer11);
+//			newEval.answer12.setValue(evalAnswers.answer12);
+//			newEval.answer13.setValue(evalAnswers.answer13);
 			
 					
+//			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
+//			ds.Attendee.find("email = :1", evalAnswers.email,{
+//				 onSuccess: function(findAttendeeEvent){
+//				 	
+//				 	if(findAttendeeEvent.entity) {
+//				 		newEval.attendee.setValue(findAttendeeEvent.entity);
+//						newEval.save({
+//					        onSuccess:function(event)
+//					        {	
+//					        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Saved";
+//					        	$("#startSummitSurvey").addClass('ui-disabled');
+//					        	$.mobile.changePage($('#page1'), {
+//											transition: "slidedown"
+//								});
+//								$(".saveSummitEval").removeClass('ui-disabled');
+//					        }
+//					    });					
+//				 	}
+//				 	else {
+//				 		var newAttendee = ds.Attendee.newEntity();
+//						newAttendee.fullName.setValue(evalAnswers.fullName);
+//						newAttendee.email.setValue(evalAnswers.email);
+//						newAttendee.uniqueID.setValue(cookieID);
+//						newAttendee.save({
+//							onSuccess: function(attendeeEvent){
+//								newEval.attendee.setValue(attendeeEvent.entity);
+//								newEval.save({
+//							        onSuccess:function(event)
+//							        {	
+//							        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Submitted";
+//							        	$("#startSummitSurvey").addClass('ui-disabled');
+//							        	$.mobile.changePage($('#page1'), {
+//											transition: "slidedown"
+//										});  
+//										$(".saveSummitEval").removeClass('ui-disabled');
+//							        }
+//							    });		
+//							},
+//							onError: function(error){
+//							}
+//						});
+//				 	}
+//				 }
+//			});
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
-			ds.Attendee.find("email = :1", evalAnswers.email,{
+				ds.Attendee.find("email = :1", evalAnswers.email,{
 				 onSuccess: function(findAttendeeEvent){
-				 	
 				 	if(findAttendeeEvent.entity) {
-				 		newEval.attendee.setValue(findAttendeeEvent.entity);
-						newEval.save({
-					        onSuccess:function(event)
+				 		evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue();
+						evalAnswers.speakerID = $('#evalSpeakerList')[0].value;
+						ds.Eval.submitEval(evalAnswers,{
+					        onSuccess:function(submitEvalEvent)
 					        {	
 					        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Saved";
 					        	$("#startSummitSurvey").addClass('ui-disabled');
@@ -434,15 +496,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						newAttendee.uniqueID.setValue(cookieID);
 						newAttendee.save({
 							onSuccess: function(attendeeEvent){
-								newEval.attendee.setValue(attendeeEvent.entity);
-								newEval.save({
+								evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue;
+								//evalAnswers.speakerID.setValue($('#evalSpeakerList')[0].value);
+								ds.Eval.submitEval(evalAnswers,{
 							        onSuccess:function(event)
 							        {	
 							        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Submitted";
 							        	$("#startSummitSurvey").addClass('ui-disabled');
 							        	$.mobile.changePage($('#page1'), {
 											transition: "slidedown"
-										});  
+										});
 										$(".saveSummitEval").removeClass('ui-disabled');
 							        }
 							    });		
@@ -482,29 +545,55 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					//var answerNumber = "answer" + question.questionNumber;
 					var answerNumber = question.questionNumber;
 					if (question.questionType == "selection")
+						if(!question.options)
 						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
 					if (question.questionType == "text")
 						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1"  class="answerInput" /></textarea></fieldset>';
 					$('.evalQuestionsContent').append(html);
 				});
 				$('#page7').trigger('create');
-				$( ".answerInput" ).bind( "change", function(event, ui) {
-					evalAnswers[this.name] = this.value;
-				});
 			}
 		});
 		
 		ds.Eval.getEvalQuestions('conference',1,{
 			onSuccess: function(findEvalQuestionEvent) {
 				var questions = findEvalQuestionEvent.result;
-				//debugger;
 				questions.forEach(function(question) {
 					var html = "";
 					//var answerNumber = "answer" + question.questionNumber;
 					var answerNumber = question.questionNumber;
-					if (question.questionType == "selection")
+					if (question.questionType == "selection")//single selection radio button
+						if(!question.options)
 						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
-					if (question.questionType == "text")
+						else {
+							var questionOptions = question.options.split(/\s*,\s*/);
+							html += '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend>';
+							questionOptions.forEach(function(option,optionIndex) {
+								html += '<input value="'+ (optionIndex+1) +'" type="radio" name="'+ answerNumber +'" id="radio'+ (optionIndex+1) +'"  class="answerInput"/><label for="radio'+ (optionIndex+1) +'">'+ option +'</label>';
+							});
+							html += '</fieldset>';
+						}
+					if (question.questionType == "multiple-selection") {// multi selection radio button
+						var questionOptions = question.options.split(/\s*,\s*/);
+						html += '<fieldset data - role = "controlgroup" class = "ui-controlgroup ui-controlgroup-vertical ui-corner-all" >';
+						html += '<div role = "heading" class = "ui-controlgroup-label" > <legend> '+ question.questionText +'</legend></div><div class="ui-controlgroup-controls ">';
+						questionOptions.forEach(function(option,optionIndex) {
+							html += '<div class="ui-checkbox"><label for="checkbox-'+ (optionIndex+1) +'" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">'+ option +'</label><input type="checkbox" answervalue="'+(optionIndex+1)+'" name="'+ answerNumber +'" id="checkbox-'+ (optionIndex+1) +'" class="answerInput" data-mini="true"></div>';
+						});
+						html += ' </div></fieldset>';
+					}
+					
+					if (question.questionType == "dropdown") {//single selection dropdown select
+						var questionOptions = question.options.split(/\s*,\s*/);
+						html += '<div data-role="fieldcontain"><label for="answer'+ answerNumber +'" class="select">'+ question.questionText +'</label>';
+						html += '<select name="'+ answerNumber +'" id="answer'+ answerNumber +'" data-mini="true" class="answerInput">';
+						questionOptions.forEach(function(option,optionIndex) {
+							html += '<option value="'+ (optionIndex+1) +'">'+ option +'</option>';
+						});
+						html += '</select></div>';
+						
+					}
+					if (question.questionType == "text")//text field
 						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
 					$('.summitEvalQuestionsContent').append(html);
 				});
@@ -518,10 +607,26 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //					$('.evalQuestionsContent').append(html);
 //				});
 //				$('#page7').trigger('create');
+				$('.summitEvalQuestionsContent').trigger('create');
+				
 			}
 		});
 	};// @lock
-	
+	$( ".answerInput" ).live( "change", function(event, ui) {
+		//check if answerInput if multi selection
+		if(this.getAttribute('answervalue')){
+			//debugger;
+			if($(this).is(':checked'))
+				evalAnswers[this.name]?evalAnswers[this.name] += this.getAttribute('answervalue')+ " ": evalAnswers[this.name] = this.getAttribute('answervalue')+ " ";
+			else {//if multi selection is unchecked the answer value should be removed from answer string
+				//debugger;
+				var answerIndex = evalAnswers[this.name].indexOf(this.getAttribute('answervalue'));
+				evalAnswers[this.name]= evalAnswers[this.name].slice(0, answerIndex) + evalAnswers[this.name].slice(answerIndex+2);//slice the answer and the space after it
+			}
+		}
+		else
+		evalAnswers[this.name] = this.value;
+	});
 	//Utility: Generates UniqueID for cookie and localstorage
 	function uniqueid(){
 	    // always start with a letter (for DOM friendlyness)

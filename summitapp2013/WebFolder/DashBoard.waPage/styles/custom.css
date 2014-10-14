@@ -5,5 +5,11 @@
 	width: 100%!important;
 }
 #container7 {
-	width: 100%!important;;
+	width: 100%!important;
+}
+.waf-label-combobox {
+	margin-left:-15px!important;
+}
+.waf-label-textfield {
+	margin-left:-15px!important;
 }

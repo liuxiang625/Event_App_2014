@@ -23,8 +23,8 @@
  		<div id="page1" data-role="page">
 			<div data-role="content">
 				<div style="text-align:center;">
-					<a href="http://www.4d.com/company/events/summit2014.html/" target="_blank" style="text-align : center;">
-		                 <img id="4dSummitlogo" style="max-width: 350px; max-height: 120px; " src="/images/summit_logo.png"/>
+					<a href="http://www.4d.com/company/events/summit2014.html/" target="_blank" style="text-align : center;" style="max-width: 90%; max-height: 20%;">
+		                 <img id="4dSummitlogo" style="max-width: 100%; max-height: 100%;" src="/images/summit_logo.png"/>
 		   			</a>  
 					<h1 style="text-align:center; color: rgb(102, 102, 102);">
 	          			Welcome to San Antonio for 4D Summit !
@@ -145,7 +145,7 @@
                 <h3>
                     Session Detail
                 </h3>
-                <a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
+                <a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
                     Back
                 </a>
 				<a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
@@ -299,282 +299,15 @@
             <div data-role="content">
 				<div id="attendeeInfo" data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                        <input placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
+                        <input  id="attendeNameInputSummitEval" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
                         </input>
 						<p></p>
-                        <input placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
+                        <input id="attendeEmailInputSummitEval" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
                         </input>
                     </fieldset>
                 </div>
-				<div data-role="fieldcontain">
-					<label for="answer1" class="select">What are you developing today: (check all that apply to you)</label>
-					<select name="answer1" id="answer1" data-mini="true" class="answerInput" multiple="multiple" data-native-menu="false">
-						<option value="Cloud apps">Cloud apps</option>
-						<option value="Client apps">Client/Sever apps</option>
-						<option value="Web apps">Web apps</option>
-						<option value="Mobile apps">Mobile apps</option>
-					</select>
+				<div class ="summitEvalQuestionsContent">
 				</div>
-				<fieldset data - role = "controlgroup" class = "ui-controlgroup ui-controlgroup-vertical ui-corner-all" > 
-					<div role = "heading" class = "ui-controlgroup-label" > <legend> In the next year what kind of apps do you see yourself developing ( Check all that apply to you)</legend></div>
-					<div class="ui-controlgroup-controls ">
-						
-						<div class="ui-checkbox"><label for="checkbox-1a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">Cloud apps</label><input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" data-mini="true"></div>
-						
-
-						<div class="ui-checkbox"><label for="checkbox-2a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Client/Server apps</label><input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" data-mini="true"></div>
-						
-
-						<div class="ui-checkbox"><label for="checkbox-3a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Web apps</label><input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" data-mini="true"></div>
-						
-
-						<div class="ui-checkbox"><label for="checkbox-4a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">Mobile apps</label><input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" data-mini="true"></div>
-						
-				    </div>
-				</fieldset>
-				<div data-role="fieldcontain">
-					<label for="answer3" class="select">How long have you been developing with 4D?</label>
-					<select name="answer3" id="answer3" data-mini="true" class="answerInput">
-						<option value=""></option>
-						<option value="0-12 months">0-12 months</option>
-						<option value="1-5 years">1-5 years</option>
-						<option value="5-10 years">5-10 years</option>
-						<option value="10+ years">10+ years</option>
-					</select>
-				</div>
-                <div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Overall value of sessions:
-                        </legend>
-                        <input value="4" type="radio" name="answer4" id="radio1"  class="answerInput"/>
-                        <label for="radio1">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer4" id="radio2" class="answerInput"/>
-                        <label for="radio2">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer4" id="radio3" class="answerInput"/>
-                        <label for="radio3">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer4" id="radio4" class="answerInput"/>
-                        <label for="radio4">
-                            Poor
-                        </label>
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Overall value of Keynote:
-                        </legend>
-                        <input value="4" type="radio" name="answer5" id="radio5"  class="answerInput" />
-                        <label for="radio5">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer5" id="radio6" class="answerInput" />
-                        <label for="radio6">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer5" id="radio7" class="answerInput" //>
-                        <label for="radio7">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer5" id="radio8" class="answerInput" //>
-                        <label for="radio8">
-                            Poor
-                        </label>
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Overall 4D Summit Value:
-                        </legend>
-                        <input value="4" type="radio" name="answer6" id="radio9"  class="answerInput" //>
-                        <label for="radio9">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer6" id="radio10" class="answerInput" //>
-                        <label for="radio10">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer6" id="radio11" class="answerInput" //>
-                        <label for="radio11">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer6" id="radio12" class="answerInput" //>
-                        <label for="radio12">
-                            Poor
-                        </label>
-                    </fieldset>
-                </div>
-				<div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Quality of food:
-                        </legend>
-                        <input value="4" type="radio" name="answer7" id="radio13"  class="answerInput" //>
-                        <label for="radio13">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer7" id="radio14" class="answerInput" //>
-                        <label for="radio14">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer7" id="radio15" class="answerInput" //>
-                        <label for="radio15">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer7" id="radio16" class="answerInput" //>
-                        <label for="radio16">
-                            Poor
-                        </label>
-						<input value="0" type="radio" name="answer7" id="radio17" class="answerInput" //>
-                        <label for="radio17">
-                            N/A
-                        </label>
-                    </fieldset>
-                </div>
-      		   <div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Quality of the party:
-                        </legend>
-                        <input value="4" type="radio" name="answer8" id="radio18"  class="answerInput" //>
-                        <label for="radio18">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer8" id="radio19" class="answerInput" //>
-                        <label for="radio19">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer8" id="radio20" class="answerInput" //>
-                        <label for="radio20">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer8" id="radio21" class="answerInput" //>
-                        <label for="radio21">
-                            Poor
-                        </label>
-						<input value="0" type="radio" name="answer8" id="radio22" class="answerInput" //>
-                        <label for="radio22">
-                            N/A
-                        </label>
-                    </fieldset>
-                </div>
-
-
-<div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Logistics and Quality of welcome:
-                        </legend>
-                        <input value="4" type="radio" name="answer9" id="radio23"  class="answerInput" //>
-                        <label for="radio23">
-                            Excellent
-                        </label>
-                        <input value="3" type="radio" name="answer9" id="radio24" class="answerInput" //>
-                        <label for="radio24">
-                            Good
-                        </label>
-                        <input value="2" type="radio" name="answer9" id="radio25" class="answerInput" //>
-                        <label for="radio25">
-                            Fair
-                        </label>
-                        <input value="1" type="radio" name="answer9" id="radio26" class="answerInput" //>
-                        <label for="radio26">
-                            Poor
-                        </label>
-						<input value="0" type="radio" name="answer9" id="radio27" class="answerInput" //>
-                        <label for="radio27">
-                            N/A
-                        </label>
-                    </fieldset>
-                </div>
-				<div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>What was your primary reason for attending the 4D Summit? Item in the left has the most influence and item in the right has the least .</legend>
-						<select name="answer10" id="answer10-1" data-mini="true" class="rankingSelect">
-							<option data-placeholder="true">Most</option>
-							<option value="Learn about new products">Learn about new products</option>
-							<option value="Learn about best practices">Learn about best practices</option>
-							<option value="Networking">Networking</option>
-							<option value="Learn about company vision">Learn about company vision</option>
-							<option value="Visit Paris or France">Visit Paris or France</option>
-						</select>
-						<select name="answer10" id="answer10-2" data-mini="true" class="rankingSelect">
-							<option data-placeholder="true"></option>
-							<option value="Learn about new products">Learn about new products</option>
-							<option value="Learn about best practices">Learn about best practices</option>
-							<option value="Networking">Networking</option>
-							<option value="Learn about company vision">Learn about company vision</option>
-							<option value="Visit Paris or France">Visit Paris or France</option>
-						</select>
-						<select name="answer10" id="answer10-3" data-mini="true" class="rankingSelect">
-							<option data-placeholder="true"></option>
-							<option value="Learn about new products">Learn about new products</option>
-							<option value="Learn about best practices">Learn about best practices</option>
-							<option value="Networking">Networking</option>
-							<option value="Learn about company vision">Learn about company vision</option>
-							<option value="Visit Paris or France">Visit Paris or France</option>
-						</select>
-						<select name="answer10" id="answer10-4" data-mini="true" class="rankingSelect">
-							<option data-placeholder="true"></option>
-							<option value="Learn about new products">Learn about new products</option>
-							<option value="Learn about best practices">Learn about best practices</option>
-							<option value="Networking">Networking</option>
-							<option value="Learn about company vision">Learn about company vision</option>
-							<option value="Visit Paris or France">Visit Paris or France</option>
-						</select>
-						<select name="answer10" id="answer10-5" data-mini="true" class="rankingSelect">
-							<option data-placeholder="true">Least</option>
-							<option value="Learn about new products">Learn about new products</option>
-							<option value="Learn about best practices">Learn about best practices</option>
-							<option value="Networking">Networking</option>
-							<option value="Learn about company vision">Learn about company vision</option>
-							<option value="Visit Paris or France">Visit Paris or France</option>
-						</select>
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                      
-					<label for="answer11" class="select">Where did you stay during the Summit?</label>
-					<select name="answer11" id="answer11" data-mini="true" class="answerInput">                        
-						<option value=""></option>
-						<option value="At Home">At Home</option>
-						<option value="At a friend's place">At a friend's place</option>
-						<option value="At a hotel among the ones 4D recommended">At a hotel among the ones 4D recommended</option>
-						<option value="At another hotel">At another hotel</option>
-						<option value="Other">Other</option>
-					</select>
-                  </div>
-         			<div data-role="fieldcontain">
-                    <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
-                        <legend>
-                            Are you planning on attending the 2014 4D Summit in Europe.
-                        </legend>
-                        <input value="1" type="radio" name="answer12" id="radio45" class="answerInput" //>
-                        <label for="radio45">
-                            Yes
-                        </label>
-                        <input value="0" type="radio" name="answer12" id="radio46" class="answerInput" //>
-                        <label for="radio46">
-                            No
-                        </label>
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textarea1">
-                            Do you have any comments or suggestions to help improve 4D Summit?
-                        </label>
-                        <textarea placeholder="" name="answer13" id="textarea1" data-mini="true" class="answerInput" />
-                        </textarea>
-                    </fieldset>
-                </div>
 				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveSummitEval">
                     Save and Submit
                 </a>

@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var speakerEvent = {};	// @dataSource
 	var button24 = {};	// @button
 	var button23 = {};	// @button
 	var button22 = {};	// @button
@@ -31,6 +32,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	speakerEvent.onpicURLAttributeChange = function speakerEvent_onpicURLAttributeChange (event)// @startlock
+	{// @endlock
+		//Load speaker image when pic url is changed;
+		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
+	};// @lock
 
 	button24.click = function button24_click (event)// @startlock
 	{// @endlock
@@ -247,6 +254,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("speaker", "onpicURLAttributeChange", speakerEvent.onpicURLAttributeChange, "WAF", "picURL");
 	WAF.addListener("button24", "click", button24.click, "WAF");
 	WAF.addListener("button23", "click", button23.click, "WAF");
 	WAF.addListener("button22", "click", button22.click, "WAF");
