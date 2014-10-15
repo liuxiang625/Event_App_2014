@@ -1,14 +1,17 @@
 ﻿<!DOCTYPE html><html>
     <head>
         <title>4D Summit</title>
-		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="summit_logo.png">
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<link rel="icon" sizes="192x192" href="4D-Android-icon-all.png"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="generator" content="Wakanda GUIDesigner"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <meta name="WAF.catalog" content="*"/>
     	<meta name="wakanda-version" content="9 build 9.170192"/>
 		<meta name="wakanda-build" content="9.170192"/>
-		<meta name="viewport" content=" width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = true"/>		
+		<meta name="viewport" content=" width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0"/>		
 		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/index-smartphone.css"/>
 		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
 		<meta name="WAF.config.loadCSS" content="/styles/my.css"/>
@@ -58,14 +61,15 @@
 	                    		<img id="goldSponsor1" style="width: 100px; height: 48px; " src="/images/Sponsor_hm.png"/>
 	   						</a>          
 	            </div>
+				<div style="text-align : center; margin-bottom:10px" >
+					<a href="http://www.synectique.eu/fr/" target="_blank" style="text-align:center;" >
+		            	<img id="silverSponsor1" style="width:150px; height: 39px;" src="/images/Sponsor_synectique.png"/>
+		      		</a>  
+				</div>
 				<h3 style="color: rgb(153, 153, 153);text-align:center;" >
 	                    <i>Silver Sponsors:</i>
 	            </h3>
-				<div style="text-align : center; margin-bottom:10px" >
-					<a href="http://www.synectique.eu/fr/" target="_blank" style="text-align:center;" >
-		            	<img id="silverSponsor1" style="width:150px; height: 39px;" src="/images/Sponsor_Synectique.jpg"/>
-		      		</a>  
-				</div>
+
 				<div style="text-align : center;; margin-bottom:10px" >
 					<a href="http://objectivesystems.com/" target="_blank" style="text-align:center;" >
 		            	<img id="silverSponsor2" style="width:150px; height: 24.5px;" src="/images/Sponsor_objective_systems.png"/>
@@ -96,25 +100,17 @@
                     Home
                 </a>
             </div>
-
-<!--				<form id="showAllSessionsContainer" >-->
-<!--						<label>-->
-<!--							<input type="checkbox" name="showAllSessions" data-mini="true" > Show All Sessions-->
-<!--						</label>-->
-<!--				</form>-->
-
-                <ul style="margin:0px" id="sessionListview" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="Search session or speaker" data-divider-theme="b">
-                </ul>
-				<div data-role="footer" data-position="fixed">		
-					<div data-role="navbar">
-						<ul>
-							<li><a id="liveSessions" href="#page2" class="SessionListTabButton ui-btn-active" data-transition="none">What's next</a></li>
-							<li><a id="allSessions" href="#page2" class="SessionListTabButton"  data-transition="none">All Sessions</a></li>
-							<li><a id="speakersList" href="#" class="SessionListTabButton"  data-transition="none">People</a></li>
-						</ul>
-					</div><!-- /navbar -->
-				</div><!-- /footer -->
-            </div>
+            <ul style="margin:0px" id="sessionListview" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="Search session or speaker" data-divider-theme="b">
+            </ul>
+			<div data-role="footer" data-position="fixed">		
+				<div data-role="navbar">
+					<ul>
+						<li><a id="liveSessions" href="#page2" class="SessionListTabButton ui-btn-active" data-transition="none">What's next</a></li>
+						<li><a id="allSessions" href="#page2" class="SessionListTabButton"  data-transition="none">All Sessions</a></li>
+						<li><a id="speakersList" href="#" class="SessionListTabButton"  data-transition="none">People</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
         </div>
 <!--		All Speakers and Staff List-->
 		<div id="page3" data-role="page">
@@ -252,7 +248,7 @@
                 <h3>
                     Evaluation
                 </h3>
-                <a href="#page4" data-transition="slidedown" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a id="calcelSessionSurvey" href="#page4" data-transition="slidedown" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
                     Cancel
                 </a>
 				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveEval">
@@ -289,7 +285,7 @@
                 <h3>
                     Evaluation
                 </h3>
-                <a href="#page4" data-transition="slidedown" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a id="cancelSummitSurvey" href="#" data-theme="c" data-role="button"  data-iconpos="left" data-icon="arrow-l"  class="ui-btn-left">
                     Cancel
                 </a>
 				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveSummitEval">

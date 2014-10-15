@@ -20,6 +20,8 @@ var evalAnswers = {
 var allSessions = [];
 //global var to hold conference
 var conference = {};
+var preClassItemHTML = "";
+var postClassItemHTML = "";
 
 WAF.onAfterInit = function onAfterInit() {// @lock
 
@@ -32,6 +34,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildListItem(html, sessionArray){
 		sessionArray.forEach(function(elem) {
 			var speakerName = "";
+			var listItemHTML = "";
 			if(!elem.isActivity & elem.speakers.length > 1){
 				for(var session in elem.speakers) {
 					speakerName +=  elem.speakers[session].fullName + ", ";
@@ -40,15 +43,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			else if(!elem.isActivity & elem.speakers.length > 0) {
 				speakerName = htmlEncode(elem.speakers[0].fullName);
 			}
-			//debugger;
-			//if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="a" style = "text-align:center"> '+ elem.sessionDateString +' </li>';
-			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
-			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
-			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
-			html += elem.isActivity ? '' : '</a>';
-			html += '</li>';
+			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="e" style = "text-align:center;padding:8px!important"> '+ elem.sessionDateString +' </li>';
+			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+			listItemHTML += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
+			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
+			listItemHTML += elem.isActivity ? '' : '</a>';
+			listItemHTML += '</li>';
+
+			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML;
+			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML;
+			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/27/2014") listItemHTML += preClassItemHTML;
+			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/30/2014") listItemHTML += postClassItemHTML;
+			html += listItemHTML;
 		});
 		
 		return html
@@ -103,6 +111,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				return false;
 	});
 	
+	$('#cancelSummitSurvey').live('tap', function(e) {//go to previous page in history
+			if(isJQMGhostClick(e))
+				return
+			$.mobile.changePage($('#page1'), {
+					transition: "slidedown"
+			});
+	});
+	
+	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		ds.Conference.find('name = :1','4D US Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
@@ -133,31 +150,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "tap", function() {
 			sessionId = this.id;
-//			if(attendee) {//Check if attendee has already submitted a eval in this session
-//				ds.Eval.query('sessionID == :1 & attendeeEmail = :2', sessionId, attendee.email.getValue(), {
-//					///autoExpand:'attendee',
-//					onSuccess: function(findEvalEvent) {
-//						debugger;
-//						if(findEvalEvent.result.length > 0);
-////						findEvalEvent.entityCollection.toArray('attendeeEmail,speakerName', {
-////							onSuccess: function(findAttendeeeAnswerEvent) {
-////								var answersArr = findAttendeeeAnswerEvent.result;
-////								if($('#startEvalButton span span')[0])$('#startEvalButton span span')[0].innerHTML = "Evaluate this Session";//Button text may not be wrapped with span 
-////								$("#startEvalButton").removeClass('ui-disabled');
-////								answersArr.forEach(function(elem) { 
-////								if (elem.attendeeEmail == attendee.email.getValue()){
-////									$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
-////									$("#startEvalButton").addClass('ui-disabled');
-////								}
-////								});
-////							}
-////						});
-//					},
-//					onError: function(error) {
-//						console.log(error.error[0]);
-//					}
-//				});
-//			}
+
 			//Disable Eval button when session is not started
 			ds.Session.isSessionAlive ({
 				onSuccess: function(checkSessionAliveEvent) {
@@ -232,6 +225,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 							
 					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
+					if ($('#sessionSpeakersList').hasClass('ui-listview'))
 					$('#sessionSpeakersList').listview('refresh');
 				}
 			});
@@ -311,13 +305,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					transition: "slideup"
 			});
 		});
-		
-//		$( ".answerInput" ).bind( "change", function(event, ui) {
-//			evalAnswers[this.name] = this.value;
-//		});
-//		$("input[type='radio']").bind( "change", function(event, ui) {
-//		  	debugger;
-//		});
 		
 		
 		$( ".rankingSelect" ).bind( "change", function(event, ui) {
@@ -411,66 +398,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			evalAnswers.evalType = 'summit';
 			evalAnswers.conferenceID = conference.ID.getValue();
 			$(".saveSummitEval").addClass('ui-disabled');
-//			var newEval = ds.Answer.newEntity();
-//			newEval.answer1.setValue(evalAnswers.answer1);
-//			newEval.answer2.setValue(evalAnswers.answer2);
-//			newEval.answer3.setValue(evalAnswers.answer3);
-//			newEval.answer4.setValue(evalAnswers.answer4);
-//			newEval.answer5.setValue(evalAnswers.answer5);
-//			newEval.answer6.setValue(evalAnswers.answer6);
-//			newEval.answer7.setValue(evalAnswers.answer7);
-//			newEval.answer8.setValue(evalAnswers.answer8);
-//			newEval.answer9.setValue(evalAnswers.answer9);
-//			newEval.answer10.setValue(evalAnswers.answer10);
-//			newEval.answer11.setValue(evalAnswers.answer11);
-//			newEval.answer12.setValue(evalAnswers.answer12);
-//			newEval.answer13.setValue(evalAnswers.answer13);
 			
-					
-//			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
-//			ds.Attendee.find("email = :1", evalAnswers.email,{
-//				 onSuccess: function(findAttendeeEvent){
-//				 	
-//				 	if(findAttendeeEvent.entity) {
-//				 		newEval.attendee.setValue(findAttendeeEvent.entity);
-//						newEval.save({
-//					        onSuccess:function(event)
-//					        {	
-//					        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Saved";
-//					        	$("#startSummitSurvey").addClass('ui-disabled');
-//					        	$.mobile.changePage($('#page1'), {
-//											transition: "slidedown"
-//								});
-//								$(".saveSummitEval").removeClass('ui-disabled');
-//					        }
-//					    });					
-//				 	}
-//				 	else {
-//				 		var newAttendee = ds.Attendee.newEntity();
-//						newAttendee.fullName.setValue(evalAnswers.fullName);
-//						newAttendee.email.setValue(evalAnswers.email);
-//						newAttendee.uniqueID.setValue(cookieID);
-//						newAttendee.save({
-//							onSuccess: function(attendeeEvent){
-//								newEval.attendee.setValue(attendeeEvent.entity);
-//								newEval.save({
-//							        onSuccess:function(event)
-//							        {	
-//							        	$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Submitted";
-//							        	$("#startSummitSurvey").addClass('ui-disabled');
-//							        	$.mobile.changePage($('#page1'), {
-//											transition: "slidedown"
-//										});  
-//										$(".saveSummitEval").removeClass('ui-disabled');
-//							        }
-//							    });		
-//							},
-//							onError: function(error){
-//							}
-//						});
-//				 	}
-//				 }
-//			});
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
 				ds.Attendee.find("email = :1", evalAnswers.email,{
 				 onSuccess: function(findAttendeeEvent){
@@ -597,16 +525,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
 					$('.summitEvalQuestionsContent').append(html);
 				});
-//				questions.forEach(function(question) {
-//					var html = "";
-//					var answerNumber = "answer" + question.questionNumber;
-//					if (question.questionType == "selection")
-//						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
-//					if (question.questionType == "text")
-//						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
-//					$('.evalQuestionsContent').append(html);
-//				});
-//				$('#page7').trigger('create');
+
 				$('.summitEvalQuestionsContent').trigger('create');
 				
 			}
@@ -648,6 +567,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	    return re.test(email);
 	} 
+	
+	//Utility: check if click event firing twice on same position.
+	  var lastclickpoint, curclickpoint;
+	  var isJQMGhostClick = function(event){
+	      curclickpoint = event.clientX+'x'+event.clientY;
+	      if (lastclickpoint === curclickpoint) {
+	        lastclickpoint = '';
+	        return true;
+	      } else {
+	        //alert(lastclickpoint);
+	        lastclickpoint = curclickpoint;
+	        return false;
+	      }
+	  }
 // @region eventManager// @startlock
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 // @endregion

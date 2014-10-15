@@ -4,26 +4,26 @@
 */
 
 #button20 {
+	 z-index: 5;
 	 width: 120px;
 	 height: 40px;
 	 bottom: 21px;
-	 right: 49px;
+	 right: 329px;
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 5;
 	 
 }
 
 #button19 {
+	 z-index: 4;
 	 width: 120px;
 	 height: 40px;
 	 bottom: 21px;
-	 right: 203px;
+	 right: 483px;
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 4;
 	 
 }
 
@@ -32,7 +32,7 @@
 	 width: 120px;
 	 height: 40px;
 	 bottom: 19px;
-	 right: 324px;
+	 right: 46px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -43,8 +43,8 @@
 	 z-index: 4;
 	 width: 120px;
 	 height: 40px;
-	 bottom: 18px;
-	 right: 488px;
+	 bottom: 19px;
+	 right: 207px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -574,7 +574,7 @@
 
 #container10 {
 	 z-index: 9;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -956,7 +956,7 @@
 
 #container8 {
 	 z-index: 8;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -992,7 +992,7 @@
 	 width: 120px;
 	 height: 40px;
 	 bottom: 20px;
-	 right: 28px;
+	 right: 56px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -1004,7 +1004,7 @@
 	 width: 120px;
 	 height: 40px;
 	 bottom: 20px;
-	 right: 174px;
+	 right: 202px;
 	
 	 position: absolute;
 	 font-size: 16px;
@@ -1166,7 +1166,7 @@
 
 #container2 {
 	 z-index: 7;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1639,7 +1639,7 @@
 
 #container6 {
 	 z-index: 6;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1672,7 +1672,7 @@
 
 #container5 {
 	 z-index: 5;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1705,7 +1705,7 @@
 
 #container4 {
 	 z-index: 4;
-	 width: 1027px;
+	 width: 1026px;
 	 top: 28px;
 	 bottom: 5px;
 	 left: 5px;
@@ -1751,7 +1751,7 @@
 	 height: 23px;
 	 top: 5px;
 	 left: 5px;
-	 right: 890px;
+	 right: 610px;
 	
 	 position: absolute;
 	 
