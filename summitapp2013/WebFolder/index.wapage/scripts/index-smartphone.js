@@ -43,8 +43,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			else if(!elem.isActivity & elem.speakers.length > 0) {
 				speakerName = htmlEncode(elem.speakers[0].fullName);
 			}
-			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="e" style = "text-align:center;padding:8px!important"> '+ elem.sessionDateString +' </li>';
-			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="b" style = "text-align:center;padding:0px!important"> '+ elem.sessionDateString +' </li>';
+			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D")
+			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style="background-color: #d7fcff">';
+			else
+			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
 			listItemHTML += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
 			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
@@ -513,8 +516,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					
 					if (question.questionType == "dropdown") {//single selection dropdown select
 						var questionOptions = question.options.split(/\s*,\s*/);
-						html += '<div data-role="fieldcontain"><label for="answer'+ answerNumber +'" class="select">'+ question.questionText +'</label>';
+						html += '<div data-role="fieldcontain"><label for="answer'+ answerNumber +'" class="select" style="width:100%">'+ question.questionText +'</label>';
 						html += '<select name="'+ answerNumber +'" id="answer'+ answerNumber +'" data-mini="true" class="answerInput">';
+						html += '<option value="0"></option>';
 						questionOptions.forEach(function(option,optionIndex) {
 							html += '<option value="'+ (optionIndex+1) +'">'+ option +'</option>';
 						});

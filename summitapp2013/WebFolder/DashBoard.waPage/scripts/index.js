@@ -66,12 +66,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		var deleteOK = confirm('Are you sure to delete: ' + sources.speaker.fullName);
 		if(deleteOK)sources.session.removeCurrent();
+		sources.session.save();
+		sources.session.all();
 	};// @lock
 
 	button7.click = function button7_click (event)// @startlock
 	{// @endlock
 		var deleteOK = confirm('Are you sure to delete: ' + sources.session.title);
 		if(deleteOK)sources.session.removeCurrent();
+		sources.session.save();
+		sources.session.all();
 	};// @lock
 
 	button6.click = function button6_click (event)// @startlock
