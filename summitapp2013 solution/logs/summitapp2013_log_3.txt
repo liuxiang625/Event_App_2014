@@ -7147,3 +7147,11 @@
 2014-10-17 16:13:10 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/addtohomescreen.css no change on TS : 2014-09-27T09:34:02.000Z"]}
 2014-10-17 16:15:19 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
 2014-10-17 16:15:19 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-17 16:57:53 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-17 16:57:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-17 16:57:55 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-17 16:57:55 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-17 16:57:55 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-17 16:57:56 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-17 16:57:56 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-17 16:57:56 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
