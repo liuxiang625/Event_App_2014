@@ -7,4 +7,5 @@
 	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
 	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
 	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
-</permissions>
+
+<allow action="upload" groupName="admin"  groupID="01000000000000000000000000000000" resource="upload"  temporaryForcePermissions="false" type="service"/></permissions>

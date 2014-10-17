@@ -36,7 +36,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	speakerEvent.onpicURLAttributeChange = function speakerEvent_onpicURLAttributeChange (event)// @startlock
 	{// @endlock
 		//Load speaker image when pic url is changed;
-		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
+		$('#image1 img')[0].src = window.location.origin +"/images/speakerimages/" + source.speaker.picURL;
 	};// @lock
 
 	button24.click = function button24_click (event)// @startlock
@@ -89,6 +89,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		sources.presentation.session.set(sources.breakoutSessions);
 		sources.presentation.speaker.set(sources.speakersOnly);
 		sources.presentation.save();
+		sources.presentation.all()
 	};// @lock
 
 	dataGrid8.onRowClick = function dataGrid8_onRowClick (event)// @startlock
@@ -136,7 +137,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	        onSuccess: function(updateImagesFolderevent) {
 	        	if(updateImagesFolderevent.result) {
 	          		sources.speaker.picURL = fileName;
-	          		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
+	          		$('#image1 img')[0].src = window.location.origin + "/images/speakerimages/" + source.speaker.picURL;
 	          	}
 	        }
     	});
@@ -163,9 +164,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		//Save Speaker Detail
 		sources.speaker.fullName = sources.speaker.firstName + " " + sources.speaker.lastName;
+		sources.speaker.conference.set(sources.conference);
 		sources.speaker.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(3);
+	           sources.speaker.all();
 	        }
     	});
 	};// @lock
@@ -173,7 +176,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	dataGrid3.onRowDblClick = function dataGrid3_onRowDblClick (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(4);
-		$('#image1 img')[0].src = "http://127.0.0.1:8081/images/speakerimages/" + source.speaker.picURL;
+		$('#image1 img')[0].src = window.location.origin +"/images/speakerimages/" + source.speaker.picURL;
 	};// @lock
 
 	button10.click = function button10_click (event)// @startlock

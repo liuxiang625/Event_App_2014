@@ -44,13 +44,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				speakerName = htmlEncode(elem.speakers[0].fullName);
 			}
 			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="b" style = "text-align:center;padding:0px!important"> '+ elem.sessionDateString +' </li>';
-			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D")
+			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D")//Apply special Welcome Reception color for 4D party
 			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style="background-color: #d7fcff">';
 			else
-			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
+			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity & elem.title != "Q & A" ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
 			listItemHTML += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
 			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
+			//Add a reminder for 4D Party
+			if(elem.title == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Busses leave at 6:00pm" + ' </p>';
 			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			listItemHTML += elem.isActivity ? '' : '</a>';
 			listItemHTML += '</li>';
@@ -94,7 +96,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var html = "";
 		if (speakersObj.speakersArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Speakers</li>';
 		speakersObj.speakersArray.forEach(function(elem) {
-			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSpeakerProfile" ' + '>';
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSpeakerProfile">';
+			html += '<a href="#page5" data-transition="slide" >';
+			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerimages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
+			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  +', '+ htmlEncode(elem.company) + '</p>';
+			html += '</a>';
+			html += '</li>';
+		});
+		if (speakersObj.staffArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Summit Staff</li>';
+		speakersObj.staffArray.forEach(function(elem) {
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSpeakerProfile">';
 			html += '<a href="#page5" data-transition="slide" >';
 			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerimages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';

@@ -1,27 +1,70 @@
-/*goToSessions button text & color*/
-/*#goToSessions {*/
-/*	background:#17357d;*/
-/*	color:#fff;*/
-/*}*/
+/*Backgroud color for detail and survery page*/
+/*Session Detail page*/
+#page4.ui-body-c {
+	background-image: linear-gradient(#c6def7,#c6def7);
+}
+#page4.ui-body-c * {
+	text-shadow:none;
+}
+/*Speaker Detail page*/
+#page5.ui-body-c {
+	background-image: linear-gradient(#c6def7,#c6def7);
+}
+#page5.ui-body-c * {
+	text-shadow:none;
+}
+/*Survey page*/
+#page6.ui-body-c {
+	background-image: linear-gradient(#c6def7,#c6def7);
+}
+#page6.ui-body-c * {
+	text-shadow:none;
+}
+/*Session Survey page*/
+#page7.ui-body-c {
+	background-image: linear-gradient(#c6def7,#c6def7);
+}
+#page7.ui-body-c * {
+	text-shadow:none;
+}
 
-/*#goToSessions .ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c {*/
-/*  color: white;*/
-/*  font-weight: bold;*/
-/*  text-decoration: none; */
-/*}*/
+/*Speaker list Item text & color*/
+.loadSpeakerProfile {
+	background:#eeeaea;
+}
+.loadSpeakerProfile.ui-btn-down-c {
+	background: #f6f2f2!important;
+}
+.loadSpeakerProfile.ui-btn-hover-c {
+	background: #e5e1e1;
+}
 
+/*Session list Item text & color*/
+.loadSessionDetail.ui-btn-down-c {
+	background:#d6ecff!important;
+}
+.loadSessionDetail.ui-btn-hover-c {
+	background: #b1d0f4;
+}
 /*goToSessions button text & color*/
 #goToSessions {
 	margin-left:auto; margin-right:auto;
 	max-width:414px;
 	border: 1px solid #711414;
 	color: white;
-	background: #17357d;
+	background: #1d4990;
 	text-shadow: 0 -1px 1px #711414;
 	/*  background-image: -moz-linear-gradient(top, #c44f4f, #ab2525);*/
 	/*  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c45e5e), color-stop(1, #9e3939));*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c44f4f', EndColorStr='#ab2525')"; 
 }
+#goToSessions.ui-btn-down-c {
+	background: #5291d5!important;
+}
+#startSummitSurvey.ui-btn-down-c {
+	background: #5291d5!important;
+}
+
 
 /*startSummitSurvey button text & color*/
 #startSummitSurvey{
@@ -29,7 +72,7 @@
 	max-width:414px;
 	border: 1px solid #711414;
 	color: white;
-	background: #17357d;
+	background: #1d4990;
 	text-shadow: 0 -1px 1px #711414;
 	/*  background-image: -moz-linear-gradient(top, #c44f4f, #ab2525);*/
 	/*  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c45e5e), color-stop(1, #9e3939));*/
@@ -41,9 +84,12 @@
 	padding:15px!important;
 }
 
-/*fix listview divider size issue in Wak 9*/
+/*fix listview divider size issue in Wak 9, change background color to match summit theme*/
 .ui-li-divider{
 	padding:15px!important;
+	background: #17357d;
+	color: #fff;
+	text-shadow: 0 -1px 1px #711414;
 }
 
 /* linkedin image for speaker page button*/
