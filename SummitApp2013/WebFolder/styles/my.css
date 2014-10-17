@@ -1,5 +1,8 @@
 /*Backgroud color for detail and survery page*/
-.ui-body-c {
+#page4.ui-body-c {
+	bottom:0px;
+}
+#page5.ui-body-c {
 	bottom:0px;
 }
 

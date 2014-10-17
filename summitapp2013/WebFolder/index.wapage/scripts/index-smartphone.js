@@ -146,6 +146,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		// Set attendee's name and email in cookie for future authentication 
 		var CookieDate = new Date;
+		var summitDate = new Date("10/27/2014");
+		
+//		if (CookieDate < summitDate) {
+//			$('#startSummitSurvey').hide();
+//			$('#startSummitSurveyText').hide();
+//		}
 		CookieDate.setFullYear(CookieDate.getFullYear( ) +10);
 		if(document.cookie.indexOf("SummitAPPID") == -1) {
 			document.cookie = 'SummitAPPID = ' + uniqueid() + ';expires=' + CookieDate.toGMTString() + ';';
@@ -251,7 +257,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								});
 								else {// No attendee found, firt time user
 						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-						       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+						       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 								}
 						}
 				    });
@@ -558,6 +564,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					}
 					if (question.questionType == "text")//text field
 						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
+					html += '<div id="seperator" style="border-bottom: 1px gray solid;margin-bottom:5px;"></div>';
 					$('.summitEvalQuestionsContent').append(html);
 				});
 

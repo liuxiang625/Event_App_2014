@@ -69,7 +69,7 @@
 				<a id="startSummitSurvey" href="#page6" data-transition="slideup" data-role="button" data-iconpos="noicon" data-icon="">
                     Take Survey About Summit
                 </a> 
-				<h5 style="text-align:center;">
+				<h5 id="startSummitSurveyText" style="text-align:center;">
 	                   Please take a brief survey about Summit and help us improve your summit exprience every year.
 	            </h5>
 				<h3 style="color: e5e4e2);text-align:center;" >
@@ -96,8 +96,8 @@
 		            	<img id="silverSponsor1" style="width:150px; height: 39px;" src="/images/Sponsor_synectique.png"/>
 		      		</a>  
 				</div>
-				<h3 style="color: rgb(153, 153, 153);text-align:center;" >
-	                    <i>Silver Sponsors:</i>
+				<h3 style="color: rgb(205, 127, 50);text-align:center;" >
+	                    <i>Bronze Sponsors:</i>
 	            </h3>
 
 				<div style="text-align : center;; margin-bottom:10px" >
@@ -107,7 +107,7 @@
 				</div>
 				<div style="text-align : center;; margin-bottom:10px">
 					<a href="http://www.bluecompany.fr/" target="_blank" style="text-align:center;">
-		            	<img id="silverSponsor3"  style="width:150px; height: 24.5px;" src="/images/Sponsor_blue.png"/>
+		            	<img id="silverSponsor3"  style="width:150px; height: 18px;" src="/images/Sponsor_blue.png"/>
 		      		</a>  
 				</div> 
 				
@@ -286,11 +286,13 @@
                 </a>
             </div>
             <div data-role="content">
+				<div class ="evalQuestionsContent">
+				</div>
 				<div id="attendeeInfo" data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <input id="attendeNameInput" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
                         </input>
-						<p></p>
+						<br/>
                         <input id="attendeEmailInput" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
                         </input>
                     </fieldset>
@@ -301,9 +303,6 @@
 						<option value="JPR">JPR</option>
 					</select>
 				</div>
-				<div class ="evalQuestionsContent">
-				</div>
-
 				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveEval">
                     Save and Submit
                 </a>
@@ -323,17 +322,17 @@
                 </a>
             </div>
             <div data-role="content">
+				<div class ="summitEvalQuestionsContent">
+				</div>
 				<div id="attendeeInfo" data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <input  id="attendeNameInputSummitEval" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
                         </input>
-						<p></p>
+						<br/>
                         <input id="attendeEmailInputSummitEval" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
                         </input>
                     </fieldset>
                 </div>
-				<div class ="summitEvalQuestionsContent">
-				</div>
 				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveSummitEval">
                     Save and Submit
                 </a>
