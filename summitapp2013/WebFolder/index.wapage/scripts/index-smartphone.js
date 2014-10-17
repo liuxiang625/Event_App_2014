@@ -152,10 +152,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var CookieDate = new Date;
 		var summitDate = new Date("10/27/2014");
 		
-//		if (CookieDate < summitDate) {
-//			$('#startSummitSurvey').hide();
-//			$('#startSummitSurveyText').hide();
-//		}
+		if (CookieDate < summitDate) {
+			$('#startSummitSurvey').hide();
+			$('#startSummitSurveyText').hide();
+		}
 		CookieDate.setFullYear(CookieDate.getFullYear( ) +10);
 		if(document.cookie.indexOf("SummitAPPID") == -1) {
 			document.cookie = 'SummitAPPID = ' + uniqueid() + ';expires=' + CookieDate.toGMTString() + ';';
@@ -322,7 +322,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
 				evalAnswers.sessionID = sessionId;
-				//$('#attendeeInfo').hide();
 				//Fill the Attendee info in the text fields
 				$('#attendeNameInput').val(evalAnswers.fullName);
 				$('#attendeEmailInput').val(evalAnswers.email);
@@ -337,7 +336,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
 				evalAnswers.sessionID = sessionId;
-				//$('#attendeeInfo').hide();
 				//Fill the Attendee info in the text fields
 				$('#attendeNameInputSummitEval').val(evalAnswers.fullName);
 				$('#attendeEmailInputSummitEval').val(evalAnswers.email);
