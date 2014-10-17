@@ -40,6 +40,7 @@ model.Eval.methods.submitEval = function(evalAnswers) {
 		else {
 			session.speakers.forEach(
 				function(speaker) {
+					var answerNumber = 1;
 			        var newEval = new ds.Eval();
 					newEval.attendee = attendee;
 					newEval.session = session;
