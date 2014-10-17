@@ -30,7 +30,26 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
-
+	function buildEvalPage () {
+		//Get session evals and build session eval page
+		ds.Eval.getEvalQuestions('session',1,{
+			onSuccess: function(findEvalQuestionEvent) {
+				var questions = findEvalQuestionEvent.result;
+				questions.forEach(function(question) {
+					var html = "";
+					//var answerNumber = "answer" + question.questionNumber;
+					var answerNumber = question.questionNumber;
+					if (question.questionType == "selection")
+						if(!question.options)
+						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+					if (question.questionType == "text")
+						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1"  class="answerInput" /></textarea></fieldset>';
+					$('.evalQuestionsContent').append(html);
+				});
+				$('#page7').trigger('create');
+			}
+		});
+	}
 	function buildListItem(html, sessionArray){
 		sessionArray.forEach(function(elem) {
 			var speakerName = "";
@@ -184,21 +203,22 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		
 		//tap event handler to load session detail
-		$( ".loadSessionDetail" ).live( "tap", function() {
+		$( ".loadSessionDetail" ).live( "vclick", function(event,ui) {
+			$("#startEvalButton").removeClass('ui-disabled');
+			if(isJQMGhostClick(event))
+				return
 			sessionId = this.id;
 
 			//Disable Eval button when session is not started
 			ds.Session.isSessionAlive ({
 				onSuccess: function(checkSessionAliveEvent) {
-					var evalButtonText = "";
-					$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
 					if(checkSessionAliveEvent.result){
 						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
 						$("#startEvalButton").removeClass('ui-disabled');
 					}
 					else {
 						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
-						//$("#startEvalButton").addClass('ui-disabled');   //temperorally commented out for eval page development
+						$("#startEvalButton").addClass('ui-disabled');   //temperorally commented out for eval page development
 					}
 				}
 			});
@@ -232,7 +252,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
 							    	onSuccess: function(findEvalEvent) {
 							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
-											$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
+											$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
 											$("#startEvalButton").addClass('ui-disabled');
 										}
 										else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
@@ -249,19 +269,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
 										       		}
 										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-										       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+										       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 										        }
 										    });
 										}
 										else {// This attendee has evaluated no speakers in this session
 								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-								       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+								       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 										}
 							    	}
 								});
 								else {// No attendee found, firt time user
 						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-						       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+						       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 								}
 						}
 				    });
@@ -289,7 +309,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		// tap event handler to load speak's profile
-		$( ".loadSpeakerProfile" ).live( "tap", function() {
+		$( ".loadSpeakerProfile" ).live( "vclick", function(event,ui) {
 			var speakerId = this.id;
 			var sessionListHTML = '';
 			 ds.Speaker.find("ID = " + speakerId , {
@@ -317,7 +337,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		//Go to eval page and start eval 
-		$(".startEval").live( "tap", function(event, ui) {
+		$(".startEval").live( "vclick", function(event, ui) {
 			if(attendee) {
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
@@ -331,7 +351,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			});
 		});
 		
-		$("#startSummitSurvey").live( "tap", function(event, ui) {
+		$("#startSummitSurvey").live( "vclick", function(event, ui) {
 			if(attendee) {
 				evalAnswers.email = attendee.email.getValue();
 				evalAnswers.fullName = attendee.fullName.getValue();
@@ -352,13 +372,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		//Set survey and attendee while saving the eval
-		$( ".saveEval" ).bind( "tap", function(event, ui) {
+		$( ".saveEval" ).bind( "vclick", function(event, ui) {
+			$('#attendeNameInput').blur();
+			$('#attendeEmailInput').blur();
+			
 			evalAnswers.evalType = 'session';
 			evalAnswers.sessionID = sessionId;
-			$(".saveEval").addClass('ui-disabled');
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
 				ds.Attendee.find("email = :1", evalAnswers.email,{
 				 onSuccess: function(findAttendeeEvent){
+				 	$(".saveEval").addClass('ui-disabled');
 				 	if(findAttendeeEvent.entity) {
 				 		evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue();
 						evalAnswers.speakerID = $('#evalSpeakerList')[0].value;
@@ -371,6 +394,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 											transition: "slidedown"
 								});
 								$(".saveEval").removeClass('ui-disabled');
+								$('.evalQuestionsContent')[0].innerHTML = "";
+								buildEvalPage ();
 					        }
 					    });					
 				 	}
@@ -381,7 +406,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						newAttendee.uniqueID.setValue(cookieID);
 						newAttendee.save({
 							onSuccess: function(attendeeEvent){
-								debugger;
 								evalAnswers.uniqueID = attendeeEvent.entity.uniqueID.getValue();
 								evalAnswers.speakerID = ($('#evalSpeakerList')[0].value);
 								ds.Eval.submitEval(evalAnswers,{
@@ -393,6 +417,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 											transition: "slidedown"
 										});
 										$(".saveEval").removeClass('ui-disabled');
+										$('.evalQuestionsContent')[0].innerHTML = "";
+										buildEvalPage ();
 							        }
 							    });		
 							},
@@ -407,7 +433,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		});
 		
-		$(".SessionListTabButton").bind( "tap", function(event, ui) {
+		$(".SessionListTabButton").bind( "vclick", function(event, ui) {
 			//$('.ui-input-clear').tap();
 			$("input[data-type=search]").val("").change(); 
 			if(this.id.indexOf("allSessions") > -1 ){
@@ -435,7 +461,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$("#" + this.id).addClass('ui-btn-active');
 		});
 			
-		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {
+		$( ".saveSummitEval" ).bind( "vclick", function(event, ui) {
 			evalAnswers.evalType = 'summit';
 			evalAnswers.conferenceID = conference.ID.getValue();
 			evalAnswers.sessionID = sessionId;
@@ -506,24 +532,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			}
 		});
 		
-		//Get session evals and build session eval page
-		ds.Eval.getEvalQuestions('session',1,{
-			onSuccess: function(findEvalQuestionEvent) {
-				var questions = findEvalQuestionEvent.result;
-				questions.forEach(function(question) {
-					var html = "";
-					//var answerNumber = "answer" + question.questionNumber;
-					var answerNumber = question.questionNumber;
-					if (question.questionType == "selection")
-						if(!question.options)
-						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
-					if (question.questionType == "text")
-						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1"  class="answerInput" /></textarea></fieldset>';
-					$('.evalQuestionsContent').append(html);
-				});
-				$('#page7').trigger('create');
-			}
-		});
+		buildEvalPage ();
 		
 		ds.Eval.getEvalQuestions('conference',1,{
 			onSuccess: function(findEvalQuestionEvent) {
@@ -578,11 +587,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$( ".answerInput" ).live( "change", function(event, ui) {
 		//check if answerInput if multi selection
 		if(this.getAttribute('answervalue')){
-			//debugger;
 			if($(this).is(':checked'))
 				evalAnswers[this.name]?evalAnswers[this.name] += this.getAttribute('answervalue')+ " ": evalAnswers[this.name] = this.getAttribute('answervalue')+ " ";
 			else {//if multi selection is unchecked the answer value should be removed from answer string
-				//debugger;
 				var answerIndex = evalAnswers[this.name].indexOf(this.getAttribute('answervalue'));
 				evalAnswers[this.name]= evalAnswers[this.name].slice(0, answerIndex) + evalAnswers[this.name].slice(answerIndex+2);//slice the answer and the space after it
 			}
