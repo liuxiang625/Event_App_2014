@@ -131,8 +131,8 @@
 		},
 		"model" : 
 		{
-			"workspaceLeft" : 0,
-			"workspaceTop" : 1100,
+			"workspaceLeft" : 616,
+			"workspaceTop" : 965,
 			"scriptMode" : "manual",
 			"lastScriptLocation" : 
 			{
@@ -637,6 +637,12 @@
 				},
 				{
 					"name" : "options",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
+				},
+				{
+					"name" : "options_FR",
 					"kind" : "storage",
 					"scope" : "public",
 					"type" : "string"

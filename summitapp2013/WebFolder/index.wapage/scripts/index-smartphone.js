@@ -52,7 +52,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
 			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
 			//Add a reminder for 4D Party
-			if(elem.title == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Busses leave at 6:00pm" + ' </p>';
+			if(elem.title == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Buses leave at 6:00pm" + ' </p>';
 			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			listItemHTML += elem.isActivity ? '' : '</a>';
 			listItemHTML += '</li>';
@@ -188,7 +188,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					}
 					else {
 						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
-						$("#startEvalButton").addClass('ui-disabled');   //temperorally commented out for eval page development
+						//$("#startEvalButton").addClass('ui-disabled');   //temperorally commented out for eval page development
 					}
 				}
 			});
@@ -251,12 +251,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								});
 								else {// No attendee found, firt time user
 						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-						       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+						       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 								}
 						}
 				    });
-
-							
 					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
 					if ($('#sessionSpeakersList').hasClass('ui-listview'))
 					$('#sessionSpeakersList').listview('refresh');
@@ -348,6 +346,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Set survey and attendee while saving the eval
 		$( ".saveEval" ).bind( "tap", function(event, ui) {
 			evalAnswers.evalType = 'session';
+			evalAnswers.sessionID = sessionId;
 			$(".saveEval").addClass('ui-disabled');
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
 				ds.Attendee.find("email = :1", evalAnswers.email,{

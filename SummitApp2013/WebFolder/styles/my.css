@@ -1,4 +1,8 @@
 /*Backgroud color for detail and survery page*/
+.ui-body-c {
+	bottom:0px;
+}
+
 /*Session Detail page*/
 #page4.ui-body-c {
 	background-image: linear-gradient(#c6def7,#c6def7);
