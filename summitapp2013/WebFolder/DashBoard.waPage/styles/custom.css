@@ -13,3 +13,7 @@
 .waf-label-textfield {
 	margin-left:-15px!important;
 }
+#menuBar2 {
+	height:50px!important;
+	visibility:hidden;
+}
