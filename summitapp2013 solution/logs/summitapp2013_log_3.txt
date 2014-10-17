@@ -7145,3 +7145,5 @@
 2014-10-17 16:13:10 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/addtohomescreen.js no change on TS : 2014-09-27T09:34:02.000Z"]}
 2014-10-17 16:13:10 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/addtohomescreen.css no change on TS : 2014-09-27T09:34:02.000Z
 2014-10-17 16:13:10 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/addtohomescreen.css no change on TS : 2014-09-27T09:34:02.000Z"]}
+2014-10-17 16:15:19 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-17 16:15:19 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
