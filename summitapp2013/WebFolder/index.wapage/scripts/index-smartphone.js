@@ -159,8 +159,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		ds.Attendee.find('uniqueID == ' + cookieID ,{
 			onSuccess: function(locatAttendeeEvent) {
 				attendee = locatAttendeeEvent.entity;
+				//Chekc if summit eval has already been submitted;
+				if(attendee)
+			    ds.Eval.query('evalType == :1 & attendeeEmail == :2', 'summit', attendee.email.getValue(),{
+			    	onSuccess: function(findEvalEvent) {
+			    		if(findEvalEvent.result.length > 0) {
+							$('#startSummitSurvey span span')[0].innerHTML = "Evaluation Submitted";
+							$("#startSummitSurvey").addClass('ui-disabled');
+						}
+			    	}
+				});		
 			}
-		});
+		});    
+		
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "tap", function() {
@@ -177,7 +188,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					}
 					else {
 						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
-						//$("#startEvalButton").addClass('ui-disabled');   temperorally commented out for eval page development
+						$("#startEvalButton").addClass('ui-disabled');   //temperorally commented out for eval page development
 					}
 				}
 			});
@@ -223,13 +234,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 												},
 												atTheEnd: function(event)
 										        {
-										           //debugger;
 										           evalSpeakListHTML = "";
 										           for (var speakerName in speakerMap) {
 										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
 										       		}
 										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-										       		$("#startEvalButton").removeClass('ui-disabled');
+										       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 										        }
 										    });
 										}

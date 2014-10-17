@@ -66,7 +66,6 @@ model.Eval.methods.submitEval = function(evalAnswers) {
 			newEval.attendee = attendee;
 			newEval.evalType = evalAnswers.evalType;
 			newEval.save();
-			debugger;
 			while(evalAnswers[answerNumber]){
 					newAnswer = new ds.EvalAnswer();
 					newAnswer.eval = newEval;
