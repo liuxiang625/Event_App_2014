@@ -137,6 +137,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		addToHomescreen({
+			skipFirstVisit: true,
+   			maxDisplayCount: 1
+		});
 		ds.Conference.find('name = :1','4D US Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
 			autoExpand:'sessions,speakers,evalQuestions',
 			onSuccess : function(findConferenceEvent) {
