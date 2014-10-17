@@ -18,7 +18,7 @@ model.Eval.methods.submitEval = function(evalAnswers) {
 	
 	if(evalAnswers.evalType == 'session') {
 		var session = ds.Session(evalAnswers.sessionID);
-		if(evalAnswers.speakerID != "All Speakers" || session.presentaors.length == 1) {
+		if(evalAnswers.speakerID != "All Speakers" || session.presentations.length == 1) {
 			var answerNumber = 1;
 			var newEval = new ds.Eval();
 			newEval.attendee = attendee;
@@ -39,11 +39,11 @@ model.Eval.methods.submitEval = function(evalAnswers) {
 		}
 		else {
 			session.speakers.forEach(
-				function(prentation) {
+				function(speaker) {
 			        var newEval = new ds.Eval();
 					newEval.attendee = attendee;
 					newEval.session = session;
-					newEval.speaker = prentation.speaker;		
+					newEval.speaker = ds.Speaker(speaker.ID);		
 					newEval.conference = ds.Conference[evalAnswers.conferenceID];
 					newEval.evalType = evalAnswers.evalType;
 					newEval.save();

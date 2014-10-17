@@ -221,11 +221,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						    if(attendee)
 							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
 							    	onSuccess: function(findEvalEvent) {
-							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {
+							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
 											$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted";
 											$("#startEvalButton").addClass('ui-disabled');
 										}
-										else if (1 <= findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {
+										else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
 											findEvalEvent.result.forEach({
 												onSuccess: function(evalEvent)
 										        {
@@ -243,8 +243,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 										        }
 										    });
 										}
+										else {// This attendee has evaluated no speakers in this session
+								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+								       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+										}
 							    	}
-								});		    
+								});
+								else {// No attendee found, firt time user
+						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+						       		($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
+								}
 						}
 				    });
 
@@ -366,8 +374,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 						newAttendee.uniqueID.setValue(cookieID);
 						newAttendee.save({
 							onSuccess: function(attendeeEvent){
-								evalAnswers.uniqueID = findAttendeeEvent.entity.uniqueID.getValue;
-								evalAnswers.speakerID.setValue($('#evalSpeakerList')[0].value);
+								debugger;
+								evalAnswers.uniqueID = attendeeEvent.entity.uniqueID.getValue();
+								evalAnswers.speakerID = ($('#evalSpeakerList')[0].value);
 								ds.Eval.submitEval(evalAnswers,{
 							        onSuccess:function(event)
 							        {	
@@ -422,6 +431,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {
 			evalAnswers.evalType = 'summit';
 			evalAnswers.conferenceID = conference.ID.getValue();
+			evalAnswers.sessionID = sessionId;
 			$(".saveSummitEval").addClass('ui-disabled');
 			
 			if(evalAnswers.fullName && validateEmail(evalAnswers.email))
