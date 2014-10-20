@@ -52,6 +52,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 	}
 	function buildListItem(html, sessionArray){
+		var afternoonSessionDividerAdded = false;//Flag for 3pm/4pm 10AM/11AM session divider;
 		sessionArray.forEach(function(elem) {
 			var speakerName = "";
 			var listItemHTML = "";
@@ -63,22 +64,31 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			else if(!elem.isActivity & elem.speakers.length > 0) {
 				speakerName = htmlEncode(elem.speakers[0].fullName);
 			}
+			//Adding date divider before breakfast
+			if(elem.startTimeString == "15:00" || elem.startTimeString == "10:15")afternoonSessionDividerAdded = false;
+			if(elem.startTimeString == "16:00" && !afternoonSessionDividerAdded || elem.startTimeString == "11:15" && !afternoonSessionDividerAdded){//Add divider between 10am/11am and 3pm/4pm 
+				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';
+				afternoonSessionDividerAdded = true;	
+			}
+			if(elem.title == "Q & A") listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';//Add divider before Q&A
 			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="b" style = "text-align:center;padding:0px!important"> '+ elem.sessionDateString +' </li>';
-			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D")//Apply special Welcome Reception color for 4D party
-			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style="background-color: #d7fcff">';
+			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D") {//Apply special Welcome Reception color for 4D party
+				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';
+				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style="background-color: #d7fcff">';
+			}
 			else
 			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity & elem.title != "Q & A" ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
 			listItemHTML += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
+			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(milToStandard(elem.startTimeString)) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
 			//Add a reminder for 4D Party
 			if(elem.title == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Buses leave at 6:00pm" + ' </p>';
 			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			listItemHTML += elem.isActivity ? '' : '</a>';
 			listItemHTML += '</li>';
 
-			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML.replace("09:00","13:30");
-			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML.replace("09:00","13:30");
+			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate pre-class for morning and afternoon session
+			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate post-class for morning and afternoon session
 			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/27/2014") listItemHTML += preClassItemHTML;
 			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/30/2014") listItemHTML += postClassItemHTML;
 			html += listItemHTML;
@@ -432,7 +442,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		$(".SessionListTabButton").bind( "vclick", function(event, ui) {
-			//$('.ui-input-clear').tap();
 			$("input[data-type=search]").val("").change(); 
 			if(this.id.indexOf("allSessions") > -1 ){
 				buildSessionListView(allSessions);
@@ -630,6 +639,44 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	        return false;
 	      }
 	  }
+	  
+	//Convert Military Time To Standard Time With JavaScript
+	function milToStandard(value) {
+		if (value !== null && value !== undefined){ //If value is passed in
+		if(value.indexOf('AM') > -1 || value.indexOf('PM') > -1){ //If time is already in standard time then don't format.
+		  return value;
+		}
+		else {
+		  if(value.length == 5){ //If value is the expected length for military time then process to standard time.
+		    var hour = value.substring ( 0,2 ); //Extract hour
+		    var minutes = value.substring ( 3,5 ); //Extract minutes
+		    
+		   	
+		    var identifier = 'AM'; //Initialize AM PM identifier
+
+		    if(hour == 12){ //If hour is 12 then should set AM PM identifier to PM
+		      identifier = 'PM';
+		    }
+		    if(hour == 0){ //If hour is 0 then set to 12 for standard time 12 AM
+		      hour=12;
+		    }
+		    if(hour > 12){ //If hour is greater than 12 then convert to standard 12 hour format and set the AM PM identifier to PM
+		      hour = hour - 12;
+		      identifier='PM';
+		    }
+		    else if (hour < 10) hour = hour.replace('0','');
+
+		    if (minutes == "00") //remove 00 if it's 00 sharp 
+		    return hour + ' ' + identifier
+		    else
+		    return hour + ':' + minutes + ' ' + identifier; //Return the constructed standard time
+		  }
+		  else { //If value is not the expected length than just return the value as is
+		    return value;
+		  }
+    }
+  }
+};
 // @region eventManager// @startlock
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 // @endregion
