@@ -25,6 +25,7 @@ var postClassItemHTML = "";
 
 WAF.onAfterInit = function onAfterInit() {// @lock
 	addToHomescreen({maxDisplayCount: 0});
+	addToHomescreen().clearSession();//This will make addToHome Screen Popup show up each time user visits 
 // @region namespaceDeclaration// @startlock
 	var documentEvent = {};	// @document
 // @endregion// @endlock
@@ -76,8 +77,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			listItemHTML += elem.isActivity ? '' : '</a>';
 			listItemHTML += '</li>';
 
-			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML;
-			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML;
+			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML.replace("09:00","13:30");
+			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML.replace("09:00","13:30");
 			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/27/2014") listItemHTML += preClassItemHTML;
 			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/30/2014") listItemHTML += postClassItemHTML;
 			html += listItemHTML;
