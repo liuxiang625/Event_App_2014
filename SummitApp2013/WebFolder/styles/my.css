@@ -1,12 +1,12 @@
-/*Give ATH popup a white backgroud*/
+/*Give ATH popup a white background*/
 .ath-container {
 	background:white!important;
 }
-/*Give ATH pointer a white backgroud*/
+/*Give ATH pointer a white background*/
 .ath-ios.ath-phone:after {
 	background:white!important;
 }
-/*Give ATH pointer a white backgroud*/
+/*Give ATH pointer a white background*/
 .ath-ios.ath-tablet:after {
 	background:white!important;
 }

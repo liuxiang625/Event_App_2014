@@ -183,12 +183,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		// Set attendee's name and email in cookie for future authentication 
-		var CookieDate = new Date;
+		var CookieDate = new Date();
 		var summitDate = new Date("10/27/2014");
 		
 		if (CookieDate < summitDate) {
 			$('#startSummitSurvey').hide();
 			$('#startSummitSurveyText').hide();
+		}
+		else{
+			$('#startSummitSurvey').show();
+			$('#startSummitSurveyText').show();	
 		}
 		CookieDate.setFullYear(CookieDate.getFullYear( ) +10);
 		if(document.cookie.indexOf("SummitAPPID") == -1) {
