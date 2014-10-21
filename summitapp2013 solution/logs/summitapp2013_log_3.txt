@@ -16623,3 +16623,843 @@
 2014-10-21 10:09:56 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:08:41.000Z"]}
 2014-10-21 10:10:21 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
 2014-10-21 10:10:21 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 10:13:27 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:13:27 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z
+2014-10-21 10:13:30 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z
+2014-10-21 10:13:54 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:13:11.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z
+2014-10-21 10:14:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z
+2014-10-21 10:14:35 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z
+2014-10-21 10:14:39 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:26.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z
+2014-10-21 10:14:48 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z
+2014-10-21 10:14:51 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z
+2014-10-21 10:15:06 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:14:47.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:15:57.000Z
+2014-10-21 10:15:58 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:15:57.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z
+2014-10-21 10:16:22 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z
+2014-10-21 10:16:34 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:18.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z
+2014-10-21 10:16:49 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z
+2014-10-21 10:16:55 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:16:48.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z
+2014-10-21 10:17:09 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z"]}
+2014-10-21 10:22:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:22:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 10:51:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:51:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T01:01:23.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z
+2014-10-21 10:51:20 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T17:17:06.000Z"]}
+2014-10-21 10:51:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:51:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 10:53:10 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:53:10 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 10:53:11 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 10:53:12 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 10:53:12 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 10:53:12 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 10:53:13 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 10:53:13 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 10:53:13 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 10:53:14 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 10:53:14 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 10:53:14 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 10:53:14 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 10:53:14 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 10:53:14 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 10:53:15 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 10:53:15 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 1448 ms)
+2014-10-21 10:53:15 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 10:53:41 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 10:53:41 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 10:53:42 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 10:53:43 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 10:53:43 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 10:53:43 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 10:53:43 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 10:53:43 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 10:53:43 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 10:53:45 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 10:53:46 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 10:53:46 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 10:53:46 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 2515 ms)
+2014-10-21 10:53:46 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:01:21 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:01:21 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 11:01:23 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 11:01:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 11:01:24 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 11:01:24 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 11:01:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 11:01:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 11:01:24 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 11:01:25 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 11:01:25 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 11:01:25 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 498 ms)
+2014-10-21 11:01:25 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:01:40 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:01:40 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 11:01:41 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 11:01:42 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 11:01:42 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 11:01:42 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 11:01:42 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 11:01:42 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 11:01:43 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 11:01:44 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 11:01:45 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 11:01:45 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 11:01:45 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 2514 ms)
+2014-10-21 11:01:45 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:13:26 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:13:26 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 11:13:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 11:13:28 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 11:13:28 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 11:13:28 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 11:13:29 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 11:13:29 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 11:13:29 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 11:13:30 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 11:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 11:13:30 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 11:13:31 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 11:13:31 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 11:13:31 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 1510 ms)
+2014-10-21 11:13:31 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:13:56 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:13:56 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 11:13:57 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 11:13:58 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 11:13:58 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 11:13:58 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 11:13:59 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 11:13:59 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 11:13:59 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 11:13:59 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 11:14:00 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 11:14:00 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 11:14:00 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 1500 ms)
+2014-10-21 11:14:00 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:24:20 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:24:20 [com.wakanda-software] INFO - Stops "summitapp2013" solution
+2014-10-21 11:24:21 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project stopped
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project stopped
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution stopped
+2014-10-21 11:24:23 [com.wakanda-software] INFO - Closes "summitapp2013" solution
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-21 11:24:23 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-21 11:24:24 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-21 11:24:24 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-21 11:24:24 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 501 ms)
+2014-10-21 11:24:24 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-21 11:28:29 [com.wakanda-software.summitapp2013.ServerAdmin] INFO -  created 
+2014-10-21 11:28:29 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - set the debugger
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z
+2014-10-21 11:28:32 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z
+2014-10-21 11:29:27 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.js no change on TS : 2014-07-25T10:00:19.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file minifiedCoresWAF/mobile.core.min.css no change on TS : 2014-07-08T12:00:22.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/jquery.mobile-1.3.2.min.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file themes/cupertino/cupertino.css no change on TS : 2014-07-25T14:00:25.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/styles/index-smartphone.css no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file application.css no change on TS : 2014-10-17T04:31:47.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file styles/my.css no change on TS : 2014-10-21T18:28:13.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file scripts/jquery.mobile-1.3.2.min.js no change on TS : 2014-10-01T22:14:52.000Z"]}
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z
+2014-10-21 11:29:28 [com.wakanda-software.summitapp2013.SummitApp2013.console] INFO - {"data":[">>> >packageListHelper.diffPackageListStorageVsWpm() > file index.waPage/scripts/index-smartphone.js no change on TS : 2014-10-21T18:06:45.000Z"]}
