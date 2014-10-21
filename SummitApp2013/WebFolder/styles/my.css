@@ -2,6 +2,15 @@
 .ath-container {
 	background:white!important;
 }
+/*Give ATH pointer a white backgroud*/
+.ath-ios.ath-phone:after {
+	background:white!important;
+}
+/*Give ATH pointer a white backgroud*/
+.ath-ios.ath-tablet:after {
+	background:white!important;
+}
+
 /*Backgroud color for detail and survery page*/
 #page4.ui-body-c {
 	bottom:0px;
