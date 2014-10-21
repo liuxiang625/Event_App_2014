@@ -25,13 +25,20 @@ var preClassItemHTML = "";
 var postClassItemHTML = "";
 
 WAF.onAfterInit = function onAfterInit() {// @lock
-	if(navigator.userAgent.indexOf('Android') == -1) {
-		addToHomescreen({
-			maxDisplayCount: 0,
-			onShow:function (){$(addToHomescreen().element).css("background","white");}	//Change popup background to white for better visual presentation
-		});
-		addToHomescreen().clearSession();//This will make addToHome Screen Popup show up each time user visits 
-	}
+//	if(navigator.userAgent.indexOf('Android') == -1) {
+//		addToHomescreen({
+//			maxDisplayCount: 0,
+//			onShow:function (){
+//				$(addToHomescreen().element).css("background","white");//Change popup background to white for better visual presentation
+//				//debugger;
+//				//alert($(".ath-action-icon").css('background-image'));
+//			}	,
+//			onInit:function (){
+//				//console.log($(".ath-action-icon").css('background-image'));
+//			}	
+//		});
+//		addToHomescreen().clearSession();//This will make addToHome Screen Popup show up each time user visits 
+//	}
 
 // @region namespaceDeclaration// @startlock
 	var documentEvent = {};	// @document

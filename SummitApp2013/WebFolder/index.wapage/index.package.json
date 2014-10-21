@@ -33,14 +33,6 @@
         "id": "index.waPage/scripts/index-smartphone.js",
         "path": "WEBFOLDER",
         "type": "script"
-    },{
-        "id": "index.waPage/scripts/addtohomescreen.js",
-        "path": "WEBFOLDER",
-        "type": "script"
-    },{
-        "id": "index.waPage/styles/addtohomescreen.css",
-        "path": "WEBFOLDER",
-        "type": "style"
     }]
 }
 
