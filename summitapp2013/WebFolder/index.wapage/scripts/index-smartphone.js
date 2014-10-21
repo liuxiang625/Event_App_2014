@@ -25,7 +25,7 @@ var preClassItemHTML = "";
 var postClassItemHTML = "";
 
 WAF.onAfterInit = function onAfterInit() {// @lock
-	if(navigator.userAgent.indexOf('Android') == -1) {
+	if(navigator.userAgent.indexOf('Android') == -1 && navigator.userAgent.indexOf('iPhone OS 8') == -1){
 		addToHomescreen({
 			maxDisplayCount: 0,
 			onShow:function (){
@@ -139,7 +139,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<a href="#page5" data-transition="slide" >';
 			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerimages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
-			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  + (elem.company?', '+ htmlEncode(elem.company):"") + '</p>';
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  + (elem.company && elem.title?', ':"") + htmlEncode(elem.company) + '</p>';
 			html += '</a>';
 			html += '</li>';
 		});
@@ -225,6 +225,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "vclick", function(event,ui) {
+			//Hide eval button for keynote	
+			(this.id == 112 || this.id == 113) ?$('#startEvalButton ').hide():$('#startEvalButton ').show();
 			if(isJQMGhostClick(event))
 				return
 			sessionId = this.id;
@@ -290,19 +292,16 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
 										       		}
 										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-										       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 										        }
 										    });
 										}
 										else {// This attendee has evaluated no speakers in this session
 								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-								       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 										}
 							    	}
 								});
 								else {// No attendee found, firt time user
 						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-						       		//($('#startEvalButton span span')[0].innerHTML = "Session has not started yet")?$("#startEvalButton").addClass('ui-disabled'):$("#startEvalButton").removeClass('ui-disabled');
 								}
 						}
 				    });
@@ -339,7 +338,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		   				var speakerEntity = findSpeakerEvent.entity;
 		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
 		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
-		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.company.getValue()? " at " + speakerEntity.company.getValue():"");
+		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.title.getValue() && speakerEntity.company.getValue()?" at ":"") + speakerEntity.company.getValue();
 		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
 		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
 		   				
