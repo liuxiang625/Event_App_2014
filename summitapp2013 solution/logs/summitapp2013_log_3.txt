@@ -14397,3 +14397,31 @@
 2014-10-20 17:39:43 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project closed
 2014-10-20 17:39:43 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project closed
 2014-10-20 17:39:44 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution closed
+2014-10-20 17:40:13 [com.wakanda-software.supervisor] INFO - solution closed
+2014-10-20 17:40:13 [com.wakanda-software] INFO - Opens the solution "Mactintosh HD:Users:xliu:GitHub:Event_App_2014:summitapp2013 solution:summitapp2013.waSolution" for running
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013] INFO - Users and groups directory opened
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Datastore opened
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project opened
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project opened
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution opened
+2014-10-20 17:40:15 [com.wakanda-software] INFO - Starts "summitapp2013" solution
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - mode :  release
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - >buildInit() - added package definition to storage
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - <buildInit()
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - HTTP Server started
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - "ServerAdmin" project started
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - mode :  release
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - minified core files detected - try to add package definition to storage
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - >buildInit() - added package definition to storage
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - <buildInit()
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - HTTP Server started
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - "SummitApp2013" project started
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Executes the bootstrap file(s)
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.ServerAdmin] INFO - Bootstrap file(s) executed
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Executes the bootstrap file(s)
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013.SummitApp2013] INFO - Bootstrap file(s) executed
+2014-10-20 17:40:15 [com.wakanda-software.summitapp2013] INFO - "summitapp2013" solution started
+2014-10-20 17:40:15 [com.wakanda-software] INFO - "summitapp2013" solution has been successfully opened for running (duration: 1485 ms)
+2014-10-20 17:40:15 [com.wakanda-software.supervisor] INFO - solution opened
+2014-10-20 17:40:35 [com.wakanda-software.dbmg] ERROR - [1574] The sessionName attribute is not the correct type, task #30723, task name is HTTP connection handler
