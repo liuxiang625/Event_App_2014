@@ -11,12 +11,12 @@ model.Session.methods.getLiveSessions = function() {
 };
 model.Session.methods.getLiveSessions.scope = "public";
 
-model.Session.methods.isSessionAlive = function() {
+//Check if session has not yet taken place
+model.Session.methods.isSessionAlive = function(sessionId) {
 	var date = new Date();
 	
 	var isCurrent = false;
-	
-	ds.Session.query("startTime <= :1 and endTime >= :1", date).length > 0?isCurrent = true:isCurrent= false;
+	ds.Session.query("startTime <= :1  and ID = :2", date,sessionId).length > 0?isCurrent = true:isCurrent= false;
 
 	return isCurrent
 };

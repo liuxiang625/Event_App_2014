@@ -1,4 +1,5 @@
-﻿//Take user to home page on reload
+﻿
+//Take user to home page on reload
 var pageNotInit = true;
 $(document).live('pageinit',function(event){//Force the app to go home after force refresh the page on browser
 	if(pageNotInit){
@@ -24,8 +25,14 @@ var preClassItemHTML = "";
 var postClassItemHTML = "";
 
 WAF.onAfterInit = function onAfterInit() {// @lock
-	addToHomescreen({maxDisplayCount: 0});
-	addToHomescreen().clearSession();//This will make addToHome Screen Popup show up each time user visits 
+	if(navigator.userAgent.indexOf('Android') == -1) {
+		addToHomescreen({
+			maxDisplayCount: 0,
+			onShow:function (){$(addToHomescreen().element).css("background","white");}	//Change popup background to white for better visual presentation
+		});
+		addToHomescreen().clearSession();//This will make addToHome Screen Popup show up each time user visits 
+	}
+
 // @region namespaceDeclaration// @startlock
 	var documentEvent = {};	// @document
 // @endregion// @endlock
@@ -130,7 +137,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<a href="#page5" data-transition="slide" >';
 			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerimages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
-			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  +', '+ htmlEncode(elem.company) + '</p>';
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  + (elem.company?', '+ htmlEncode(elem.company):"") + '</p>';
 			html += '</a>';
 			html += '</li>';
 		});
@@ -212,14 +219,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "vclick", function(event,ui) {
-			$("#startEvalButton").removeClass('ui-disabled');
 			if(isJQMGhostClick(event))
 				return
 			sessionId = this.id;
 
 			//Disable Eval button when session is not started
-			ds.Session.isSessionAlive ({
+			ds.Session.isSessionAlive (sessionId,{
 				onSuccess: function(checkSessionAliveEvent) {
+					$("#startEvalButton").removeClass('ui-disabled');
 					if(checkSessionAliveEvent.result){
 						$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
 						$("#startEvalButton").removeClass('ui-disabled');
@@ -326,7 +333,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		   				var speakerEntity = findSpeakerEvent.entity;
 		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
 		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
-		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + " at " + speakerEntity.company.getValue();
+		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.company.getValue()? " at " + speakerEntity.company.getValue():"");
 		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
 		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
 		   				

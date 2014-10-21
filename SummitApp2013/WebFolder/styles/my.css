@@ -1,3 +1,7 @@
+/*Give ATH popup a white backgroud*/
+.ath-container {
+	background:white!important;
+}
 /*Backgroud color for detail and survery page*/
 #page4.ui-body-c {
 	bottom:0px;
@@ -39,7 +43,7 @@
 .loadSpeakerProfile {
 	background:#eeeaea;
 }
-.loadSpeakerProfile.ui-btn-down-c {
+.loadSpeakerProfile.ui-btn-active {
 	background: #f6f2f2!important;
 }
 .loadSpeakerProfile.ui-btn-hover-c {
@@ -47,9 +51,10 @@
 }
 
 /*Session list Item text & color*/
-.loadSessionDetail.ui-btn-down-c {
-	background:#d6ecff!important;
+.loadSessionDetail.ui-btn-active { 
+	background:#d6ecff!important 
 }
+
 .loadSessionDetail.ui-btn-hover-c {
 	background: #b1d0f4;
 }
@@ -65,7 +70,7 @@
 	/*  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c45e5e), color-stop(1, #9e3939));*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c44f4f', EndColorStr='#ab2525')"; 
 }
-#goToSessions.ui-btn-down-c {
+#goToSessions.ui-btn-active {
 	background: #5291d5!important;
 }
 #startSummitSurvey.ui-btn-down-c {
