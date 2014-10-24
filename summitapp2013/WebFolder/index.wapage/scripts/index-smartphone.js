@@ -1,11 +1,7 @@
-﻿
-//Take user to home page on reload
+﻿//Take user to home page on reload
 var pageNotInit = true;
 $(document).live('pageinit',function(event){//Force the app to go home after force refresh the page on browser
-	if(pageNotInit){
-		$.mobile.changePage($('#page1'));
-		pageNotInit = false;
-	}	
+	
 });
 //Global var to hold the eval
 var evalAnswers = {
@@ -19,6 +15,7 @@ var evalAnswers = {
 	}
 
 var allSessions = [];
+var people = [];
 //global var to hold conference
 var conference = {};
 var preClassItemHTML = "";
@@ -160,12 +157,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		}
 	}
 	
-	$(".goPrevious").live('tap', function() {//go to previous page in history
-				history.back();
-				return false;
+	//Go back to previous page
+	$(".goPrevious").live('vclick', function(event) {//go to previous page in history
+		event.preventDefault();
+		history.back();
 	});
 	
-	$('#cancelSummitSurvey').live('tap', function(e) {//go to previous page in history
+	$('#cancelSummitSurvey').live('vclick', function(e) {//go to previous page in history
 			if(isJQMGhostClick(e))
 				return
 			$.mobile.changePage($('#page1'), {
@@ -176,9 +174,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		
+		if (!('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)))
+		    $("a").removeClass('goPrevious');		
+				
+		if(pageNotInit){
+			$.mobile.changePage($('#page1'));
+			pageNotInit = false;
+		}	
 		ds.Conference.find('name = :1','4D US Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
-			autoExpand:'sessions,speakers,evalQuestions',
 			onSuccess : function(findConferenceEvent) {
 				conference = findConferenceEvent.entity;
 			}
@@ -225,8 +228,26 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "vclick", function(event,ui) {
-			//Hide eval button for keynote	
-			(this.id == 112 || this.id == 113) ?$('#startEvalButton ').hide():$('#startEvalButton ').show();
+			//Load session from allSessions array, this will prevent iOS 8 lock screen breaking callbacks bug.
+			var speakerListHTML = '';
+			var evalSpeakListHTML = '';
+			var speakerMap = {};
+			var session = allSessions.filter(findElement,{'ID':this.id})[0];
+			//Build Session Detail page		
+			$('#sessionDetailTitleDiv h2')[0].innerHTML = session.title;
+			$('#sessionDetailTitleDiv div p span')[0].innerHTML = session.sessionDateString + ' at ' + session.startTimeString + '<br> Conference Room: ' + session.room;
+			$('#sessionDescrption p')[0].innerHTML = session.description;//Load session description
+			if(session.speakers.length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
+			for (speakerIndex in session.speakers){
+				var speaker = session.speakers[speakerIndex];
+				speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ speaker.ID +'"><a  href="#page5" data-transition="slide">Speaker: '+ speaker.fullName +'</a></li>'
+				//Build the dropdown for later eval
+				evalSpeakListHTML += '<option value="'+ speaker.ID +'">'+ speaker.fullName +'</option>';
+				speakerMap[speaker.fullName]= speaker.ID;
+			}
+			$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
+			if ($('#sessionSpeakersList').hasClass('ui-listview'))$('#sessionSpeakersList').listview('refresh');
+			(this.id == 112 || this.id == 113) ?$('#startEvalButton ').hide():$('#startEvalButton ').show();//No Eval for keynotes
 			if(isJQMGhostClick(event))
 				return
 			sessionId = this.id;
@@ -245,71 +266,104 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					}
 				}
 			});
-
-			ds.Session.find("ID = :1 & conference.ID = :2" ,sessionId,conference.ID.getValue(), {
-				autoExpand:'presentations',
-				onSuccess: function(findEvent) {
-					//Build Session Detail
-					var speakerListHTML = '';
-					var evalSpeakListHTML = '';
-					var sessionEntity = findEvent.entity;
-					var speakerMap = {};
-					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
-					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + '<br> Conference Room: ' + sessionEntity.room.getValue();
-					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
-					//build speakers list
-					if(sessionEntity.presentations.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
-					sessionEntity.presentations.getValue().forEach({  
-				        onSuccess: function(presentorEvent)
-				        {
-				            var presentor = presentorEvent.entity; // get the entity from event.entity
-				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
-							//Build the dropdown for later eval
-							evalSpeakListHTML += '<option value="'+ presentor.speakerID.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
-							speakerMap[presentor.speakerName.getValue()]= presentor.speakerID.getValue();
-						},
-						atTheEnd: function(event){
-							
-							//check if evaluation has already been submited for each speaker;
-						    if(attendee)
-							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
-							    	onSuccess: function(findEvalEvent) {
-							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
-											$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
-											$("#startEvalButton").addClass('ui-disabled');
-										}
-										else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
-											findEvalEvent.result.forEach({
-												onSuccess: function(evalEvent)
-										        {
-										            var eval = evalEvent.entity; // get the entity from event.entity
-										            if (speakerMap[eval.speakerName.getValue()]) delete speakerMap[eval.speakerName.getValue()];
-												},
-												atTheEnd: function(event)
-										        {
-										           evalSpeakListHTML = "";
-										           for (var speakerName in speakerMap) {
-										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
-										       		}
-										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-										        }
-										    });
-										}
-										else {// This attendee has evaluated no speakers in this session
-								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-										}
-							    	}
-								});
-								else {// No attendee found, firt time user
-						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-								}
+			
+			 if(attendee)
+				ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
+					onSuccess: function(findEvalEvent) {
+						if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
+							$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
+							$("#startEvalButton").addClass('ui-disabled');
 						}
-				    });
-					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
-					if ($('#sessionSpeakersList').hasClass('ui-listview'))
-					$('#sessionSpeakersList').listview('refresh');
-				}
-			});
+						else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
+							findEvalEvent.result.forEach({
+								onSuccess: function(evalEvent)
+						        {
+						            var eval = evalEvent.entity; // get the entity from event.entity
+						            if (speakerMap[eval.speakerName.getValue()]) delete speakerMap[eval.speakerName.getValue()];
+								},
+								atTheEnd: function(event)
+						        {
+						           evalSpeakListHTML = "";
+						           for (var speakerName in speakerMap) {
+						           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
+						       		}
+						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+						        }
+						    });
+						}
+						else {// This attendee has evaluated no speakers in this session
+				       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+						}
+					}
+				});
+			else {// No attendee found, firt time user
+					$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+			}
+								
+//			ds.Session.find("ID = :1 & conference.ID = :2" ,sessionId,conference.ID.getValue(), {
+//				autoExpand:'presentations',
+//				onSuccess: function(findEvent) {
+//					//Build Session Detail
+//					var speakerListHTML = '';
+//					var evalSpeakListHTML = '';
+//					var sessionEntity = findEvent.entity;
+//					var speakerMap = {};
+//					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
+//					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + '<br> Conference Room: ' + sessionEntity.room.getValue();
+//					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
+//					//build speakers list
+//					if(sessionEntity.presentations.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
+//					sessionEntity.presentations.getValue().forEach({  
+//				        onSuccess: function(presentorEvent)
+//				        {
+//				            var presentor = presentorEvent.entity; // get the entity from event.entity
+//				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
+//							//Build the dropdown for later eval
+//							evalSpeakListHTML += '<option value="'+ presentor.speakerID.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
+//							speakerMap[presentor.speakerName.getValue()]= presentor.speakerID.getValue();
+//						},
+//						atTheEnd: function(event){
+//							
+//							//check if evaluation has already been submited for each speaker;
+//						    if(attendee)
+//							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
+//							    	onSuccess: function(findEvalEvent) {
+//							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
+//											$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
+//											$("#startEvalButton").addClass('ui-disabled');
+//										}
+//										else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
+//											findEvalEvent.result.forEach({
+//												onSuccess: function(evalEvent)
+//										        {
+//										            var eval = evalEvent.entity; // get the entity from event.entity
+//										            if (speakerMap[eval.speakerName.getValue()]) delete speakerMap[eval.speakerName.getValue()];
+//												},
+//												atTheEnd: function(event)
+//										        {
+//										           evalSpeakListHTML = "";
+//										           for (var speakerName in speakerMap) {
+//										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
+//										       		}
+//										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+//										        }
+//										    });
+//										}
+//										else {// This attendee has evaluated no speakers in this session
+//								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+//										}
+//							    	}
+//								});
+//								else {// No attendee found, firt time user
+//						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
+//								}
+//						}
+//				    });
+//					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
+//					if ($('#sessionSpeakersList').hasClass('ui-listview'))
+//					$('#sessionSpeakersList').listview('refresh');
+//				}
+//			});
 			
 			
 		});
@@ -319,41 +373,64 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //		  	$("#speakersList").addClass('ui-btn-active');
 //		});
 		$( '#page4' ).live( 'pageshow',function(event, ui){
-		  	$('#sessionSpeakersList').listview('refresh');
+		  	//$('#sessionSpeakersList').listview('refresh');
 		});
 		$( '#page7' ).live( 'pageshow',function(event, ui){
-		  	$('#evalSpeakerList').selectmenu('refresh', true);
+		  	//$('#evalSpeakerList').selectmenu('refresh', true);
 		});
 		$( '#page5' ).live( 'pageshow',function(event, ui){
-		  	$('#speakersSessionsList').listview('refresh');
+		  	//$('#speakersSessionsList').listview('refresh');
+		  	//$('#speakerLinedIn').button('refresh');
 		});
-		
 		// tap event handler to load speak's profile
 		$( ".loadSpeakerProfile" ).live( "vclick", function(event,ui) {
 			var speakerId = this.id;
 			var sessionListHTML = '';
-			 ds.Speaker.find("ID = " + speakerId , {
-		  			autoExpand:'presentations',
-		   			onSuccess: function(findSpeakerEvent) {
-		   				var speakerEntity = findSpeakerEvent.entity;
-		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
-		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
-		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.title.getValue() && speakerEntity.company.getValue()?" at ":"") + speakerEntity.company.getValue();
-		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
-		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
-		   				
-		   				//build speakers' session list
-		   				speakerEntity.presentations.getValue().forEach({  
-					        onSuccess: function(presentationEvent)
-					        {
-					            var presentation = presentationEvent.entity; // get the entity from event.entity
-					            sessionListHTML += '<li data-theme="c" id="'+ presentation.session.relKey +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ presentation.sessionName.getValue() +'</a></li>'
-							}
-					    });
-						$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
-		   				$('#speakersSessionsList').listview('refresh');
-		   			}
-		   	 });
+			var speaker = people.filter(findElement,{'ID':speakerId})[0];
+			speaker.picURL? $('#speakerImage')[0].src = "/images/speakerimages/" + speaker.picURL: $('#speakerImage')[0].src = "/images/speakerimages/x.png";
+			$('#speakerName h2 span')[0].innerHTML = speaker.fullName;
+			$('#speakerName h3 span')[0].innerHTML = speaker.title + (speaker.title&& speaker.company?" at ":"") + speaker.company;
+			$('#speakerBio p')[0].innerHTML = speaker.biography;
+			if(speaker.linkedIn){
+				$('#speakerLinedIn').attr('href',speaker.linkedIn);
+				$('#speakerLinedIn').show();
+				$('#speakerLinedIn').trigger('create');
+			}
+			else	
+			$('#speakerLinedIn').hide();
+			for (sessionIndex in speaker.sessions){
+				var session = speaker.sessions[sessionIndex]; 
+				sessionListHTML += '<li data-theme="c" id="'+ session.ID +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ session.title +'</a></li>'
+			}
+			$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
+			if ($('#speakersSessionsList').hasClass('ui-listview'))$('#speakersSessionsList').listview('refresh');
+			//if ($('#speakerLinedIn').hasClass('ui-btn'))$('#speakerLinedIn').button('refresh');
+			
+//			$.mobile.changePage($('#page5'), {
+//					transition: "slide"
+//			});
+//			 ds.Speaker.find("ID = " + speakerId , {
+//		  			autoExpand:'presentations',
+//		   			onSuccess: function(findSpeakerEvent) {
+//		   				var speakerEntity = findSpeakerEvent.entity;
+//		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
+//		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
+//		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.title.getValue() && speakerEntity.company.getValue()?" at ":"") + speakerEntity.company.getValue();
+//		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
+//		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
+//		   				
+//		   				//build speakers' session list
+//		   				speakerEntity.presentations.getValue().forEach({  
+//					        onSuccess: function(presentationEvent)
+//					        {
+//					            var presentation = presentationEvent.entity; // get the entity from event.entity
+//					            sessionListHTML += '<li data-theme="c" id="'+ presentation.session.relKey +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ presentation.sessionName.getValue() +'</a></li>'
+//							}
+//					    });
+//						$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
+//		   				$('#speakersSessionsList').listview('refresh');
+//		   			}
+//		   	 });
 		});
 		
 		//Go to eval page and start eval 
@@ -547,11 +624,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Get All speakers and build speakers list
 		ds.Speaker.getAllSpeakers({
 			onSuccess: function(e) {
+				people = e.result.speakersArray.concat(e.result.staffArray);
 				buildSpeakerListView(e.result);
 			}
 		});
 		
-		buildEvalPage ();
+		//Initialize session eval page
+		buildEvalPage();
 		
 		ds.Eval.getEvalQuestions('conference',1,{
 			onSuccess: function(findEvalQuestionEvent) {
@@ -616,6 +695,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		else
 		evalAnswers[this.name] = this.value;
 	});
+	
+	//find Session ID in seesion array element
+	function findElement(element,index,array){
+		return element.ID == this.ID
+	}
+	
 	//Utility: Generates UniqueID for cookie and localstorage
 	function uniqueid(){
 	    // always start with a letter (for DOM friendlyness)

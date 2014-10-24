@@ -38,7 +38,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="generator" content="Wakanda GUIDesigner"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-        <meta name="WAF.catalog" content="*"/>
     	<meta name="wakanda-version" content="9 build 9.170192"/>
 		<meta name="wakanda-build" content="9.170192"/>
 		<meta name="viewport" content=" width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0"/>		
@@ -169,7 +168,7 @@
                 <h3>
                     Session Detail
                 </h3>
-                <a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a  href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
                     Back
                 </a>
 				<a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
@@ -217,7 +216,7 @@
                 <h3>
                     Speaker
                 </h3>
-                <a id="" href="#page4" data-transition="slide" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
+                <a  href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left goPrevious">
                     Back
                 </a>
 				<a href="#page2" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
@@ -262,7 +261,7 @@
                 <h3>
                     Evaluation
                 </h3>
-                <a id="calcelSessionSurvey" href="#page4" data-transition="slidedown" data-theme="c" data-role="button" data-rel="back" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
+                <a id="calcelSessionSurvey" href="#page4" data-transition="slidedown" data-theme="c" data-role="button" data-iconpos="left" data-icon="arrow-l" data-direction="reverse" class="ui-btn-left">
                     Cancel
                 </a>
 				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveEval">
@@ -323,5 +322,39 @@
             </div>
         </div>
 		<script type="text/javascript" src="/waLib/WAF/Loader.js"></script>
+<!--		This is the tracking code : Asynchronous/Marketo-->
+		<script type="text/javascript">
+		(function() {
+		  var didInit = false;
+		  function initMunchkin() {
+		    if(didInit === false) {
+		      didInit = true;
+		      Munchkin.init('531-MRT-468');
+		    }
+		  }
+		  var s = document.createElement('script');
+		  s.type = 'text/javascript';
+		  s.async = true;
+		  s.src = '//munchkin.marketo.net/munchkin.js';
+		  s.onreadystatechange = function() {
+		    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+		      initMunchkin();
+		    }
+		  };
+		  s.onload = initMunchkin;
+		  document.getElementsByTagName('head')[0].appendChild(s);
+		})();
+		</script>
+<!--		Tracking Code Google Analytics / UA : -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-9073736-3', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
 </body>
 </html>

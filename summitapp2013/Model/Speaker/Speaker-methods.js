@@ -15,7 +15,7 @@ model.Speaker.methods.updateSpeakerImagesFolder.scope = "public";
 model.Speaker.methods.getAllSpeakers = function() {
 	var speakers = {};
 	
-	speakers.speakersArray = ds.Speaker.query("isStaff == null or isStaff == false").orderBy("firstName").toArray("ID,firstName,lastName,fullName,company,title,biography,picURL,linkedIn");
+	speakers.speakersArray = ds.Speaker.query("isStaff == null or isStaff == false").orderBy("firstName").toArray("ID,firstName,lastName,fullName,company,title,biography,picURL,linkedIn,sessions.ID,sessions.title");
 	speakers.staffArray = ds.Speaker.query("isStaff == true").orderBy("firstName").toArray("ID,firstName,lastName,fullName,company,title,biography,picURL,linkedIn");
 	return speakers;
 };
