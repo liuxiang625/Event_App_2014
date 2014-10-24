@@ -174,7 +174,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		if (!('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)))
+		if (navigator.appVersion.indexOf("Mobile") != -1 && navigator.appVersion.indexOf("Safari") == -1)
 		    $("a").removeClass('goPrevious');		
 				
 		if(pageNotInit){
@@ -394,7 +394,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if(speaker.linkedIn){
 				$('#speakerLinedIn').attr('href',speaker.linkedIn);
 				$('#speakerLinedIn').show();
-				$('#speakerLinedIn').trigger('create');
 			}
 			else	
 			$('#speakerLinedIn').hide();
