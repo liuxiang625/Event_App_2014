@@ -161,6 +161,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$(".goPrevious").live('vclick', function(event) {//go to previous page in history
 		event.preventDefault();
 		history.back();
+
 	});
 	
 	$('#cancelSummitSurvey').live('vclick', function(e) {//go to previous page in history
@@ -189,7 +190,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		// Set attendee's name and email in cookie for future authentication 
 		var CookieDate = new Date();
-		var summitDate = new Date("10/27/2014");
+		var summitDate = new Date("10/29/2014");
 		
 		if (CookieDate < summitDate) {
 			$('#startSummitSurvey').hide();
@@ -270,11 +271,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			 if(attendee)
 				ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
 					onSuccess: function(findEvalEvent) {
-						if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
+						if(findEvalEvent.result.length == session.speakers.length) {// This attendee has evaluated all speakers in this session.
 							$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
 							$("#startEvalButton").addClass('ui-disabled');
 						}
-						else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
+						else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < session.speakers.length) {// This attendee has evaluated one but not all speakers in this session.
 							findEvalEvent.result.forEach({
 								onSuccess: function(evalEvent)
 						        {
