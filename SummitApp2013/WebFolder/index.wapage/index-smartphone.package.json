@@ -18,11 +18,11 @@
         "path": "WEBFOLDER",
         "type": "style"
     },{
-        "id": "styles/my.css",
+        "id": "application.css",
         "path": "WEBFOLDER",
         "type": "style"
     },{
-        "id": "application.css",
+        "id": "styles/my.css",
         "path": "WEBFOLDER",
         "type": "style"
     },{

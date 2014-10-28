@@ -59,6 +59,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	}
 	function buildSessionListView(arr) {
 		var html = "";
+		html += '<li role="heading" data-role="list-divider" style = "text-align:center">All Sessions</li>';
 		html = buildListItem(html, arr);
 		var listview = document.getElementById('sessionListview');
 		listview.innerHTML = html;
@@ -70,8 +71,22 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildLiveSessionListView(sessionsObj) {
 		var html = "";
 		if (sessionsObj.liveSessionsArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
-			html = buildListItem(html, sessionsObj.liveSessionsArray);
+		html = buildListItem(html, sessionsObj.liveSessionsArray);
 		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Upcoming Sessions </li>';
+		html = buildListItem(html, sessionsObj.commingSessionsArray);
+		
+		var listview = document.getElementById('sessionListview');
+		listview.innerHTML = html;
+		if ($('#sessionListview').hasClass('ui-listview')) {
+			$('#sessionListview').listview('refresh');
+		}
+	}
+	//speakerListView
+	function buildSpeakerListView(speakersObj) {
+		var html = "";
+		if (speakersObj.speakersArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Speakers</li>';
+		html = buildListItem(html, sessionsObj.liveSessionsArray);
+		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Staff </li>';
 		html = buildListItem(html, sessionsObj.commingSessionsArray);
 		
 		var listview = document.getElementById('sessionListview');
@@ -315,17 +330,34 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 
 		
-		$("input[type='checkbox']").bind( "change", function(event, ui) {
-			if(this.checked){
+//		$("input[type='checkbox']").bind( "change", function(event, ui) {
+//			if(this.checked){
+//				buildSessionListView(allSessions);
+//			}
+//			else {
+//				ds.Session.getLiveSessions({
+//					onSuccess: function(e) {
+//						buildLiveSessionListView(e.result);
+//					}
+//				});
+//			}
+//		});
+		
+		$(".SessionListTabButton").bind( "tap", function(event, ui) {
+			$("#" + this.id).addClass('ui-btn-active');
+			if(this.id == "allSessions" )
 				buildSessionListView(allSessions);
-			}
-			else {
+			else if (this.id == "liveSessions" ){
 				ds.Session.getLiveSessions({
 					onSuccess: function(e) {
 						buildLiveSessionListView(e.result);
 					}
 				});
 			}
+			else
+				$.mobile.changePage($('#page3'), {
+					transition: "slide"
+				});
 		});
 			
 		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {

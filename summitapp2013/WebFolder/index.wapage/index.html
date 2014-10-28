@@ -94,14 +94,46 @@
                 </a>
             </div>
 
-				<form id="showAllSessionsContainer" >
-						<label>
-							<input type="checkbox" name="showAllSessions" data-mini="true" > Show All Sessions
-						</label>
-				</form>
+<!--				<form id="showAllSessionsContainer" >-->
+<!--						<label>-->
+<!--							<input type="checkbox" name="showAllSessions" data-mini="true" > Show All Sessions-->
+<!--						</label>-->
+<!--				</form>-->
 
                 <ul style="margin:0px" id="sessionListview" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="Search session or speaker" data-divider-theme="b">
                 </ul>
+				<div data-role="footer" data-position="fixed">		
+					<div data-role="navbar">
+						<ul>
+							<li><a id="liveSessions" href="#" class="SessionListTabButton ui-btn-active"  data-icon="star">Live</a></li>
+							<li><a id="allSessions" href="#" class="SessionListTabButton"  data-icon="grid">All</a></li>
+							<li><a id="speakers" href="#" class="SessionListTabButton"  data-icon="info">Speakers</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</div><!-- /footer -->
+            </div>
+        </div>
+<!--		All Speakers and Staff List-->
+		<div id="page3" data-role="page">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Speakers and Staff
+                </h3>
+                <a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="home" data-direction="reverse" class="ui-btn-left">
+                    Home
+                </a>
+            </div>
+                <ul style="margin:0px" id="speakerListView" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="Search speaker or staff here" data-divider-theme="b">
+                </ul>
+				<div data-role="footer" data-position="fixed">		
+					<div data-role="navbar">
+						<ul>
+							<li><a id="liveSessions" href="#page2" class="SessionListTabButton "  data-icon="star">Live Sessions</a></li>
+							<li><a id="allSessions" href="#page2" class="SessionListTabButton"  data-icon="grid">All Sessions</a></li>
+							<li><a id="speakers" href="#" class="SessionListTabButton ui-btn-active"  data-icon="info">All Speakers</a></li>
+						</ul>
+					</div>
+				</div><!-- /footer -->
             </div>
         </div>
         <!-- Session Detail -->
