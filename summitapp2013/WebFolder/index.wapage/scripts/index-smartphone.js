@@ -49,7 +49,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			//html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
 			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
 			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
@@ -148,22 +147,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 									$("#startEvalButton").addClass('ui-disabled');
 								}
 								});
-								
-								//Disabl Eval button when session is not started
-								ds.Session.isSessionAlive ({
-									onSuccess: function(checkSessionAliveEvent) {
-										var evalButtonText = "";
-										$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
-										if(checkSessionAliveEvent.result){
-											$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
-											$("#startEvalButton").removeClass('ui-disabled');
-										}
-										else{
-											$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
-											$("#startEvalButton").addClass('ui-disabled');
-										}
-									}
-								});
 							}
 						});
 					},
@@ -175,25 +158,39 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			ds.Session.find("ID = " + sessionId , {
 				autoExpand:'presentaors',
 				onSuccess: function(findEvent) {
+					//Build Session Detail
 					var speakerListHTML = '';
 					var evalSpeakListHTML = '';
-					
 					var sessionEntity = findEvent.entity;
-					
 					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
-					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + ', Conference Room: ' + sessionEntity.room.getValue();
+					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + '<br> Conference Room: ' + sessionEntity.room.getValue();
 					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
-
 					//build speakers list
+					if(sessionEntity.presentaors.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
 					sessionEntity.presentaors.getValue().forEach({  
 				        onSuccess: function(presentorEvent)
 				        {
 				            var presentor = presentorEvent.entity; // get the entity from event.entity
 				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
 							//Build the dropdown for later eval
-							evalSpeakListHTML += '<option value="'+ presentor.speakerName.getValue() +'">'+ presentor.speakerName.getValue() +'</option>'
+							evalSpeakListHTML += '<option value="'+ presentor.speakerName.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
 						}
 				    });
+				    //Disable Eval button when session is not started
+					ds.Session.isSessionAlive ({
+						onSuccess: function(checkSessionAliveEvent) {
+							var evalButtonText = "";
+							$('#startEvalButton span span')[0]?(evalButtonText = $('#startEvalButton span span')[0].innerHTML): evalButtonText = ($('#startEvalButton')[0].innerHTML)
+							if(checkSessionAliveEvent.result){
+								$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Evaluate this Session"):($('#startEvalButton')[0].innerHTML  = "Evaluate this Session");
+								$("#startEvalButton").removeClass('ui-disabled');
+							}
+							else{
+								$('#startEvalButton span span')[0]?($('#startEvalButton span span')[0].innerHTML = "Session has not started yet"):($('#startEvalButton')[0].innerHTML  = "Session has not started yet");
+								//$("#startEvalButton").addClass('ui-disabled');   temperorally commented out for eval page development
+							}
+						}
+					});				
 					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
 					$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
 					$('#sessionSpeakersList').listview('refresh');
@@ -355,7 +352,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //		});
 		
 		$(".SessionListTabButton").bind( "tap", function(event, ui) {
-			
+			$('.ui-input-clear').click();
 			if(this.id.indexOf("allSessions") > -1 ){
 				buildSessionListView(allSessions);
 				$("#speakersList").removeClass('ui-btn-active');
@@ -448,7 +445,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		});
 		
-		//Get live and upcoming sessions
+		//Get live and upcoming sessions and build session list
 		ds.Session.getLiveSessions({
 			onSuccess: function(e) {
 				allSessions = e.result.allSessionsArray;
@@ -456,9 +453,53 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			}
 		});
 		
+		//Get All speakers and build speakers list
 		ds.Speaker.getAllSpeakers({
 			onSuccess: function(e) {
 				buildSpeakerListView(e.result);
+			}
+		});
+		
+		//Get session evals and build session eval page
+		ds.Eval.getEvalQuestions('session',1,{
+			onSuccess: function(findEvalQuestionEvent) {
+				var questions = findEvalQuestionEvent.result;
+				questions.forEach(function(question) {
+					var html = "";
+					var answerNumber = "answer" + question.questionNumber;
+					if (question.questionType == "selection")
+						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+					if (question.questionType == "text")
+						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
+					$('.evalQuestionsContent').append(html);
+				});
+				$('#page7').trigger('create');
+			}
+		});
+		
+		ds.Eval.getEvalQuestions('conference',1,{
+			onSuccess: function(findEvalQuestionEvent) {
+				var questions = findEvalQuestionEvent.result;
+				//debugger;
+				questions.forEach(function(question) {
+					var html = "";
+					var answerNumber = "answer" + question.questionNumber;
+					if (question.questionType == "selection")
+						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+					if (question.questionType == "text")
+						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
+					$('.summitEvalQuestionsContent').append(html);
+				});
+//				questions.forEach(function(question) {
+//					var html = "";
+//					var answerNumber = "answer" + question.questionNumber;
+//					if (question.questionType == "selection")
+//						html = '<fieldset data-type="horizontal" data-role="controlgroup" data-mini="true"><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+//					if (question.questionType == "text")
+//						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" data-mini="true" class="answerInput" /></textarea></fieldset>';
+//					$('.evalQuestionsContent').append(html);
+//				});
+//				$('#page7').trigger('create');
 			}
 		});
 	};// @lock

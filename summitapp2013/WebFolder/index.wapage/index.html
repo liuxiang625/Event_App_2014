@@ -22,7 +22,7 @@
  		<div id="page1" data-role="page">
 			<div data-role="content">
 				<div style="text-align:center;">
-					<a href="http://www.4d.com/company/events/summit2013.html/" target="_blank" style="text-align : center;">
+					<a href="http://www.4d.com/company/events/summit2014.html/" target="_blank" style="text-align : center;">
 		                 <img id="4dSummitlogo" style="max-width: 125px; max-height: 125px; " src="/images/Summit_2014_logo.png"/>
 		   			</a>  
 					<h1 style="text-align:center; color: rgb(102, 102, 102);">
@@ -47,7 +47,7 @@
 		      		</a>  
 				</div>
 				<h3 style="color: rgb(255, 153, 0);text-align:center;" >
-	                    <i>Gold Sponsor:</i>
+	                    <i>Gold Sponsors:</i>
 	            </h3>
 				<div style="text-align : center;" >
 							<a href="http://www.orchardsoft.com/" target="_blank" style="float:center; width: 100px; height: 48px;margin-right:10px;">
@@ -271,12 +271,14 @@
                         </input>
                     </fieldset>
                 </div>
-				<div data-role="fieldcontain">
+				<div id="evalSpeakerSelect" data-role="fieldcontain">
 					<label for="evalSpeakerList" class="select">Speaker:</label>
 					<select name="speakerName" id="evalSpeakerList" data-mini="true" class="answerInput" >
 						<option value="JPR">JPR</option>
 					</select>
 				</div>
+<!--				<div class ="summitEvalQuestionsContent">-->
+<!--				</div>-->
                 <div data-role="fieldcontain">
                     <fieldset data-type="horizontal" data-role="controlgroup" data-mini="true">
                         <legend>
@@ -451,15 +453,23 @@
 						<option value="Mobile apps">Mobile apps</option>
 					</select>
 				</div>
-				<div data-role="fieldcontain">
-					<label for="answer2" class="select">In the next year what kind of apps do you see yourself developing: ( Check all that apply to you)</label>
-					<select name="answer2" id="answer2" data-mini="true" class="answerInput" multiple="multiple" data-native-menu="false">
-						<option value="Cloud apps">Cloud apps</option>
-						<option value="Client apps">Client/Sever apps</option>
-						<option value="Web apps">Web apps</option>
-						<option value="Mobile apps">Mobile apps</option>
-					</select>
-				</div>
+				<fieldset data - role = "controlgroup" class = "ui-controlgroup ui-controlgroup-vertical ui-corner-all" > 
+					<div role = "heading" class = "ui-controlgroup-label" > <legend> In the next year what kind of apps do you see yourself developing ( Check all that apply to you)</legend></div>
+					<div class="ui-controlgroup-controls ">
+						
+						<div class="ui-checkbox"><label for="checkbox-1a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">Cloud apps</label><input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" data-mini="true"></div>
+						
+
+						<div class="ui-checkbox"><label for="checkbox-2a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Client/Server apps</label><input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" data-mini="true"></div>
+						
+
+						<div class="ui-checkbox"><label for="checkbox-3a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Web apps</label><input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" data-mini="true"></div>
+						
+
+						<div class="ui-checkbox"><label for="checkbox-4a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">Mobile apps</label><input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" data-mini="true"></div>
+						
+				    </div>
+				</fieldset>
 				<div data-role="fieldcontain">
 					<label for="answer3" class="select">How long have you been developing with 4D?</label>
 					<select name="answer3" id="answer3" data-mini="true" class="answerInput">

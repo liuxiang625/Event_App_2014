@@ -24,3 +24,5 @@ include("./Model/Speaker/Speaker-methods.js");
 include("./Model/Survey/Survey-events.js");
 include("./Model/Survey/Survey-methods.js");
 
+
+include("./Model/Eval/Eval-methods.js");

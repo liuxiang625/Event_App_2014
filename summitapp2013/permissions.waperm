@@ -1,17 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?><permissions>
-	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Session" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Session" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Session" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Presentation" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Presentation" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Presentation" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Speaker" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Speaker" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Speaker" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Question" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Question" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Question" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Answer" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Attendee" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.SessionFavorite" temporaryForcePermissions="false" type="dataClass"/><allow action="upload" groupName="Admin" groupID="01000000000000000000000000000000" resource="upload" temporaryForcePermissions="false" type="service"/>
+	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Eval" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Eval" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Eval" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.EvalAnswer" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.EvalAnswer" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Conference" temporaryForcePermissions="false" type="dataClass"/>
 </permissions>

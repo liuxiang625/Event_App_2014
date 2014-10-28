@@ -4,6 +4,7 @@
 */
 
 #richText16 {
+	 z-index: 31;
 	 width: 131px;
 	 height: 18px;
 	 top: 397px;
@@ -11,11 +12,11 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 31;
 	 
 }
 
 #richText15 {
+	 z-index: 30;
 	 width: 134px;
 	 height: 18px;
 	 top: 396px;
@@ -23,11 +24,11 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 30;
 	 
 }
 
 #richText14 {
+	 z-index: 29;
 	 width: 74px;
 	 height: 18px;
 	 top: 281px;
@@ -35,11 +36,11 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 29;
 	 
 }
 
 #richText13 {
+	 z-index: 28;
 	 width: 31px;
 	 height: 18px;
 	 top: 151px;
@@ -47,11 +48,11 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 28;
 	 
 }
 
 #richText12 {
+	 z-index: 27;
 	 width: 77px;
 	 height: 18px;
 	 top: 51px;
@@ -59,11 +60,11 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 27;
 	 
 }
 
 #richText11 {
+	 z-index: 26;
 	 width: 69px;
 	 height: 18px;
 	 top: 151px;
@@ -71,7 +72,6 @@
 	
 	 position: absolute;
 	 font-size: 16px;
-	 z-index: 26;
 	 
 }
 

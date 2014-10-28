@@ -26,8 +26,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": "367",
-						"Y": "822"
+						"X": 433,
+						"Y": 912
 					}
 				}
 			},
@@ -39,8 +39,8 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": "42",
-						"Y": "752"
+						"X": 60,
+						"Y": 768
 					}
 				}
 			},
@@ -52,7 +52,7 @@
 					"pathVisible": "true",
 					"__CDATA": "\n\t\t\t\t\t\n\t\t\t\t",
 					"position": {
-						"X": 775,
+						"X": 791,
 						"Y": 797
 					}
 				}
@@ -108,11 +108,55 @@
 						"Y": 270
 					}
 				}
+			},
+			"Eval": {
+				"panelColor": "#4FA997",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 406,
+						"Y": 1612
+					}
+				}
+			},
+			"EvalAnswer": {
+				"panelColor": "#7F7F7F",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 36,
+						"Y": 1540
+					}
+				}
+			},
+			"Conference": {
+				"panelColor": "#D8D8D8",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 404,
+						"Y": 1168
+					}
+				}
+			},
+			"EvalQuestion": {
+				"panelColor": "#548DD4",
+				"panel": {
+					"isOpen": "true",
+					"pathVisible": true,
+					"position": {
+						"X": 845,
+						"Y": 1428
+					}
+				}
 			}
 		},
 		"model": {
-			"workspaceLeft": 1,
-			"workspaceTop": 200,
+			"workspaceLeft": 0,
+			"workspaceTop": 1200,
 			"scriptMode": "manual",
 			"lastScriptLocation": {
 				"Session": {
@@ -120,6 +164,9 @@
 				},
 				"Speaker": {
 					"method": "Speaker/Speaker-methods.js"
+				},
+				"Eval": {
+					"method": "Eval/Eval-methods.js"
 				}
 			}
 		}
@@ -348,6 +395,14 @@
 							"userDefined": true
 						}
 					]
+				},
+				{
+					"name": "evalAnswerCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalAnswerCollection",
+					"reversePath": true,
+					"path": "attendee"
 				}
 			],
 			"events": [
@@ -355,6 +410,295 @@
 					"kind": "onSave",
 					"from": "model.Attendee.events.onSave",
 					"userDefined": true
+				}
+			]
+		},
+		{
+			"name": "Conference",
+			"className": "Conference",
+			"collectionName": "ConferenceCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "name",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "location",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "startDate",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": true
+				},
+				{
+					"name": "endDate",
+					"kind": "storage",
+					"scope": "public",
+					"type": "date",
+					"simpleDate": true
+				},
+				{
+					"name": "sessions",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SessionCollection",
+					"reversePath": true,
+					"path": "conference"
+				},
+				{
+					"name": "speakers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SpeakerCollection",
+					"reversePath": true,
+					"path": "conference"
+				},
+				{
+					"name": "evalQuestions",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalQuestionCollection",
+					"reversePath": true,
+					"path": "conference"
+				},
+				{
+					"name": "evalCollection",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalCollection",
+					"reversePath": true,
+					"path": "conference"
+				}
+			]
+		},
+		{
+			"name": "Eval",
+			"className": "Eval",
+			"collectionName": "EvalCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "Session"
+				},
+				{
+					"name": "sessionTitle",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "session.title"
+				},
+				{
+					"name": "speakers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SpeakerCollection",
+					"path": "session.speakers"
+				},
+				{
+					"name": "evalType",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "evalAnswers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalAnswerCollection",
+					"reversePath": true,
+					"path": "eval"
+				},
+				{
+					"name": "conference",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Conference",
+					"path": "Conference"
+				},
+				{
+					"name": "evalQuestions",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalQuestionCollection",
+					"path": "conference.evalQuestions"
+				}
+			],
+			"methods": [
+				{
+					"name": "getEvalQuestions",
+					"applyTo": "dataClass",
+					"scope": "public",
+					"from": "model.Eval.methods.getEvalQuestions",
+					"userDefined": true
+				}
+			]
+		},
+		{
+			"name": "EvalAnswer",
+			"className": "EvalAnswer",
+			"collectionName": "EvalAnswerCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "eval",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Eval",
+					"path": "Eval"
+				},
+				{
+					"name": "session",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Session",
+					"path": "eval.session"
+				},
+				{
+					"name": "sessionId",
+					"kind": "alias",
+					"scope": "public",
+					"type": "long",
+					"path": "session.ID"
+				},
+				{
+					"name": "sessionTitle",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "session.title"
+				},
+				{
+					"name": "speakers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "SpeakerCollection",
+					"path": "session.speakers"
+				},
+				{
+					"name": "attendee",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Attendee",
+					"path": "Attendee"
+				},
+				{
+					"name": "attendeeName",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "attendee.fullName"
+				},
+				{
+					"name": "attendeeEmail",
+					"kind": "alias",
+					"scope": "public",
+					"type": "string",
+					"path": "attendee.email"
+				},
+				{
+					"name": "answerText",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "anynomous",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
+				}
+			]
+		},
+		{
+			"name": "EvalQuestion",
+			"className": "EvalQuestion",
+			"collectionName": "EvalQuestionCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "questionText",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "questionType",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "questionNumber",
+					"kind": "storage",
+					"scope": "public",
+					"type": "number"
+				},
+				{
+					"name": "conference",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Conference",
+					"path": "Conference"
+				},
+				{
+					"name": "evalType",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "options",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
 				}
 			]
 		},
@@ -627,6 +971,28 @@
 					"scope": "public",
 					"type": "AnswerCollection",
 					"path": "sessionSurveys.answers"
+				},
+				{
+					"name": "evaluations",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalCollection",
+					"reversePath": true,
+					"path": "session"
+				},
+				{
+					"name": "evaluationAnwsers",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "EvalAnswerCollection",
+					"path": "evaluations.evalAnswers"
+				},
+				{
+					"name": "conference",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Conference",
+					"path": "Conference"
 				}
 			],
 			"methods": [
@@ -767,6 +1133,13 @@
 					"kind": "storage",
 					"scope": "public",
 					"type": "bool"
+				},
+				{
+					"name": "conference",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "Conference",
+					"path": "Conference"
 				}
 			],
 			"methods": [
@@ -839,6 +1212,5 @@
 				}
 			]
 		}
-	],
-	"type": []
+	]
 }
