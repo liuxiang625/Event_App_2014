@@ -11,3 +11,13 @@ model.Speaker.methods.updateSpeakerImagesFolder = function() {
 	return true;
 };
 model.Speaker.methods.updateSpeakerImagesFolder.scope = "public";
+
+model.Speaker.methods.getAllSpeakers = function() {
+	var speakers = {};
+	
+	speakers.speakersArray = ds.Speaker.query("isStaff == null or isStaff == false").orderBy("firstName").toArray("ID,firstName,lastName,fullName,company,title,biography,picURL,linkedIn");
+	speakers.staffArray = ds.Speaker.query("isStaff == true").orderBy("firstName").toArray("ID,firstName,lastName,fullName,company,title,biography,picURL,linkedIn");
+	return speakers;
+};
+
+model.Speaker.methods.getAllSpeakers.scope = "public";

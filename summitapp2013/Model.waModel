@@ -112,7 +112,7 @@
 		},
 		"model": {
 			"workspaceLeft": 1,
-			"workspaceTop": 0,
+			"workspaceTop": 200,
 			"scriptMode": "manual",
 			"lastScriptLocation": {
 				"Session": {
@@ -758,16 +758,29 @@
 				},
 				{
 					"name": "linkedIn",
+					"kind": "storage",
 					"scope": "public",
-					"type": "string",
-					"kind": "storage"
+					"type": "string"
+				},
+				{
+					"name": "isStaff",
+					"kind": "storage",
+					"scope": "public",
+					"type": "bool"
 				}
 			],
 			"methods": [
 				{
+					"name": "getAllSpeakers",
+					"applyTo": "dataClass",
+					"scope": "public",
+					"from": "model.Speaker.methods.getAllSpeakers",
+					"userDefined": true
+				},
+				{
 					"name": "updateSpeakerImagesFolder",
 					"applyTo": "dataClass",
-					"scope": "publicOnServer",
+					"scope": "public",
 					"from": "model.Speaker.methods.updateSpeakerImagesFolder",
 					"userDefined": true
 				}

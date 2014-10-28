@@ -49,7 +49,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			//html += '<p class="ui-li-desc">'+   htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', '  + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(elem.startTimeString) + ', ' + 'Conference Room: ' + htmlEncode(elem.room) + ' </p>';
 			html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
@@ -85,14 +86,24 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildSpeakerListView(speakersObj) {
 		var html = "";
 		if (speakersObj.speakersArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Speakers</li>';
-		html = buildListItem(html, sessionsObj.liveSessionsArray);
-		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Staff </li>';
-		html = buildListItem(html, sessionsObj.commingSessionsArray);
+		speakersObj.speakersArray.forEach(function(elem) {
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSpeakerProfile" ' + '>';
+			html += '<a href="#page5" data-transition="slide" >';
+			html += '<img  style="width: 56px; max-height: 100%" src = "/images/speakerImages/' + htmlEncode(elem.picURL) + '" class = "ui-li-thumb" />';
+			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.fullName) +'</h1>';
+			html += '<p class="ui-li-desc">'+   htmlEncode(elem.title)  +', '+ htmlEncode(elem.company) + '</p>';
+			//html +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
+			html += '</a>';
+			html += '</li>';
+		});
+//		html = buildListItem(html, sessionsObj.liveSessionsArray);
+//		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Staff </li>';
+//		html = buildListItem(html, sessionsObj.commingSessionsArray);
 		
-		var listview = document.getElementById('sessionListview');
+		var listview = document.getElementById('speakerListView');
 		listview.innerHTML = html;
-		if ($('#sessionListview').hasClass('ui-listview')) {
-			$('#sessionListview').listview('refresh');
+		if ($('#speakerListView').hasClass('ui-listview')) {
+			$('#speakerListView').listview('refresh');
 		}
 	}
 	
@@ -182,7 +193,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				        onSuccess: function(presentorEvent)
 				        {
 				            var presentor = presentorEvent.entity; // get the entity from event.entity
-				            speakerListHTML += '<li data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
+				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
 							//Build the dropdown for later eval
 							evalSpeakListHTML += '<option value="'+ presentor.speakerName.getValue() +'">'+ presentor.speakerName.getValue() +'</option>'
 						}
@@ -207,7 +218,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		// tap event handler to load speak's profile
-		$( "#sessionSpeakersList li" ).live( "tap", function() {
+		$( ".loadSpeakerProfile" ).live( "tap", function() {
 			var speakerId = this.id;
 			var sessionListHTML = '';
 			 ds.Speaker.find("ID = " + speakerId , {
@@ -344,7 +355,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //		});
 		
 		$(".SessionListTabButton").bind( "tap", function(event, ui) {
-			$("#" + this.id).addClass('ui-btn-active');
+			
 			if(this.id == "allSessions" )
 				buildSessionListView(allSessions);
 			else if (this.id == "liveSessions" ){
@@ -358,6 +369,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$.mobile.changePage($('#page3'), {
 					transition: "slide"
 				});
+			$("#" + this.id).addClass('ui-btn-active');
 		});
 			
 		$( ".saveSummitEval" ).bind( "tap", function(event, ui) {
@@ -432,6 +444,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			onSuccess: function(e) {
 				allSessions = e.result.allSessionsArray;
 				buildLiveSessionListView(e.result);
+			}
+		});
+		
+		ds.Speaker.getAllSpeakers({
+			onSuccess: function(e) {
+				buildSpeakerListView(e.result);
 			}
 		});
 	};// @lock
