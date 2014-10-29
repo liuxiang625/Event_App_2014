@@ -112,8 +112,13 @@
 		},
 		"model": {
 			"workspaceLeft": 1,
-			"workspaceTop": 727,
-			"scriptMode": "manual"
+			"workspaceTop": 0,
+			"scriptMode": "manual",
+			"lastScriptLocation": {
+				"Session": {
+					"method": "Session/Session-methods.js"
+				}
+			}
 		}
 	},
 	"dataClasses": [
@@ -619,6 +624,15 @@
 					"scope": "public",
 					"type": "AnswerCollection",
 					"path": "sessionSurveys.answers"
+				}
+			],
+			"methods": [
+				{
+					"name": "getLiveSessions",
+					"applyTo": "dataClass",
+					"scope": "publicOnServer",
+					"from": "model.Session.methods.getLiveSessions",
+					"userDefined": true
 				}
 			]
 		},

@@ -39,31 +39,28 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var html = "";
 
 		arr.forEach(function(elem) {
-		if(elem.title.indexOf("Registration") != -1){
-				var dayString = '';
-				switch(elem.sessionDateString) {
-					case '10/27/2014':
-						dayString = 'Tuesday'
-						break
-					case '10/28/2014':
-						dayString = 'Wednesday'
-						break
-					case '10/29/2014':
-						dayString = 'Thursday'
-						break
-					case '10/30/2014':
-						dayString = 'Friday'
-						break	
-//					case '10/19/2013':
-//						dayString = 'Saturday'
+//		if(elem.title.indexOf("Registration") != -1){
+//				var dayString = '';
+//				switch(elem.sessionDateString) {
+//					case '10/27/2014':
+//						dayString = 'Tuesday'
 //						break
-				}
-				html += '<li role="heading" data-role="list-divider">' + htmlEncode(elem.sessionDateString) + '  ' + dayString + '</li>';
-			}
-			html += '<li id = "'+ htmlEncode(elem. __KEY) +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+//					case '10/28/2014':
+//						dayString = 'Wednesday'
+//						break
+//					case '10/29/2014':
+//						dayString = 'Thursday'
+//						break
+//					case '10/30/2014':
+//						dayString = 'Friday'
+//						break	
+//				}
+//				html += '<li role="heading" data-role="list-divider">' + htmlEncode(elem.sessionDateString) + '  ' + dayString + '</li>';
+//			}
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' - ' + htmlEncode(elem.startTimeString) +'- '+ htmlEncode(elem.endTimeString) + ', ' + htmlEncode(elem.room) +' </p>';
+			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
@@ -74,6 +71,33 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		}
 	}
 	
+	function buildLiveSessionListView(sessionsObj) {
+		var html = "";
+		html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
+		sessionsObj.liveSessionsArray.forEach(function(elem) {
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+			html += elem.isActivity ? '' : '</a>';
+			html += '</li>';
+		});
+		html += '<li role="heading" data-role="list-divider" style = "text-align:center"> Upcoming Sessions </li>';
+		sessionsObj.commingSessionsArray.forEach(function(elem) {
+			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
+			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
+			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
+			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+			html += elem.isActivity ? '' : '</a>';
+			html += '</li>';
+		});
+		
+		var listview = document.getElementById('sessionListview');
+		listview.innerHTML = html;
+		if ($('#sessionListview').hasClass('ui-listview')) {
+			$('#sessionListview').listview('refresh');
+		}
+	}
 	
 	$(".goPrevious").live('tap', function() {//go to previous page in history
 				history.back();
@@ -369,15 +393,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 
 		//Get all sessions and build the session list
-		ds.Session.query("", {
-			//pageSize:1,
-			orderBy:"sessionDateString, startTimeString", //ID
+//		ds.Session.query("", {
+//			orderBy:"sessionDateString, startTimeString", //ID
+//			onSuccess: function(e) {
+//				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
+//					onSuccess: function(e2) {
+//						buildSessionListView(e2.result);
+//					}
+//				});
+//			}
+//		});
+		
+		//Get live and upcoming sessions
+		ds.Session.getLiveSessions({
 			onSuccess: function(e) {
-				e.entityCollection.toArray("title,isActivity,room,startTimeString,endTimeString,sessionDateString", {
-					onSuccess: function(e2) {
-						buildSessionListView(e2.result);
-					}
-				});
+				buildLiveSessionListView(e.result);
 			}
 		});
 	};// @lock
