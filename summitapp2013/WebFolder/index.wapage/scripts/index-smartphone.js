@@ -73,12 +73,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	
 	function buildLiveSessionListView(sessionsObj) {
 		var html = "";
-		html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
+		if (sessionsObj.liveSessionsArray.length > 0)html += '<li role="heading" data-role="list-divider" style = "text-align:center">Live Sessions</li>';
 		sessionsObj.liveSessionsArray.forEach(function(elem) {
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html +=	(elem.speakers.length == 0?'':'<p>Present by ' +htmlEncode(elem.speakers[0].fullName)+ ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
@@ -87,7 +88,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			html += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity ? 'style="background-color: #d3d3d3"' : '') + '>';
 			html += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
 			html += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) + ' </p>';
+			html += '<p class="ui-li-desc">'+  '<i>' + htmlEncode(elem.startTimeString)  +'- '+ htmlEncode(elem.endTimeString) + ', ' +'</i>' + htmlEncode(elem.room) + ', ' + htmlEncode(elem.sessionDateString) +  ' </p>';
+			html +=	(elem.speakers.length == 0?'':'<p>Present by ' +htmlEncode(elem.speakers[0].fullName)+ ' </p>') 
 			html += elem.isActivity ? '' : '</a>';
 			html += '</li>';
 		});
