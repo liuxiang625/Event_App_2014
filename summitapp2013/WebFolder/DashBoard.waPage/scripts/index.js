@@ -1,7 +1,8 @@
 ﻿
 WAF.onAfterInit = function onAfterInit() {// @lock
-
+	
 // @region namespaceDeclaration// @startlock
+	var menuItem7 = {};	// @menuItem
 	var speakerEvent = {};	// @dataSource
 	var button24 = {};	// @button
 	var button23 = {};	// @button
@@ -32,6 +33,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem7.click = function menuItem7_click (event)// @startlock
+	{// @endlock
+		 $$('tabView2').selectTab(7);
+	};// @lock
 
 	speakerEvent.onpicURLAttributeChange = function speakerEvent_onpicURLAttributeChange (event)// @startlock
 	{// @endlock
@@ -213,6 +219,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		
 		$$('menuItem1').setState('active');
 		if (waf.directory.currentUserBelongsTo('admin') == 1)
 		$$('loginContainer').hide();
@@ -261,6 +268,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
 	WAF.addListener("speaker", "onpicURLAttributeChange", speakerEvent.onpicURLAttributeChange, "WAF", "picURL");
 	WAF.addListener("button24", "click", button24.click, "WAF");
 	WAF.addListener("button23", "click", button23.click, "WAF");

@@ -1,0 +1,1 @@
+﻿model.EvalAnswer.questionText.onGet = function() {	var question = ds.EvalQuestion.find('questionNumber = :1 and evalType = :2',this.answerNumber,this.eval.evalType);	if(question) return question.questionText;	};

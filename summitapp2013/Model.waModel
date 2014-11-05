@@ -81,8 +81,8 @@
 					"pathVisible" : true,
 					"position" : 
 					{
-						"X" : 444,
-						"Y" : 1373
+						"X" : 420,
+						"Y" : 1323
 					}
 				}
 			},
@@ -131,14 +131,15 @@
 		},
 		"model" : 
 		{
-			"workspaceLeft" : 616,
-			"workspaceTop" : 965,
+			"workspaceLeft" : 5,
+			"workspaceTop" : 0,
 			"scriptMode" : "manual",
 			"lastScriptLocation" : 
 			{
 				"Session" : 
 				{
-					"method" : "Session/Session-methods.js"
+					"method" : "Session/Session-methods.js",
+					"computed" : "Session/Session-events.js"
 				},
 				"Speaker" : 
 				{
@@ -147,6 +148,10 @@
 				"Eval" : 
 				{
 					"method" : "Eval/Eval-methods.js"
+				},
+				"EvalAnswer" : 
+				{
+					"computed" : "EvalAnswer/EvalAnswer-events.js"
 				}
 			}
 		}
@@ -572,6 +577,20 @@
 					"scope" : "public",
 					"type" : "string",
 					"path" : "eval.speakerName"
+				},
+				{
+					"name" : "questionText",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "$mainModel.EvalAnswer.questionText.onGet",
+							"userDefined" : true
+						}
+					]
 				}
 			],
 			"key" : 
@@ -856,22 +875,39 @@
 					"type" : "string"
 				},
 				{
-					"name" : "FavoriteCount",
+					"name" : "audienceHeadCount",
 					"kind" : "storage",
+					"matchColumn" : "FavoriteCount",
 					"scope" : "public",
 					"type" : "number"
 				},
 				{
 					"name" : "SurveyReceived",
-					"kind" : "storage",
+					"kind" : "calculated",
 					"scope" : "public",
-					"type" : "number"
+					"type" : "number",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "$mainModel.Session.SurveyReceived.onGet",
+							"userDefined" : true
+						}
+					]
 				},
 				{
 					"name" : "SurveyAverageRate",
-					"kind" : "storage",
+					"kind" : "calculated",
 					"scope" : "public",
-					"type" : "number"
+					"type" : "number",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "$mainModel.Session.SurveyAverageRate.onGet",
+							"userDefined" : true
+						}
+					]
 				},
 				{
 					"name" : "presentations",

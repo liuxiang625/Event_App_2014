@@ -1,0 +1,1 @@
+﻿function getRandomInt(min, max) {    return Math.floor(Math.random() * (max - min + 1)) + min;}function raffle(numberOfWinners,min,max){	var winners = [];		while(numberOfWinners > 0){		winners.push(getRandomInt(min,max));		numberOfWinners = numberOfWinners-1;	}	return winners;}//raffle(10,67,1077);getRandomInt(67,1077)
