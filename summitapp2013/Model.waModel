@@ -951,6 +951,13 @@
 					"userDefined" : true
 				},
 				{
+					"name" : "getServerTimezone",
+					"applyTo" : "dataClass",
+					"scope" : "public",
+					"from" : "$mainModel.Session.methods.getServerTimezone",
+					"userDefined" : true
+				},
+				{
 					"name" : "isSessionAlive",
 					"applyTo" : "dataClass",
 					"scope" : "public",
