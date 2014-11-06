@@ -60,6 +60,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	function buildListItem(html, sessionArray){
 		var afternoonSessionDividerAdded = false;//Flag for 3pm/4pm 10AM/11AM session divider;
 		sessionArray.forEach(function(elem) {
+			var languagePref = "";
+			if(localStorage.getItem("LangPref") == "FR") languagePref = "_FR";
 			var speakerName = "";
 			var listItemHTML = "";
 			if(!elem.isActivity & elem.speakers.length > 1){
@@ -76,27 +78,27 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';
 				afternoonSessionDividerAdded = true;	
 			}
-			if(elem.title == "Q & A") listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';//Add divider before Q&A
-			if(elem.title.indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="b" style = "text-align:center;padding:0px!important"> '+ elem.sessionDateString +' </li>';
-			if(elem.title == "Welcome Reception" || elem.title == "Evening with 4D") {//Apply special Welcome Reception color for 4D party
+			if(elem['title' + languagePref] == "Q & A") listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';//Add divider before Q&A
+			if(elem['title' + languagePref].indexOf("Breakfast") != -1) html += '<li role="heading" data-role="list-divider" data-theme="b" style = "text-align:center;padding:0px!important"> '+ elem.sessionDateString +' </li>';
+			if(elem['title' + languagePref] == "Welcome Reception" || elem['title' + languagePref] == "Evening with 4D") {//Apply special Welcome Reception color for 4D party
 				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style = "height:15px;padding:1px!important"></li>';
 				listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "" style="background-color: #d7fcff">';
 			}
 			else
-			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity & elem.title != "Q & A" ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
+			listItemHTML += '<li id = "'+ elem.ID +'" data-theme="c" class = "loadSessionDetail" ' + (elem.isActivity & elem['title' + languagePref] != "Q & A" ? 'style="background-color: #eeeaea"' : 'style="background: #c6def7"') + '>';
 			listItemHTML += elem.isActivity ? '' :  '<a href="#page4" data-transition="slide" >';
-			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem.title) +'</h1>';
-			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(milToStandard(elem.startTimeString)) + ', ' + 'Room: ' + htmlEncode(elem.room) + ' </p>';
+			listItemHTML += '<h1 class="ui-li-heading">'+ htmlEncode(elem['title' + languagePref]) +'</h1>';
+			listItemHTML += '<p class="ui-li-desc">'+ htmlEncode(elem.sessionDateString) + ' at ' + htmlEncode(milToStandard(elem.startTimeString)) + ', ' + 'Room: ' + htmlEncode(elem['room' + languagePref]) + ' </p>';
 			//Add a reminder for 4D Party
-			if(elem.title == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Buses leave at 6:00pm" + ' </p>';
-			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>') 
+			if(elem['title' + languagePref] == "Evening with 4D") listItemHTML += '<p class="ui-li-desc">' + "Buses leave at 6:00pm" + ' </p>';
+			listItemHTML +=	(elem.speakers.length == 0?'':'<p>Presented By ' + '<i>' + speakerName + '</i>' + ' </p>');
 			listItemHTML += elem.isActivity ? '' : '</a>';
 			listItemHTML += '</li>';
 
-			if(elem.title.indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate pre-class for morning and afternoon session
-			if(elem.title.indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate post-class for morning and afternoon session
-			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/27/2014") listItemHTML += preClassItemHTML;
-			if(elem.title.indexOf("Lunch") != -1 && elem.sessionDateString == "10/30/2014") listItemHTML += postClassItemHTML;
+			if(elem['title' + languagePref].indexOf("Pre-Class") != -1) preClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate pre-class for morning and afternoon session
+			if(elem['title' + languagePref].indexOf("Post-Class") != -1) postClassItemHTML = listItemHTML.replace("9 AM","1:30 PM");//Duplicate post-class for morning and afternoon session
+			if(elem['title' + languagePref].indexOf("Lunch") != -1 && elem.sessionDateString == "10/27/2014") listItemHTML += preClassItemHTML;
+			if(elem['title' + languagePref].indexOf("Lunch") != -1 && elem.sessionDateString == "10/30/2014") listItemHTML += postClassItemHTML;
 			html += listItemHTML;
 		});
 		
@@ -204,6 +206,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		if(document.cookie.indexOf("SummitAPPID") == -1) {
 			document.cookie = 'SummitAPPID = ' + uniqueid() + ';expires=' + CookieDate.toGMTString() + ';';
 		}
+		if(!localStorage.getItem("LangPref")) {
+			localStorage.setItem("LangPref", 'EN');
+		}
 		var beginIndex = document.cookie.indexOf("SummitAPPID")+12;
 		var endIndex = beginIndex + 32;
 		var cookieID = document.cookie.substring(beginIndex,endIndex);
@@ -229,15 +234,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		//tap event handler to load session detail
 		$( ".loadSessionDetail" ).live( "vclick", function(event,ui) {
+			var languagePref = "";
+			if(localStorage.getItem("LangPref") == "FR") languagePref = "_FR";
 			//Load session from allSessions array, this will prevent iOS 8 lock screen breaking callbacks bug.
 			var speakerListHTML = '';
 			var evalSpeakListHTML = '';
 			var speakerMap = {};
 			var session = allSessions.filter(findElement,{'ID':this.id})[0];
 			//Build Session Detail page		
-			$('#sessionDetailTitleDiv h2')[0].innerHTML = session.title;
-			$('#sessionDetailTitleDiv div p span')[0].innerHTML = session.sessionDateString + ' at ' + session.startTimeString + '<br> Conference Room: ' + session.room;
-			$('#sessionDescrption p')[0].innerHTML = session.description;//Load session description
+			$('#sessionDetailTitleDiv h2')[0].innerHTML = session['title'+ languagePref];
+			$('#sessionDetailTitleDiv div p span')[0].innerHTML = session.sessionDateString + ' at ' + session.startTimeString + '<br> Conference Room: ' + session['room'+ languagePref];
+			$('#sessionDescrption p')[0].innerHTML = session['description'+ languagePref];//Load session description
 			if(session.speakers.length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
 			for (speakerIndex in session.speakers){
 				var speaker = session.speakers[speakerIndex];
@@ -300,91 +307,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			else {// No attendee found, firt time user
 					$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
 			}
-								
-//			ds.Session.find("ID = :1 & conference.ID = :2" ,sessionId,conference.ID.getValue(), {
-//				autoExpand:'presentations',
-//				onSuccess: function(findEvent) {
-//					//Build Session Detail
-//					var speakerListHTML = '';
-//					var evalSpeakListHTML = '';
-//					var sessionEntity = findEvent.entity;
-//					var speakerMap = {};
-//					$('#sessionDetailTitleDiv h2')[0].innerHTML = sessionEntity.title.getValue();
-//					$('#sessionDetailTitleDiv div p span')[0].innerHTML = sessionEntity.sessionDateString.getValue() + ' at ' + sessionEntity.startTimeString.getValue() + '<br> Conference Room: ' + sessionEntity.room.getValue();
-//					$('#sessionDescrption p')[0].innerHTML = sessionEntity.description.getValue();//Load session description
-//					//build speakers list
-//					if(sessionEntity.presentations.getValue().length > 1 ) evalSpeakListHTML = '<option value="All Speakers">All Speakers</option>';
-//					sessionEntity.presentations.getValue().forEach({  
-//				        onSuccess: function(presentorEvent)
-//				        {
-//				            var presentor = presentorEvent.entity; // get the entity from event.entity
-//				            speakerListHTML += '<li class="loadSpeakerProfile" data-theme="c" id="'+ presentor.speaker.relKey +'"><a  href="#page5" data-transition="slide">Speaker: '+ presentor.speakerName.getValue() +'</a></li>'
-//							//Build the dropdown for later eval
-//							evalSpeakListHTML += '<option value="'+ presentor.speakerID.getValue() +'">'+ presentor.speakerName.getValue() +'</option>';
-//							speakerMap[presentor.speakerName.getValue()]= presentor.speakerID.getValue();
-//						},
-//						atTheEnd: function(event){
-//							
-//							//check if evaluation has already been submited for each speaker;
-//						    if(attendee)
-//							    ds.Eval.query('sessionID == :1 & attendeeEmail == :2', sessionId, attendee.email.getValue(),{
-//							    	onSuccess: function(findEvalEvent) {
-//							    		if(findEvalEvent.result.length == sessionEntity.presentations.getValue().length) {// This attendee has evaluated all speakers in this session.
-//											$('#startEvalButton span span')[0]?$('#startEvalButton span span')[0].innerHTML = "Evaluation Submitted":$('#startEvalButton')[0].innerHTML = "Evaluation Submitted";
-//											$("#startEvalButton").addClass('ui-disabled');
-//										}
-//										else if (findEvalEvent.result.length >=1 & findEvalEvent.result.length < sessionEntity.presentations.getValue().length) {// This attendee has evaluated one but not all speakers in this session.
-//											findEvalEvent.result.forEach({
-//												onSuccess: function(evalEvent)
-//										        {
-//										            var eval = evalEvent.entity; // get the entity from event.entity
-//										            if (speakerMap[eval.speakerName.getValue()]) delete speakerMap[eval.speakerName.getValue()];
-//												},
-//												atTheEnd: function(event)
-//										        {
-//										           evalSpeakListHTML = "";
-//										           for (var speakerName in speakerMap) {
-//										           		evalSpeakListHTML += '<option value="'+ speakerMap[speakerName] +'">'+ speakerName +'</option>';
-//										       		}
-//										       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-//										        }
-//										    });
-//										}
-//										else {// This attendee has evaluated no speakers in this session
-//								       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-//										}
-//							    	}
-//								});
-//								else {// No attendee found, firt time user
-//						       		$('#evalSpeakerList')[0].innerHTML = evalSpeakListHTML;
-//								}
-//						}
-//				    });
-//					$('#sessionSpeakersList')[0].innerHTML = speakerListHTML;
-//					if ($('#sessionSpeakersList').hasClass('ui-listview'))
-//					$('#sessionSpeakersList').listview('refresh');
-//				}
-//			});
-			
-			
 		});
 		
-		
-//		$( '#page3' ).live( 'pageshow',function(event, ui){
-//		  	$("#speakersList").addClass('ui-btn-active');
-//		});
 		$( '#page4' ).live( 'pageshow',function(event, ui){
 		  	//$('#sessionSpeakersList').listview('refresh');
 		});
 		$( '#page7' ).live( 'pageshow',function(event, ui){
 		  	//$('#evalSpeakerList').selectmenu('refresh', true);
 		});
-		$( '#page5' ).live( 'pageshow',function(event, ui){
-		  	//$('#speakersSessionsList').listview('refresh');
-		  	//$('#speakerLinedIn').button('refresh');
-		});
 		// tap event handler to load speak's profile
 		$( ".loadSpeakerProfile" ).live( "vclick", function(event,ui) {
+			var languagePref = "";
+			if(localStorage.getItem("LangPref") == "FR") languagePref = "_FR";
 			var speakerId = this.id;
 			var sessionListHTML = '';
 			var speaker = people.filter(findElement,{'ID':speakerId})[0];
@@ -400,37 +334,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$('#speakerLinedIn').hide();
 			for (sessionIndex in speaker.sessions){
 				var session = speaker.sessions[sessionIndex]; 
-				sessionListHTML += '<li data-theme="c" id="'+ session.ID +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ session.title +'</a></li>'
+				sessionListHTML += '<li data-theme="c" id="'+ session.ID +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ session['title'+languagePref] +'</a></li>'
 			}
 			$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
 			if ($('#speakersSessionsList').hasClass('ui-listview'))$('#speakersSessionsList').listview('refresh');
-			//if ($('#speakerLinedIn').hasClass('ui-btn'))$('#speakerLinedIn').button('refresh');
-			
-//			$.mobile.changePage($('#page5'), {
-//					transition: "slide"
-//			});
-//			 ds.Speaker.find("ID = " + speakerId , {
-//		  			autoExpand:'presentations',
-//		   			onSuccess: function(findSpeakerEvent) {
-//		   				var speakerEntity = findSpeakerEvent.entity;
-//		   				speakerEntity.picURL.getValue()? $('#speakerImage')[0].src = "/images/speakerimages/" + speakerEntity.picURL.getValue(): $('#speakerImage')[0].src = "/images/speakerimages/x.png";
-//		   				$('#speakerName h2 span')[0].innerHTML = speakerEntity.fullName.getValue();
-//		   				$('#speakerName h3 span')[0].innerHTML = speakerEntity.title.getValue() + (speakerEntity.title.getValue() && speakerEntity.company.getValue()?" at ":"") + speakerEntity.company.getValue();
-//		   				$('#speakerBio p')[0].innerHTML = speakerEntity.biography.getValue();
-//		   				speakerEntity.linkedIn.getValue()?$('#speakerLinedIn').prop('href',speakerEntity.linkedIn.getValue()).show():$('#speakerLinedIn').hide();
-//		   				
-//		   				//build speakers' session list
-//		   				speakerEntity.presentations.getValue().forEach({  
-//					        onSuccess: function(presentationEvent)
-//					        {
-//					            var presentation = presentationEvent.entity; // get the entity from event.entity
-//					            sessionListHTML += '<li data-theme="c" id="'+ presentation.session.relKey +'" class = "loadSessionDetail"><a  href="#page4" data-transition="slide">Session: '+ presentation.sessionName.getValue() +'</a></li>'
-//							}
-//					    });
-//						$('#speakersSessionsList')[0].innerHTML = sessionListHTML;
-//		   				$('#speakersSessionsList').listview('refresh');
-//		   			}
-//		   	 });
 		});
 		
 		//Go to eval page and start eval 

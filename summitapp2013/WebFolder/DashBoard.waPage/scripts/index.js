@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 	
 // @region namespaceDeclaration// @startlock
+	var combobox1 = {};	// @combobox
 	var menuItem7 = {};	// @menuItem
 	var speakerEvent = {};	// @dataSource
 	var button24 = {};	// @button
@@ -33,6 +34,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	combobox1.change = function combobox1_change (event)// @startlock
+	{// @endlock
+		sources.session.conference.set(sources.conference);
+	};// @lock
 
 	menuItem7.click = function menuItem7_click (event)// @startlock
 	{// @endlock
@@ -230,8 +236,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Save Session Details
 		var sessionDate = sources.session.sessionDate;
 		sources.session.sessionDateString = sessionDate.getMonth()+1 + "/" + sessionDate.getDate() + "/" + sessionDate.getFullYear();
-		sources.session.endTime = new Date(sources.session.sessionDate.toDateString() + " " + sources.session.endTimeString);
-		sources.session.startTime = new Date(sources.session.sessionDate.toDateString() + " " + sources.session.startTimeString);
+		sources.session.endTime = getOffsetDate(new Date(sources.session.sessionDate.toDateString() + " " + sources.session.endTimeString),60);
+		sources.session.startTime = getOffsetDate(new Date(sources.session.sessionDate.toDateString() + " " + sources.session.startTimeString),60);
 		sources.session.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(1);
@@ -266,8 +272,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$('tabView2').selectTab(2);
 
 	};// @lock
-
+//Ultility change server timezone
+function getOffsetDate(date, offsetInMintues) {
+  // Add local time zone offset to get UTC and 
+  // Subtract offset to get desired zone
+  date.setMinutes(date.getMinutes() +date.getTimezoneOffset() - offsetInMintues);
+  return date;
+}
 // @region eventManager// @startlock
+	WAF.addListener("combobox1", "change", combobox1.change, "WAF");
 	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
 	WAF.addListener("speaker", "onpicURLAttributeChange", speakerEvent.onpicURLAttributeChange, "WAF", "picURL");
 	WAF.addListener("button24", "click", button24.click, "WAF");

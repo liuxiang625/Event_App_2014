@@ -55,6 +55,11 @@
 </head>
     <body id="waf-body" data-workspace-width="320" data-workspace-orientation="portrait" data-workspace-height="480" data-workspace-device="smartphone" data-viewport-width="device-width" data-viewport-minimum-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-initial-scale="1.0" data-type="document" data-theme="cupertino" data-platform="tablet" data-lib="WAF" data-group="[]" data-entire-model="true" data-apple-meta-tags-status-bar="default" style="bottom:;right:;visibility:hidden;">
  		<div id="page1" data-role="page">
+			 <div data-theme="a" data-role="header" data-position="fixed">
+				<a id="changeLanguage" href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="noicon" data-icon=""  class="ui-btn-right">
+                    Français
+                </a>
+            </div>
 			<div data-role="content">
 				<div style="text-align:center;">
 					<a href="http://www.4d.com/company/events/summit2014.html/" target="_blank" style="text-align : center;" style="max-width: 90%; max-height: 20%;">
@@ -67,6 +72,9 @@
 				<a id="goToSessions" href="#page2" data-transition="slide" data-role="button" data-iconpos="noicon" data-icon="">
                     Breakout Sessions Schedule
                 </a>
+				<a id="startSummitQuiz" href="#page8" data-transition="slideup" data-role="button" data-iconpos="noicon" data-icon="">
+                    Take a Quiz to win Grand Pize!
+                </a> 
 				<a id="startSummitSurvey" href="#page6" data-transition="slideup" data-role="button" data-iconpos="noicon" data-icon="">
                     Take Survey About Summit
                 </a> 
@@ -255,7 +263,37 @@
                         </a>
             </div>
         </div>
-        <!-- Survey -->
+		<!--Summit Conference Survey-->
+		 <div id="page6" data-role="page">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h3>
+                    Evaluation
+                </h3>
+                <a id="cancelSummitSurvey" href="#" data-theme="c" data-role="button"  data-iconpos="left" data-icon="arrow-l"  class="ui-btn-left">
+                    Cancel
+                </a>
+				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveSummitEval">
+                    Submit
+                </a>
+            </div>
+            <div data-role="content">
+				<div class ="summitEvalQuestionsContent">
+				</div>
+				<div id="attendeeInfo" data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <input  id="attendeNameInputSummitEval" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
+                        </input>
+						<br/>
+                        <input id="attendeEmailInputSummitEval" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
+                        </input>
+                    </fieldset>
+                </div>
+				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveSummitEval">
+                    Save and Submit
+                </a>
+            </div>
+        </div>
+		 <!-- Survey -->
         <div id="page7" data-role="page">
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>
@@ -291,16 +329,16 @@
                 </a>
             </div>
         </div>
-		<!--Summit Conference Survey-->
-		 <div id="page6" data-role="page">
+		<!--Summit Quiz-->
+		 <div id="page8" data-role="page">
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>
                     Evaluation
                 </h3>
-                <a id="cancelSummitSurvey" href="#" data-theme="c" data-role="button"  data-iconpos="left" data-icon="arrow-l"  class="ui-btn-left">
+                <a id="cancelSummitQuiz" href="#" data-theme="c" data-role="button"  data-iconpos="left" data-icon="arrow-l"  class="ui-btn-left">
                     Cancel
                 </a>
-				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveSummitEval">
+				<a href="#" data-transition="slide" data-theme="c" data-role="button" data-iconpos="left" data-icon="check" class="ui-btn-right saveSummitQuiz">
                     Submit
                 </a>
             </div>
@@ -309,14 +347,14 @@
 				</div>
 				<div id="attendeeInfo" data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                        <input  id="attendeNameInputSummitEval" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
+                        <input  id="attendeNameInputSummitQuiz" placeholder="Your Name" name="fullName" id="textarea4" data-mini="true" class="answerInput" />
                         </input>
 						<br/>
-                        <input id="attendeEmailInputSummitEval" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
+                        <input id="attendeNameInputSummitQuiz" placeholder="Your Email" name="email" id="textarea5" data-mini="true" class="answerInput" />
                         </input>
                     </fieldset>
                 </div>
-				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveSummitEval">
+				<a id="" href="#" data-transition="slide" data-role="button" data-iconpos="left" data-icon="check" class="saveSummitQuiz">
                     Save and Submit
                 </a>
             </div>
