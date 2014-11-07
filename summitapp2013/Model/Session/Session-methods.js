@@ -1,12 +1,12 @@
 
 
-model.Session.methods.getLiveSessions = function() {
+model.Session.methods.getLiveSessions = function(conferenceID) {
 	var CESTDate = getOffsetDate(60);//Paris CEST time
 	var sessions = {};
-	sessions.liveSessionsArray = ds.Session.query("startTime <= :1 and endTime >= :1", CESTDate).orderBy("sessionDateString, startTimeString").toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString,speakers.fullName");
-	sessions.allSessionsArray = ds.Session.all().orderBy("sessionDateString, startTimeString").toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString,description,speakers.fullName,speakers.ID");
+	sessions.liveSessionsArray = ds.Session.query("startTime <= :1 and endTime >= :1", CESTDate).orderBy("sessionDateString, startTimeString").toArray("ID,title,title_FR,isActivity,room,room_FR,startTimeString,endTimeString,sessionDateString,speakers.fullName");
+	sessions.allSessionsArray = ds.Session.query('conference.ID = :1', conferenceID).orderBy("sessionDateString, startTimeString").toArray("ID,title,,title_FR,isActivity,room,room_FR,startTimeString,endTimeString,description,description_FR,sessionDateString,speakers.fullName,speakers.ID");
 
-	sessions.commingSessionsArray = ds.Session.query("startTime >= :1", CESTDate).orderBy("sessionDateString, startTimeString").toArray("ID,title,isActivity,room,startTimeString,endTimeString,sessionDateString,speakers.fullName");
+	sessions.commingSessionsArray = ds.Session.query("startTime >= :1", CESTDate).orderBy("sessionDateString, startTimeString").toArray("ID,title,title_FR,isActivity,room,room_FR,startTimeString,endTimeString,sessionDateString,speakers.fullName");
 	return sessions
 };
 model.Session.methods.getLiveSessions.scope = "public";

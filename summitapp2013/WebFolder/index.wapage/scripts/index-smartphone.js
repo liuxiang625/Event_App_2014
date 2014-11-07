@@ -37,6 +37,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+	//Build eval page
 	function buildEvalPage () {
 		//Get session evals and build session eval page
 		ds.Eval.getEvalQuestions('session',1,{
@@ -49,6 +50,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					if (question.questionType == "selection")
 						if(!question.options)
 						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+						else {
+							var questionOptions = question.options.split(/\s*,\s*/);
+							html += '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend>';
+							questionOptions.forEach(function(option,optionIndex) {
+								html += '<input value="'+ (optionIndex+1) +'" type="radio" name="'+ answerNumber +'" id="radio'+ (optionIndex+1) +'"  class="answerInput"/><label for="radio'+ (optionIndex+1) +'">'+ option +'</label>';
+							});
+							html += '</fieldset>';
+						}
 					if (question.questionType == "text")
 						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1"  class="answerInput" /></textarea></fieldset>';
 					$('.evalQuestionsContent').append(html);
@@ -57,6 +66,23 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			}
 		});
 	}
+	
+	//Build QUiz eval Page
+	function buildQuizPage(){
+		ds.Eval.getEvalQuestions('quiz',1,{
+			onSuccess: function(findEvalQuestionEvent) {
+				var questions = findEvalQuestionEvent.result;
+				questions.forEach(function(question) {
+					var html = createQuestionHTML(question);
+					$('.quizlQuestionsContent').append(html);
+				});
+
+				$('.quizlQuestionsContent').trigger('create');
+				
+			}
+		});
+	}
+	
 	function buildListItem(html, sessionArray){
 		var afternoonSessionDividerAdded = false;//Flag for 3pm/4pm 10AM/11AM session divider;
 		sessionArray.forEach(function(elem) {
@@ -173,7 +199,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					transition: "slidedown"
 			});
 	});
-	
+	$('#cancelSummitQuiz').live('vclick', function(e) {//go to previous page in history
+			if(isJQMGhostClick(e))
+				return
+			$.mobile.changePage($('#page1'), {
+					transition: "slidedown"
+			});
+	});
 	
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
@@ -181,10 +213,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		    $("a").removeClass('goPrevious');		
 				
 		if(pageNotInit){
-			$.mobile.changePage($('#page1'));
+			//$.mobile.changePage($('#page1'));
 			pageNotInit = false;
+			if(localStorage.getItem("LangPref") == "FR")
+			$.mobile.changePage('../fr.html');
+			else
+			$.mobile.changePage('../index.html');
 		}	
-		ds.Conference.find('name = :1','4D US Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
+		ds.Conference.find('name = :1','4D EU Summit',{// Set conference, for instance 4D Summit U.S., 4D Summit Europe
 			onSuccess : function(findConferenceEvent) {
 				conference = findConferenceEvent.entity;
 			}
@@ -369,6 +405,20 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			});
 		});
 		
+		$("#startSummitQuiz").live( "vclick", function(event, ui) {
+			if(attendee) {
+				evalAnswers.email = attendee.email.getValue();
+				evalAnswers.fullName = attendee.fullName.getValue();
+				evalAnswers.sessionID = sessionId;
+				//Fill the Attendee info in the text fields
+				$('#attendeNameInputSummitQuiz').val(evalAnswers.fullName);
+				$('#attendeEmailInputSummitQuiz').val(evalAnswers.email);
+			}
+			$.mobile.changePage($('#page8'), {
+					transition: "slideup"
+			});
+		});
+		
 		
 		$( ".rankingSelect" ).bind( "change", function(event, ui) {
 			var evalAnswerString = evalAnswers[this.name];
@@ -445,7 +495,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$("#allSessions").addClass('ui-btn-active');
 			}
 			else if (this.id.indexOf("liveSessions") > -1 ){
-				ds.Session.getLiveSessions({
+				ds.Session.getLiveSessions(2,{
 					onSuccess: function(e) {
 						buildLiveSessionListView(e.result);
 					}
@@ -521,7 +571,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 		
 		
-		ds.Session.getLiveSessions({
+		ds.Session.getLiveSessions(2,{
 			onSuccess: function(e) {
 				allSessions = e.result.allSessionsArray;
 				buildLiveSessionListView(e.result);
@@ -539,48 +589,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Initialize session eval page
 		buildEvalPage();
 		
+		//Initialize Summit eval page
 		ds.Eval.getEvalQuestions('conference',1,{
 			onSuccess: function(findEvalQuestionEvent) {
 				var questions = findEvalQuestionEvent.result;
 				questions.forEach(function(question) {
-					var html = "";
-					//var answerNumber = "answer" + question.questionNumber;
-					var answerNumber = question.questionNumber;
-					if (question.questionType == "selection")//single selection radio button
-						if(!question.options)
-						html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
-						else {
-							var questionOptions = question.options.split(/\s*,\s*/);
-							html += '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + question.questionText + '</legend>';
-							questionOptions.forEach(function(option,optionIndex) {
-								html += '<input value="'+ (optionIndex+1) +'" type="radio" name="'+ answerNumber +'" id="radio'+ (optionIndex+1) +'"  class="answerInput"/><label for="radio'+ (optionIndex+1) +'">'+ option +'</label>';
-							});
-							html += '</fieldset>';
-						}
-					if (question.questionType == "multiple-selection") {// multi selection radio button
-						var questionOptions = question.options.split(/\s*,\s*/);
-						html += '<fieldset data - role = "controlgroup" class = "ui-controlgroup ui-controlgroup-vertical ui-corner-all" >';
-						html += '<div role = "heading" class = "ui-controlgroup-label" > <legend> '+ question.questionText +'</legend></div><div class="ui-controlgroup-controls ">';
-						questionOptions.forEach(function(option,optionIndex) {
-							html += '<div class="ui-checkbox"><label for="checkbox-'+ (optionIndex+1) +'" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">'+ option +'</label><input type="checkbox" answervalue="'+(optionIndex+1)+'" name="'+ answerNumber +'" id="checkbox-'+ (optionIndex+1) +'" class="answerInput" data-mini="true"></div>';
-						});
-						html += ' </div></fieldset>';
-					}
-					
-					if (question.questionType == "dropdown") {//single selection dropdown select
-						var questionOptions = question.options.split(/\s*,\s*/);
-						html += '<div data-role="fieldcontain"><label for="answer'+ answerNumber +'" class="select" style="width:100%">'+ question.questionText +'</label>';
-						html += '<select name="'+ answerNumber +'" id="answer'+ answerNumber +'" data-mini="true" class="answerInput">';
-						html += '<option value="0"></option>';
-						questionOptions.forEach(function(option,optionIndex) {
-							html += '<option value="'+ (optionIndex+1) +'">'+ option +'</option>';
-						});
-						html += '</select></div>';
-						
-					}
-					if (question.questionType == "text")//text field
-						html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ question.questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
-					html += '<div id="seperator" style="border-bottom: 1px gray solid;margin-bottom:5px;"></div>';
+					var html = createQuestionHTML(question);
 					$('.summitEvalQuestionsContent').append(html);
 				});
 
@@ -588,6 +602,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				
 			}
 		});
+		
+		//Initialize QUiz eval Page
+		buildQuizPage();
 	};// @lock
 	$( ".answerInput" ).live( "change", function(event, ui) {
 		//check if answerInput if multi selection
@@ -603,9 +620,76 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		evalAnswers[this.name] = this.value;
 	});
 	
+	$( ".changeLang" ).live( "vclick", function(event, ui) {
+		if(localStorage.getItem("LangPref") == 'EN'){
+			localStorage.setItem("LangPref", 'FR');
+			window.location.href = "http://127.0.0.1:8081/fr.html";
+		}
+		else {
+			localStorage.setItem("LangPref", 'EN');
+			window.location.href = "http://127.0.0.1:8081/index.html";
+		}
+		
+		buildQuizPage();
+	});
 	//find Session ID in seesion array element
 	function findElement(element,index,array){
 		return element.ID == this.ID
+	}
+	
+	
+	//Ultility Build Question
+	function createQuestionHTML(question){
+		var languagePref = "";
+		var questionText  = question.questionText;
+		var questionOptions = question.options;
+		if(localStorage.getItem("LangPref") == "FR") languagePref = "_FR";
+		var html = "";
+		var answerNumber = question.questionNumber;
+		if(question['questionText' + languagePref]) questionText = question['questionText' + languagePref];
+		if(question['options' + languagePref]) questionOptions = question['options' + languagePref];
+		switch(question.questionType){
+			case "text":
+				html = '<fieldset data-role="controlgroup"><label for="textarea1">'+ questionText + '</label><textarea placeholder="" name="'+ answerNumber +'" id="textarea1" class="answerInput" /></textarea></fieldset>';
+				return html;
+				break
+			case "selection":
+				if(!questionOptions)
+					html = '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + questionText + '</legend><input value="4" type="radio" name="'+ answerNumber +'" id="radio1"  class="answerInput"/><label for="radio1">Excellent</label><input value="3" type="radio" name="'+ answerNumber +'" id="radio2" class="answerInput"/><label for="radio2">Good</label><input value="2" type="radio" name="'+ answerNumber +'" id="radio3" class="answerInput"/><label for="radio3">Fair</label><input value="1" type="radio" name="'+ answerNumber +'" id="radio4" class="answerInput"/><label for="radio4">Poor</label></fieldset>';
+				else {
+					var options = questionOptions.split(/\s*,\s*/);
+					html += '<fieldset data-type="horizontal" data-role="controlgroup" ><legend>' + questionText + '</legend>';
+					options.forEach(function(option,optionIndex) {
+						html += '<input value="'+ (optionIndex+1) +'" type="radio" name="'+ answerNumber +'" id="radio'+ (optionIndex+1) +'"  class="answerInput"/><label for="radio'+ (optionIndex+1) +'">'+ option +'</label>';
+					});
+					html += '</fieldset>';
+				}
+				return html;
+				break
+			case "dropdown":
+				var options = questionOptions.split(/\s*,\s*/);
+				html += '<div data-role="fieldcontain"><label for="answer'+ answerNumber +'" class="select" style="width:100%">'+ questionText +'</label>';
+				html += '<select name="'+ answerNumber +'" id="answer'+ answerNumber +'" data-mini="true" class="answerInput">';
+				html += '<option value="0"></option>';
+				options.forEach(function(option,optionIndex) {
+					html += '<option value="'+ (optionIndex+1) +'">'+ option +'</option>';
+				});
+				html += '</select></div>';
+				return html;
+				break
+			case  "multiple-selection":
+				var options = questionOptions.split(/\s*,\s*/);
+				html += '<fieldset data - role = "controlgroup" class = "ui-controlgroup ui-controlgroup-vertical ui-corner-all" >';
+				html += '<div role = "heading" class = "ui-controlgroup-label" > <legend> '+ questionText +'</legend></div><div class="ui-controlgroup-controls ">';
+				options.forEach(function(option,optionIndex) {
+					html += '<div class="ui-checkbox"><label for="checkbox-'+ (optionIndex+1) +'" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">'+ option +'</label><input type="checkbox" answervalue="'+(optionIndex+1)+'" name="'+ answerNumber +'" id="checkbox-'+ (optionIndex+1) +'" class="answerInput" data-mini="true"></div>';
+				});
+				html += ' </div></fieldset>';
+				return html;
+				break
+			default:
+				return html;
+			}
 	}
 	
 	//Utility: Generates UniqueID for cookie and localstorage

@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 	
 // @region namespaceDeclaration// @startlock
+	var combobox9 = {};	// @combobox
 	var combobox1 = {};	// @combobox
 	var menuItem7 = {};	// @menuItem
 	var speakerEvent = {};	// @dataSource
@@ -35,9 +36,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	combobox9.change = function combobox9_change (event)// @startlock
+	{// @endlock
+//		if(sources.conference.ID){
+//			var confecneID = sources.conference.ID;
+//			source.session.query('conference.ID = ' + confecneID);
+//		}
+	};// @lock
+
 	combobox1.change = function combobox1_change (event)// @startlock
 	{// @endlock
-		sources.session.conference.set(sources.conference);
+//		if(sources.confrenceSessions.isNewElement())
+//		sources.confrenceSessions.conference.set(sources.conference);
 	};// @lock
 
 	menuItem7.click = function menuItem7_click (event)// @startlock
@@ -77,17 +87,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	button8.click = function button8_click (event)// @startlock
 	{// @endlock
 		var deleteOK = confirm('Are you sure to delete: ' + sources.speaker.fullName);
-		if(deleteOK)sources.session.removeCurrent();
-		sources.session.save();
-		sources.session.all();
+		if(deleteOK)sources.speaker.removeCurrent();
+		sources.speaker.save();
+		sources.speaker.collectionRefresh();
 	};// @lock
 
 	button7.click = function button7_click (event)// @startlock
 	{// @endlock
-		var deleteOK = confirm('Are you sure to delete: ' + sources.session.title);
-		if(deleteOK)sources.session.removeCurrent();
-		sources.session.save();
-		sources.session.all();
+		var deleteOK = confirm('Are you sure to delete: ' + sources.confrenceSessions.title);
+		if(deleteOK)sources.confrenceSessions.removeCurrent();
+		sources.confrenceSessions.save();
+		sources.confrenceSessions.collectionRefresh();
 	};// @lock
 
 	button6.click = function button6_click (event)// @startlock
@@ -101,7 +111,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		sources.presentation.session.set(sources.breakoutSessions);
 		sources.presentation.speaker.set(sources.speakersOnly);
 		sources.presentation.save();
-		sources.presentation.all()
+		sources.presentation.collectionRefresh()
 	};// @lock
 
 	dataGrid8.onRowClick = function dataGrid8_onRowClick (event)// @startlock
@@ -115,7 +125,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		$$('tabView2').selectTab(5);
 		$$('menuItem1').setState('default');
-		sources.presentation.all();
+		sources.presentation.collectionRefresh();
 	};// @lock
 
 	button11.click = function button11_click (event)// @startlock
@@ -180,7 +190,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		sources.speaker.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(3);
-	           sources.speaker.all();
+	           sources.speaker.collectionRefresh();
 	        }
     	});
 	};// @lock
@@ -206,26 +216,28 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem1.click = function menuItem1_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(1);
-		sources.session.all();
+		sources.confrenceSessions.collectionRefresh();
 	};// @lock
 
 	menuItem2.click = function menuItem2_click (event)// @startlock
 	{// @endlock
 		$$('tabView2').selectTab(3);
 		$$('menuItem1').setState('default');
-		sources.speaker.all();
+		sources.speaker.collectionRefresh();
 	};// @lock
 	
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
-		sources.session.addNewElement();
-		sources.session.serverRefresh();
+		sources.confrenceSessions.addNewElement({onSuccess:function(event) // create the entity on the server
+	    {
+	       sources.confrenceSessions.serverRefresh(); //get updated entity ID value on the client-side
+	    }});  
 		$$('tabView2').selectTab(2);
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		
+		//sources.conference.all();
 		$$('menuItem1').setState('active');
 		if (waf.directory.currentUserBelongsTo('admin') == 1)
 		$$('loginContainer').hide();
@@ -234,11 +246,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	button3.click = function button3_click (event)// @startlock
 	{// @endlock
 		//Save Session Details
-		var sessionDate = sources.session.sessionDate;
-		sources.session.sessionDateString = sessionDate.getMonth()+1 + "/" + sessionDate.getDate() + "/" + sessionDate.getFullYear();
-		sources.session.endTime = getOffsetDate(new Date(sources.session.sessionDate.toDateString() + " " + sources.session.endTimeString),60);
-		sources.session.startTime = getOffsetDate(new Date(sources.session.sessionDate.toDateString() + " " + sources.session.startTimeString),60);
-		sources.session.save({
+		var sessionDate = sources.confrenceSessions.sessionDate;
+		sources.confrenceSessions.sessionDateString = sessionDate.getMonth()+1 + "/" + sessionDate.getDate() + "/" + sessionDate.getFullYear();
+		sources.confrenceSessions.endTime = getOffsetDate(new Date(sources.confrenceSessions.sessionDate.toDateString() + " " + sources.confrenceSessions.endTimeString),60);
+		sources.confrenceSessions.startTime = getOffsetDate(new Date(sources.confrenceSessions.sessionDate.toDateString() + " " + sources.confrenceSessions.startTimeString),60);
+		sources.confrenceSessions.save({
 	        onSuccess: function(event) {
 	           $$('tabView2').selectTab(1);
 	        }
@@ -247,15 +259,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	button4.click = function button4_click (event)// @startlock
 	{// @endlock
-		if(sources.session.isNewElement()){
-			sources.session.removeCurrent({
+		if(sources.confrenceSessions.isNewElement()){
+			sources.confrenceSessions.removeCurrent({
 		        onSuccess: function(event) {
 		           $$('tabView2').selectTab(1);
 		        }
 	    	});
 	    }
 	    else
-	     sources.session.serverRefresh({
+	     sources.confrenceSessions.serverRefresh({
 		        onSuccess: function(event) {
 		           $$('tabView2').selectTab(1);
 		        }
@@ -280,6 +292,7 @@ function getOffsetDate(date, offsetInMintues) {
   return date;
 }
 // @region eventManager// @startlock
+	WAF.addListener("combobox9", "change", combobox9.change, "WAF");
 	WAF.addListener("combobox1", "change", combobox1.change, "WAF");
 	WAF.addListener("menuItem7", "click", menuItem7.click, "WAF");
 	WAF.addListener("speaker", "onpicURLAttributeChange", speakerEvent.onpicURLAttributeChange, "WAF", "picURL");

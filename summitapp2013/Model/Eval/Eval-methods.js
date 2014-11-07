@@ -2,7 +2,7 @@
 
 model.Eval.methods.getEvalQuestions = function(evalType,conferenceID) {
 	var evalQuestions = [];
-	evalQuestions = ds.EvalQuestion.query("evalType = :1",evalType).orderBy("questionNumber").toArray("questionText,questionType,questionNumber,evalType,options");
+	evalQuestions = ds.EvalQuestion.query("evalType = :1",evalType).orderBy("questionNumber").toArray("questionText,questionText_FR,questionType,questionNumber,evalType,options,options_FR");
 	return evalQuestions;
 };
 model.Eval.methods.getEvalQuestions.scope = "public";
